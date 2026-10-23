@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="An image cut into a grid of patches, each patch becoming one token">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="520" fill="#f7f3ea"/>
+<rect x="80.0" y="60.0" width="400.0" height="400.0" rx="4" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/>
+<rect x="110" y="240" width="44" height="200" fill="#2a78d6" opacity="0.8"/>
+<rect x="180" y="160" width="44" height="280" fill="#2a78d6" opacity="0.8"/>
+<rect x="250" y="280" width="44" height="160" fill="#2a78d6" opacity="0.8"/>
+<rect x="320" y="120" width="44" height="320" fill="#2a78d6" opacity="0.8"/>
+<rect x="390" y="200" width="44" height="240" fill="#2a78d6" opacity="0.8"/>
+<line x1="80" y1="60" x2="80" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="60" x2="480" y2="60" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="120" y1="60" x2="120" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="100" x2="480" y2="100" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="160" y1="60" x2="160" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="140" x2="480" y2="140" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="200" y1="60" x2="200" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="180" x2="480" y2="180" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="240" y1="60" x2="240" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="220" x2="480" y2="220" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="280" y1="60" x2="280" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="260" x2="480" y2="260" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="320" y1="60" x2="320" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="300" x2="480" y2="300" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="360" y1="60" x2="360" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="340" x2="480" y2="340" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="400" y1="60" x2="400" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="380" x2="480" y2="380" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="440" y1="60" x2="440" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="420" x2="480" y2="420" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="480" y1="60" x2="480" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="80" y1="460" x2="480" y2="460" stroke="#990000" stroke-width="1.5" opacity="0.7"/>
+<line x1="510.0" y1="260.0" x2="620.0" y2="260.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="650.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<rect x="712.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<rect x="774.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<rect x="836.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<rect x="898.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<rect x="960.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<rect x="1022.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<rect x="1084.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<rect x="1146.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<rect x="1208.0" y="130.0" width="52.0" height="52.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<rect x="650.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<rect x="712.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<rect x="774.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<rect x="836.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<rect x="898.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<rect x="960.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<rect x="1022.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<rect x="1084.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<rect x="1146.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<rect x="1208.0" y="192.0" width="52.0" height="52.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<rect x="650.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<rect x="712.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<rect x="774.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<rect x="836.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<rect x="898.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<rect x="960.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<rect x="1022.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<rect x="1084.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<rect x="1146.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<rect x="1208.0" y="254.0" width="52.0" height="52.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<text x="1270.0" y="360.0" font-size="22" fill="#68635d" text-anchor="end" font-weight="400">… one token per patch</text>
+<text x="650.0" y="100.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="700">Claude: tokens = ⌈width/28⌉ × ⌈height/28⌉</text>
+<text x="650.0" y="430.0" font-size="24" fill="#20201e" text-anchor="start" font-weight="400">1000 × 1000 pixels → 36 × 36 = 1,296 tokens</text>
+<text x="650.0" y="470.0" font-size="22" fill="#68635d" text-anchor="start" font-weight="400">about the same as a page of text</text>
+</svg>

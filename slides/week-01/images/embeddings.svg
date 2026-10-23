@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Embedding similarity to hypertension: medical terms score 0.78 to 0.90, fruit 0.55 to 0.73">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="520" fill="#f7f3ea"/>
+<line x1="330.0" y1="60" x2="330.0" y2="450" stroke="#ddd5c6"/>
+<text x="330.0" y="480.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">0.5</text>
+<line x1="534.0" y1="60" x2="534.0" y2="450" stroke="#ddd5c6"/>
+<text x="534.0" y="480.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">0.6</text>
+<line x1="738.0" y1="60" x2="738.0" y2="450" stroke="#ddd5c6"/>
+<text x="738.0" y="480.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">0.7</text>
+<line x1="942.0" y1="60" x2="942.0" y2="450" stroke="#ddd5c6"/>
+<text x="942.0" y="480.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">0.8</text>
+<line x1="1146.0" y1="60" x2="1146.0" y2="450" stroke="#ddd5c6"/>
+<text x="1146.0" y="480.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">0.9</text>
+<line x1="1350.0" y1="60" x2="1350.0" y2="450" stroke="#ddd5c6"/>
+<text x="1350.0" y="480.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">1.0</text>
+<text x="330.0" y="38.0" font-size="30" fill="#20201e" text-anchor="start" font-weight="600">How close is each word to “hypertension”?</text>
+<text x="314.0" y="98.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">high blood pressure</text>
+<rect x="330" y="75.0" width="824.2" height="28.0" rx="4" fill="#2a78d6"/>
+<text x="1164.2" y="98.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.90</text>
+<text x="314.0" y="136.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">diabetes</text>
+<rect x="330" y="113.0" width="689.5" height="28.0" rx="4" fill="#2a78d6"/>
+<text x="1029.5" y="136.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.84</text>
+<text x="314.0" y="174.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">heart attack</text>
+<rect x="330" y="151.0" width="644.6" height="28.0" rx="4" fill="#2a78d6"/>
+<text x="984.6" y="174.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.82</text>
+<text x="314.0" y="212.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">asthma</text>
+<rect x="330" y="189.0" width="593.6" height="28.0" rx="4" fill="#2a78d6"/>
+<text x="933.6" y="212.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.79</text>
+<text x="314.0" y="250.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">stroke</text>
+<rect x="330" y="227.0" width="575.3" height="28.0" rx="4" fill="#2a78d6"/>
+<text x="915.3" y="250.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.78</text>
+<text x="314.0" y="288.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">apple</text>
+<rect x="330" y="265.0" width="463.1" height="28.0" rx="4" fill="#eb6834"/>
+<text x="803.1" y="288.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.73</text>
+<text x="314.0" y="326.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">bicycle</text>
+<rect x="330" y="303.0" width="454.9" height="28.0" rx="4" fill="#eb6834"/>
+<text x="794.9" y="326.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.72</text>
+<text x="314.0" y="364.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">banana</text>
+<rect x="330" y="341.0" width="310.1" height="28.0" rx="4" fill="#eb6834"/>
+<text x="650.1" y="364.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.65</text>
+<text x="314.0" y="402.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">orange</text>
+<rect x="330" y="379.0" width="130.6" height="28.0" rx="4" fill="#eb6834"/>
+<text x="470.6" y="402.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.56</text>
+<text x="314.0" y="440.0" font-size="27" fill="#20201e" text-anchor="end" font-weight="400">tangerine</text>
+<rect x="330" y="417.0" width="95.9" height="28.0" rx="4" fill="#eb6834"/>
+<text x="435.9" y="440.0" font-size="25" fill="#20201e" text-anchor="start" font-weight="400">0.55</text>
+<text x="840.0" y="512.0" font-size="24" fill="#68635d" text-anchor="middle" font-weight="400">Cosine similarity of embeddings (1.0 = same direction)</text>
+<text x="1490.0" y="100.0" font-size="25" fill="#2a78d6" text-anchor="end" font-weight="600">■ medical</text>
+<text x="1490.0" y="134.0" font-size="25" fill="#eb6834" text-anchor="end" font-weight="600">■ not medical</text>
+</svg>

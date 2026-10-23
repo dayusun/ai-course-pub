@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Prompt engineering nested inside context engineering nested inside harness engineering">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="600" fill="#f7f3ea"/>
+<rect x="40.0" y="40.0" width="1420.0" height="520.0" rx="18" fill="#f7f3ea" stroke="#4b0000" stroke-width="3"/>
+<text x="70.0" y="86.0" font-size="30" fill="#4b0000" text-anchor="start" font-weight="700">Harness engineering</text>
+<text x="70.0" y="122.0" font-size="21" fill="#68635d" text-anchor="start" font-weight="400">2026 · tools, permissions, environment, workflow, checks</text>
+<rect x="120.0" y="140.0" width="1260.0" height="340.0" rx="18" fill="#fffdf8" stroke="#990000" stroke-width="3"/>
+<text x="150.0" y="186.0" font-size="30" fill="#4b0000" text-anchor="start" font-weight="700">Context engineering</text>
+<text x="150.0" y="222.0" font-size="21" fill="#68635d" text-anchor="start" font-weight="400">June 2025 · everything in the window: documents, examples, history, tool results</text>
+<rect x="240.0" y="250.0" width="1020.0" height="140.0" rx="18" fill="#fbefd6" stroke="#e3a617" stroke-width="3"/>
+<text x="270.0" y="296.0" font-size="30" fill="#4b0000" text-anchor="start" font-weight="700">Prompt engineering</text>
+<text x="270.0" y="332.0" font-size="21" fill="#68635d" text-anchor="start" font-weight="400">2020–2024 · the wording of one request</text>
+<text x="750.0" y="585.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">Each stage contains the previous one; a clear instruction is still the core.</text>
+</svg>

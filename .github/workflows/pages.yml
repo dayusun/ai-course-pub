@@ -1,0 +1,182 @@
+# Renders the course material and deploys it to GitHub Pages.
+#
+# This file lives in the working repo but only matters on the `publish` branch,
+# which is what reaches GitHub (see scripts/publish.py). The publish branch is
+# pushed to `main`, so that is what this triggers on.
+#
+# Nothing here commits rendered output. The decks are built from .qmd on every
+# run and served as an artifact, which is why slides/**/week-*.html stays
+# gitignored: there is no second copy to drift.
+
+name: Render and deploy to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Pages deployment needs these; nothing else in the job writes to the repo.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it half-published.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moves to 26 from 2026-10-19
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          # Pinned to the version the decks were authored and tested against.
+          version: 1.9.36
+
+      - name: Render every week deck
+        run: |
+          set -euo pipefail
+          mkdir -p _site/slides
+          shopt -s nullglob
+          decks=(slides/week-*/week-*.qmd)
+          if [ ${#decks[@]} -eq 0 ]; then
+            echo "No decks found under slides/week-*/ -- nothing to render."
+          fi
+          for deck in "${decks[@]}"; do
+            week=$(basename "$(dirname "$deck")")
+            echo "::group::Rendering $deck"
+            quarto render "$deck" --to revealjs
+            echo "::endgroup::"
+            # Quarto writes week-NN.html and week-NN_files/ beside the source.
+            # Copy the deck by name, not *.html: the source directory also
+            # holds interactions.html, which is an include fragment, not a page.
+            mkdir -p "_site/slides/$week"
+            cp "$(dirname "$deck")/$week.html" "_site/slides/$week/"
+            if [ -d "$(dirname "$deck")/${week}_files" ]; then
+              cp -r "$(dirname "$deck")/${week}_files" "_site/slides/$week/"
+            fi
+            # Slides link to these by relative path: figures, the exercise and
+            # worked-example files, and Week 2's raw demo output.
+            for sub in images figures materials demos; do
+              if [ -d "$(dirname "$deck")/$sub" ]; then
+                cp -r "$(dirname "$deck")/$sub" "_site/slides/$week/"
+              fi
+            done
+            # interactions.html (inlined) loads this script by relative path.
+            if [ -f "$(dirname "$deck")/interactions.js" ]; then
+              cp "$(dirname "$deck")/interactions.js" "_site/slides/$week/"
+            fi
+          done
+
+      - name: Render the syllabus documents
+        run: |
+          set -euo pipefail
+          mkdir -p _site/syllabus
+          for doc in syllabus/AI_Course_Detailed_Syllabus.md \
+                     syllabus/AI_Course_Short_Version.md; do
+            [ -f "$doc" ] || continue
+            name=$(basename "$doc" .md)
+            # No --output flag: it resolves relative to the project root, not
+            # the input's directory, and silently writes outside syllabus/.
+            # Plain render puts name.html and name_files/ beside the source.
+            quarto render "$doc" --to html -M toc:true -M "toc-depth:3"
+            mv "syllabus/$name.html" "_site/syllabus/$name.html"
+            if [ -d "syllabus/${name}_files" ]; then
+              cp -r "syllabus/${name}_files" "_site/syllabus/"
+            fi
+          done
+
+      - name: Build the landing page
+        run: |
+          set -euo pipefail
+          # Generated from whatever actually rendered, so adding week-02
+          # requires no change to this workflow.
+          {
+            cat <<'HEAD'
+          <!doctype html>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Using AI in Research and Analysis</title>
+          <style>
+            :root { --cream:#f7f3ea; --ink:#20201e; --crimson:#990000;
+                    --deep:#4b0000; --muted:#68635d; --line:rgba(75,0,0,.18); }
+            body { background:var(--cream); color:var(--ink); margin:0;
+                   font:17px/1.5 "Segoe UI",system-ui,sans-serif;
+                   padding:3rem 1.25rem; }
+            main { max-width:44rem; margin:0 auto; }
+            h1 { color:var(--deep); font-size:2rem; margin:0 0 .25rem;
+                 letter-spacing:-.02em; line-height:1.15; }
+            p.sub { color:var(--muted); margin:0 0 2.5rem; }
+            h2 { color:var(--crimson); font-size:.78rem; font-weight:700;
+                 letter-spacing:.1em; text-transform:uppercase;
+                 margin:2rem 0 .6rem; }
+            ul { list-style:none; padding:0; margin:0; }
+            li { margin:0 0 .45rem; }
+            a { display:block; padding:.7rem .9rem; background:#fffdf8;
+                border-left:4px solid var(--line); border-radius:0 8px 8px 0;
+                color:var(--deep); text-decoration:none; font-weight:600; }
+            a:hover { border-left-color:var(--crimson); }
+            a.inline { display:inline; padding:0; background:none; border:0;
+                       border-radius:0; color:var(--crimson); font-weight:600;
+                       text-decoration:underline; text-underline-offset:2px; }
+            footer { margin-top:3rem; padding-top:1rem;
+                     border-top:1px solid var(--line);
+                     color:var(--muted); font-size:.82rem; }
+          </style>
+          <main>
+          <h1>Using AI in Research and Analysis</h1>
+          <p class="sub">Indiana University &middot;
+            <a class="inline" href="https://www.sundayu.me/">Dayu Sun</a></p>
+          HEAD
+
+            if compgen -G "_site/slides/week-*" > /dev/null; then
+              echo '<h2>Slides</h2><ul>'
+              for dir in _site/slides/week-*/; do
+                week=$(basename "$dir")
+                label="Week $((10#${week#week-}))"
+                echo "<li><a href=\"slides/$week/$week.html\">$label</a></li>"
+              done
+              echo '</ul>'
+            fi
+
+            if compgen -G "_site/syllabus/*.html" > /dev/null; then
+              echo '<h2>Syllabus</h2><ul>'
+              for f in _site/syllabus/*.html; do
+                name=$(basename "$f" .html)
+                case "$name" in
+                  *Detailed*) label="Detailed syllabus" ;;
+                  *Short*)    label="Concise version" ;;
+                  *)          label="$name" ;;
+                esac
+                echo "<li><a href=\"syllabus/$(basename "$f")\">$label</a></li>"
+              done
+              echo '</ul>'
+            fi
+
+            cat <<FOOT
+          <footer><a class="inline" href="https://www.sundayu.me/">&larr; Dayu Sun's homepage</a>
+          &middot; Built from source on $(date -u +%Y-%m-%d). Slides are
+          Quarto/Reveal.js; use the arrow keys to move between slides.</footer>
+          </main>
+          FOOT
+          } > _site/index.html
+
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-24.04  # pinned: ubuntu-latest moves to 26 from 2026-10-19
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

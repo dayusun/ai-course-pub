@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="572" viewBox="0 0 1500 572" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Tokenization of five example strings by the GPT-4o tokenizer">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="572" fill="#f7f3ea"/>
+<text x="40.0" y="44.0" font-size="22" fill="#68635d" text-anchor="start" font-weight="400">GPT-4o tokenizer (o200k_base): each band is one token; · marks a space</text>
+<rect x="40.0" y="70.0" width="67.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="73.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">The</text>
+<rect x="111.0" y="70.0" width="152.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="187.0" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·patient</text>
+<rect x="267.0" y="70.0" width="84.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="309.0" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·was</text>
+<rect x="355.0" y="70.0" width="186.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="448.0" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·diagnosed</text>
+<rect x="545.0" y="70.0" width="101.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="595.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·with</text>
+<rect x="650.0" y="70.0" width="237.0" height="54.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<text x="768.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·hypertension</text>
+<rect x="891.0" y="70.0" width="67.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="924.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·in</text>
+<rect x="962.0" y="70.0" width="33.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="978.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·</text>
+<rect x="999.0" y="70.0" width="67.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="1032.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">201</text>
+<rect x="1070.0" y="70.0" width="33.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="1086.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">9</text>
+<rect x="1107.0" y="70.0" width="33.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="1123.5" y="106.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">.</text>
+<text x="1158.0" y="106.0" font-size="22" fill="#990000" text-anchor="start" font-weight="600">11 tokens</text>
+<rect x="40.0" y="152.0" width="33.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="56.5" y="188.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">p</text>
+<rect x="77.0" y="152.0" width="67.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="110.5" y="188.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">emb</text>
+<rect x="148.0" y="152.0" width="67.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="181.5" y="188.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">rol</text>
+<rect x="219.0" y="152.0" width="50.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="244.0" y="188.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">iz</text>
+<rect x="273.0" y="152.0" width="84.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="315.0" y="188.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">umab</text>
+<text x="375.0" y="188.0" font-size="22" fill="#990000" text-anchor="start" font-weight="600">5 tokens</text>
+<rect x="40.0" y="234.0" width="50.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="65.0" y="270.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">st</text>
+<rect x="94.0" y="234.0" width="67.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="127.5" y="270.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">raw</text>
+<rect x="165.0" y="234.0" width="101.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="215.5" y="270.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">berry</text>
+<text x="284.0" y="270.0" font-size="22" fill="#990000" text-anchor="start" font-weight="600">3 tokens</text>
+<rect x="40.0" y="316.0" width="203.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="141.5" y="352.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·strawberry</text>
+<text x="261.0" y="352.0" font-size="22" fill="#990000" text-anchor="start" font-weight="600">1 token</text>
+<rect x="40.0" y="398.0" width="50.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="65.0" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">Is</text>
+<rect x="94.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="110.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·</text>
+<rect x="131.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="147.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">9</text>
+<rect x="168.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="184.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">.</text>
+<rect x="205.0" y="398.0" width="50.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="230.0" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">11</text>
+<rect x="259.0" y="398.0" width="135.0" height="54.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<text x="326.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·larger</text>
+<rect x="398.0" y="398.0" width="101.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="448.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·than</text>
+<rect x="503.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="519.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">·</text>
+<rect x="540.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="556.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">9</text>
+<rect x="577.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="593.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">.</text>
+<rect x="614.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="630.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">9</text>
+<rect x="651.0" y="398.0" width="33.0" height="54.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<text x="667.5" y="434.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">?</text>
+<text x="702.0" y="434.0" font-size="22" fill="#990000" text-anchor="start" font-weight="600">12 tokens</text>
+<rect x="40.0" y="480.0" width="84.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="82.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">患者</text>
+<rect x="128.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="153.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">于</text>
+<rect x="182.0" y="480.0" width="67.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="215.5" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">201</text>
+<rect x="253.0" y="480.0" width="33.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="269.5" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">9</text>
+<rect x="290.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="315.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">年</text>
+<rect x="344.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<text x="369.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">被</text>
+<rect x="398.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="423.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">诊</text>
+<rect x="452.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#cfe3f5" stroke="none" stroke-width="1.5"/>
+<text x="477.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">断</text>
+<rect x="506.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#f4c6c6" stroke="none" stroke-width="1.5"/>
+<text x="531.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">为</text>
+<rect x="560.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#d6ead2" stroke="none" stroke-width="1.5"/>
+<text x="585.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">高</text>
+<rect x="614.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#e6d6f2" stroke="none" stroke-width="1.5"/>
+<text x="639.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">血</text>
+<rect x="668.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#fbe6b3" stroke="none" stroke-width="1.5"/>
+<text x="693.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">压</text>
+<rect x="722.0" y="480.0" width="50.0" height="54.0" rx="6" fill="#f6d7a7" stroke="none" stroke-width="1.5"/>
+<text x="747.0" y="516.0" font-size="26" fill="#20201e" text-anchor="middle" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">。</text>
+<text x="790.0" y="516.0" font-size="22" fill="#990000" text-anchor="start" font-weight="600">13 tokens</text>
+</svg>

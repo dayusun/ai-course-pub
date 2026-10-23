@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="A base model continues a quiz question with more quiz questions; formatted as Q and A, it continues with the answer">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="520" fill="#f7f3ea"/>
+<text x="30.0" y="46.0" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">A base model continues the document</text>
+<rect x="30.0" y="70.0" width="690.0" height="380.0" rx="6" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<rect x="30" y="70" width="690" height="34" rx="6" fill="#ece5d6"/>
+<text x="48.0" y="94.0" font-size="17" fill="#68635d" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">document.txt</text>
+<text x="54.0" y="146.0" font-size="23" fill="#20201e" text-anchor="start" font-weight="700" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">What is the capital of France?</text>
+<text x="54.0" y="186.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">What is the capital of Germany?</text>
+<text x="54.0" y="226.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">What is the capital of Italy?</text>
+<text x="54.0" y="266.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">What is the capital of Spain?</text>
+<text x="54.0" y="306.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">…</text>
+<text x="780.0" y="46.0" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">Formatted so that an answer comes next</text>
+<rect x="780.0" y="70.0" width="690.0" height="380.0" rx="6" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<rect x="780" y="70" width="690" height="34" rx="6" fill="#ece5d6"/>
+<text x="798.0" y="94.0" font-size="17" fill="#68635d" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">document.txt</text>
+<text x="804.0" y="146.0" font-size="23" fill="#20201e" text-anchor="start" font-weight="700" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">Q: What is the capital of France?</text>
+<text x="804.0" y="186.0" font-size="23" fill="#20201e" text-anchor="start" font-weight="700" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">A:</text>
+<text x="804.0" y="226.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace"> Paris.</text>
+<text x="804.0" y="266.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace"></text>
+<text x="804.0" y="306.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">Q: What is the capital of Japan?</text>
+<text x="804.0" y="346.0" font-size="23" fill="#990000" text-anchor="start" font-weight="400" font-family="&apos;Cascadia Code&apos;, Consolas, monospace">A: Tokyo.</text>
+<text x="30.0" y="496.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">Black: the prompt.   Red: what the model writes next (illustrative). No chat, no instructions: only “what text usually comes next?”</text>
+</svg>

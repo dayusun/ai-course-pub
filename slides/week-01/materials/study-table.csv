@@ -1,0 +1,13 @@
+id,age,sex,group,bmi,sbp,smoker
+S01,54,F,treatment,27.1,138,no
+S02,61,M,control,31.4,152,yes
+S03,47,F,treatment,"27,4",126,no
+S04,58,M,treatment,29.8,,no
+S05,66,F,control,24.9,144,yes
+S06,49,M,control,33.2,149,no
+S07,72,F,treatment,,161,no
+S08,55,M,control,28.6,135,yes
+S09,63,F,control,26.0,141,no
+S10,51,M,treatment,30.7,130,
+S11,68,F,treatment,25.3,147,no
+S12,59,M,control,32.1,156,yes

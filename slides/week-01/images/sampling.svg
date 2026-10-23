@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Next-token probabilities at temperatures 0.5, 1.0 and 1.5">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="560" fill="#f7f3ea"/>
+<text x="40.0" y="46.0" font-size="26" fill="#20201e" text-anchor="start" font-weight="600">“The patient was diagnosed with ___”   (illustrative logits)</text>
+<text x="40.0" y="100.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="600">temperature 0.5</text>
+<text x="180.0" y="158.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">hypertension</text>
+<rect x="192" y="136" width="154.6" height="30" rx="4" fill="#e3a617"/>
+<text x="354.6" y="159.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">41%</text>
+<text x="180.0" y="214.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">diabetes</text>
+<rect x="192" y="192" width="103.6" height="30" rx="4" fill="#2a78d6"/>
+<text x="303.6" y="215.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">28%</text>
+<text x="180.0" y="270.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">a</text>
+<rect x="192" y="248" width="56.9" height="30" rx="4" fill="#2a78d6"/>
+<text x="256.9" y="271.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">15%</text>
+<text x="180.0" y="326.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">cancer</text>
+<rect x="192" y="304" width="31.2" height="30" rx="4" fill="#2a78d6"/>
+<text x="231.2" y="327.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">8%</text>
+<text x="180.0" y="382.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">COVID</text>
+<rect x="192" y="360" width="9.4" height="30" rx="4" fill="#2a78d6"/>
+<text x="209.4" y="383.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">3%</text>
+<text x="180.0" y="438.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">pneumonia</text>
+<rect x="192" y="416" width="6.3" height="30" rx="4" fill="#2a78d6"/>
+<text x="206.3" y="439.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">2%</text>
+<text x="180.0" y="494.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">sepsis</text>
+<rect x="192" y="472" width="2.8" height="30" rx="4" fill="#2a78d6"/>
+<text x="202.8" y="495.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">1%</text>
+<text x="530.0" y="100.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="600">temperature 1</text>
+<text x="670.0" y="158.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">hypertension</text>
+<rect x="682" y="136" width="96.1" height="30" rx="4" fill="#e3a617"/>
+<text x="786.1" y="159.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">26%</text>
+<text x="670.0" y="214.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">diabetes</text>
+<rect x="682" y="192" width="78.6" height="30" rx="4" fill="#2a78d6"/>
+<text x="768.6" y="215.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">21%</text>
+<text x="670.0" y="270.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">a</text>
+<rect x="682" y="248" width="58.3" height="30" rx="4" fill="#2a78d6"/>
+<text x="748.3" y="271.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">16%</text>
+<text x="670.0" y="326.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">cancer</text>
+<rect x="682" y="304" width="43.2" height="30" rx="4" fill="#2a78d6"/>
+<text x="733.2" y="327.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">12%</text>
+<text x="670.0" y="382.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">COVID</text>
+<rect x="682" y="360" width="23.7" height="30" rx="4" fill="#2a78d6"/>
+<text x="713.7" y="383.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">6%</text>
+<text x="670.0" y="438.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">pneumonia</text>
+<rect x="682" y="416" width="19.4" height="30" rx="4" fill="#2a78d6"/>
+<text x="709.4" y="439.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">5%</text>
+<text x="670.0" y="494.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">sepsis</text>
+<rect x="682" y="472" width="13.0" height="30" rx="4" fill="#2a78d6"/>
+<text x="703.0" y="495.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">3%</text>
+<text x="1020.0" y="100.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="600">temperature 1.5</text>
+<text x="1160.0" y="158.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">hypertension</text>
+<rect x="1172" y="136" width="76.7" height="30" rx="4" fill="#e3a617"/>
+<text x="1256.7" y="159.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">20%</text>
+<text x="1160.0" y="214.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">diabetes</text>
+<rect x="1172" y="192" width="67.2" height="30" rx="4" fill="#2a78d6"/>
+<text x="1247.2" y="215.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">18%</text>
+<text x="1160.0" y="270.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">a</text>
+<rect x="1172" y="248" width="55.0" height="30" rx="4" fill="#2a78d6"/>
+<text x="1235.0" y="271.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">15%</text>
+<text x="1160.0" y="326.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">cancer</text>
+<rect x="1172" y="304" width="45.0" height="30" rx="4" fill="#2a78d6"/>
+<text x="1225.0" y="327.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">12%</text>
+<text x="1160.0" y="382.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">COVID</text>
+<rect x="1172" y="360" width="30.2" height="30" rx="4" fill="#2a78d6"/>
+<text x="1210.2" y="383.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">8%</text>
+<text x="1160.0" y="438.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">pneumonia</text>
+<rect x="1172" y="416" width="26.4" height="30" rx="4" fill="#2a78d6"/>
+<text x="1206.4" y="439.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">7%</text>
+<text x="1160.0" y="494.0" font-size="21" fill="#20201e" text-anchor="end" font-weight="400">sepsis</text>
+<rect x="1172" y="472" width="20.2" height="30" rx="4" fill="#2a78d6"/>
+<text x="1200.2" y="495.0" font-size="20" fill="#68635d" text-anchor="start" font-weight="400">5%</text>
+<text x="40.0" y="542.0" font-size="21" fill="#68635d" text-anchor="start" font-weight="400">Lower temperature sharpens the distribution toward the top token; higher flattens it and the tail gets sampled more often.</text>
+</svg>

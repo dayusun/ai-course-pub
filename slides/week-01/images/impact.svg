@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Before: a domain expert's request goes to an engineer or analyst, who writes the code for the computer, taking weeks. Now: anyone describes the task to an AI model, which writes the code or acts, in minutes. Below it, the engineer or analyst, who would verify the AI's output, is crossed out: this role may not be needed">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="600" fill="#f7f3ea"/>
+<text x="30.0" y="90.0" font-size="34" fill="#68635d" text-anchor="start" font-weight="700">Before</text>
+<rect x="170.0" y="30.0" width="330.0" height="120.0" rx="14" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<text x="335.0" y="82.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">Domain expert</text>
+<text x="335.0" y="120.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">clinician, manager, PI</text>
+<line x1="506.0" y1="90.0" x2="634.0" y2="90.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="570.0" y="76.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">request</text>
+<rect x="640.0" y="30.0" width="330.0" height="120.0" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="805.0" y="82.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">Engineer / analyst</text>
+<text x="805.0" y="120.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">writes the code</text>
+<line x1="976.0" y1="90.0" x2="1104.0" y2="90.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="1040.0" y="76.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">code</text>
+<rect x="1110.0" y="30.0" width="330.0" height="120.0" rx="14" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<text x="1275.0" y="82.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">Computer</text>
+<text x="1275.0" y="120.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">runs it</text>
+<text x="170.0" y="186.0" font-size="21" fill="#68635d" text-anchor="start" font-weight="400">Weeks: every request waits in the engineer's or analyst's queue.</text>
+<text x="30.0" y="320.0" font-size="34" fill="#990000" text-anchor="start" font-weight="700">Now</text>
+<rect x="170.0" y="260.0" width="330.0" height="120.0" rx="14" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<text x="335.0" y="312.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">Anyone</text>
+<text x="335.0" y="350.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">describes the task</text>
+<line x1="506.0" y1="320.0" x2="634.0" y2="320.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="570.0" y="306.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">plain language</text>
+<rect x="640.0" y="260.0" width="330.0" height="120.0" rx="14" fill="#fbefd6" stroke="#e3a617" stroke-width="3"/>
+<text x="805.0" y="312.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">AI model</text>
+<text x="805.0" y="350.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">writes code or acts</text>
+<line x1="976.0" y1="320.0" x2="1104.0" y2="320.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="1040.0" y="306.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">code, actions</text>
+<rect x="1110.0" y="260.0" width="330.0" height="120.0" rx="14" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<text x="1275.0" y="312.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">Computer</text>
+<text x="1275.0" y="350.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">runs it</text>
+<text x="170.0" y="416.0" font-size="21" fill="#20201e" text-anchor="start" font-weight="400">Minutes: the request goes straight to the model.</text>
+<rect x="640.0" y="470.0" width="330.0" height="110.0" rx="14" fill="#fffdf8" stroke="#990000" stroke-width="2.5"/>
+<text x="805.0" y="518.0" font-size="26" fill="#990000" text-anchor="middle" font-weight="700">Engineer / analyst</text>
+<text x="805.0" y="554.0" font-size="20" fill="#68635d" text-anchor="middle" font-weight="400">verifies the AI's output</text>
+<path d="M 805.0 384 L 805.0 464" fill="none" stroke="#990000" stroke-width="2.5" stroke-dasharray="8 6" marker-end="url(#arr)"/>
+<line x1="622" y1="456" x2="988" y2="594" stroke="#990000" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+<line x1="988" y1="456" x2="622" y2="594" stroke="#990000" stroke-width="12" stroke-linecap="round" opacity="0.85"/>
+<text x="1006.0" y="532.0" font-size="22" fill="#990000" text-anchor="start" font-weight="700">this role may not be needed</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="380" viewBox="0 0 1500 380" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Pipeline from pretraining to supervised fine-tuning to preference training to deployment">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="380" fill="#f7f3ea"/>
+<rect x="40.0" y="60.0" width="320.0" height="250.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<rect x="40" y="60" width="320" height="10" rx="5" fill="#4b0000"/>
+<text x="200.0" y="118.0" font-size="27" fill="#4b0000" text-anchor="middle" font-weight="700">Pretraining</text>
+<text x="200.0" y="170.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">trillions of tokens</text>
+<text x="200.0" y="214.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">predict the next token</text>
+<text x="200.0" y="278.0" font-size="22" fill="#990000" text-anchor="middle" font-weight="600">→ base model</text>
+<line x1="364.0" y1="185.0" x2="396.0" y2="185.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="400.0" y="60.0" width="320.0" height="250.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<rect x="400" y="60" width="320" height="10" rx="5" fill="#4b0000"/>
+<text x="560.0" y="118.0" font-size="27" fill="#4b0000" text-anchor="middle" font-weight="700">Supervised fine-tuning</text>
+<text x="560.0" y="170.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">thousands of examples</text>
+<text x="560.0" y="214.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">imitate good answers</text>
+<text x="560.0" y="278.0" font-size="22" fill="#990000" text-anchor="middle" font-weight="600">→ instruction model</text>
+<line x1="724.0" y1="185.0" x2="756.0" y2="185.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="760.0" y="60.0" width="320.0" height="250.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<rect x="760" y="60" width="320" height="10" rx="5" fill="#4b0000"/>
+<text x="920.0" y="118.0" font-size="27" fill="#4b0000" text-anchor="middle" font-weight="700">Preference &amp; RL</text>
+<text x="920.0" y="170.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">rankings, verifiable rewards</text>
+<text x="920.0" y="214.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">optimize for reward</text>
+<text x="920.0" y="278.0" font-size="22" fill="#990000" text-anchor="middle" font-weight="600">→ aligned / reasoning</text>
+<line x1="1084.0" y1="185.0" x2="1116.0" y2="185.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="1120.0" y="60.0" width="320.0" height="250.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<rect x="1120" y="60" width="320" height="10" rx="5" fill="#e3a617"/>
+<text x="1280.0" y="118.0" font-size="27" fill="#4b0000" text-anchor="middle" font-weight="700">Deployed system</text>
+<text x="1280.0" y="170.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">system prompt, tools</text>
+<text x="1280.0" y="214.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">harness around the model</text>
+<text x="1280.0" y="278.0" font-size="22" fill="#990000" text-anchor="middle" font-weight="600">→ what you use</text>
+<path d="M 400 335 L 1060 335" stroke="#66806a" stroke-width="3"/>
+<text x="730.0" y="366.0" font-size="22" fill="#66806a" text-anchor="middle" font-weight="600">post-training</text>
+</svg>

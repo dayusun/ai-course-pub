@@ -1,0 +1,216 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Shared theme for every week deck.
+//
+// THIS VOCABULARY IS CLOSED. Seven layout components, four teaching blocks,
+// two inline tones. If a slide needs something these cannot express, the answer
+// is to change the slide, or to discuss adding an eighth component -- not to
+// write a one-off class.
+//
+// week-01/theme.scss is the older per-deck theme with 53 single-use classes and
+// is superseded by this file. See CLAUDE.md.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/*-- scss:defaults --*/
+$body-bg: #f7f3ea;
+$body-color: #20201e;
+$link-color: #990000;
+$selection-bg: #e3a617;
+$selection-color: #20201e;
+$presentation-heading-color: #4b0000;
+$presentation-font-size-root: 38px;
+$presentation-h1-font-size: 2.3em;
+$presentation-h2-font-size: 1.48em;
+$presentation-h3-font-size: 1.12em;
+$font-family-sans-serif: "Aptos", "Segoe UI", Arial, sans-serif;
+$presentation-heading-font: "Aptos Display", "Segoe UI Semibold", Arial, sans-serif;
+$font-family-monospace: "Cascadia Code", Consolas, monospace;
+
+/*-- scss:rules --*/
+:root {
+  --cream: #f7f3ea;
+  --ink: #20201e;
+  --muted: #68635d;
+  --crimson: #990000;
+  --deep-crimson: #4b0000;
+  --gold: #e3a617;
+  --sage: #66806a;
+  --slate: #4a5568;
+  --line: rgba(75, 0, 0, 0.18);
+}
+
+// ── Base ─────────────────────────────────────────────────────────────────────
+
+.reveal { letter-spacing: -0.012em; }
+.reveal .slides { text-align: left; }
+.reveal .slides section { box-sizing: border-box; }
+
+.reveal h2 {
+  margin: 0 0 0.56em 0;
+  max-width: 1420px;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+
+.reveal p, .reveal li { line-height: 1.28; }
+.reveal strong { color: var(--deep-crimson); }
+
+.reveal .slide-number,
+.reveal .footer {
+  color: #6e625b;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+
+// Images: never let one overflow the frame, and centre it.
+.reveal .slides img {
+  max-height: 68vh;
+  display: block;
+  margin: 0.2em auto;
+}
+
+// ── Component 1 of 7: .eyebrow ───────────────────────────────────────────────
+// A small label above the content.
+
+.eyebrow {
+  font-size: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 0.7em;
+}
+
+// ── Component 2 of 7: .rows ──────────────────────────────────────────────────
+// A stacked list of rows, each with a bold lead-in. Replaces the old
+// scenario-list / decision-lines / exercise-sequence / tier-list.
+
+.rows {
+  ul { list-style: none; margin: 0; padding: 0; }
+
+  li {
+    background: rgba(255, 255, 255, 0.62);
+    border-left: 4px solid var(--line);
+    border-radius: 0 8px 8px 0;
+    padding: 0.5em 0.8em;
+    margin: 0 0 0.42em 0;
+    font-size: 0.82em;
+  }
+}
+
+// ── Component 3 of 7: .flow ──────────────────────────────────────────────────
+// A horizontal chain. Write it as plain text with " → " between the steps.
+// Replaces the old phase-line / prompt-flow / loop-strip.
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45em;
+  font-size: 0.8em;
+  margin: 0.5em 0;
+
+  p { margin: 0; }
+}
+
+// ── Component 4 of 7: .compare ───────────────────────────────────────────────
+// Two things side by side. Replaces output-compare / prompt-transform /
+// two-truths.
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+  margin: 0.5em 0;
+
+  > div {
+    background: rgba(255, 255, 255, 0.62);
+    border-top: 3px solid var(--crimson);
+    border-radius: 0 0 8px 8px;
+    padding: 0.7em 0.85em;
+    font-size: 0.76em;
+  }
+}
+
+// ── Component 5 of 7: .stack ─────────────────────────────────────────────────
+// The layered model / application / agent diagram. The one genuinely bespoke
+// visual in the course; it carries the central conceptual picture.
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  margin: 0.4em 0;
+
+  > div {
+    border: 2px solid var(--line);
+    border-radius: 10px;
+    padding: 0.6em 0.9em;
+    font-size: 0.76em;
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  > div:first-child {
+    background: var(--deep-crimson);
+    color: var(--cream);
+    border-color: var(--deep-crimson);
+    strong { color: var(--gold); }
+  }
+}
+
+// ── Component 6 of 7: .takeaway ──────────────────────────────────────────────
+// NOTE: NOT named .callout -- Quarto reserves that name and rewrites the div
+// into its own callout machinery (callout-body / callout-content wrappers).
+// The emphasised takeaway at the bottom of a slide. Replaces the old takeaway /
+// closing-line / contrast-line / failure-line / image-warning / matrix-link.
+
+.takeaway {
+  border-top: 2px solid var(--line);
+  margin-top: 0.8em;
+  padding-top: 0.55em;
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--deep-crimson);
+}
+
+// ── Component 7 of 7: .note ──────────────────────────────────────────────────
+// Small print and source attribution. Replaces source-line / micro-note.
+
+.note {
+  font-size: 0.46em;
+  color: var(--muted);
+  margin-top: 0.7em;
+  line-height: 1.35;
+}
+
+// ── Teaching blocks ──────────────────────────────────────────────────────────
+// The label is supplied here, not typed in the markdown, so its wording is
+// changeable in one place across all seven decks.
+
+.fact, .example, .experience, .caution {
+  border-left: 4px solid;
+  border-radius: 0 8px 8px 0;
+  padding: 0.55em 0.9em;
+  margin: 0.5em 0;
+  font-size: 0.76em;
+  background: rgba(255, 255, 255, 0.62);
+
+  &::before {
+    display: block;
+    font-size: 0.58em;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    margin-bottom: 0.22em;
+  }
+
+  p:last-child { margin-bottom: 0; }
+}
+
+.fact       { border-color: var(--crimson); &::before { content: "FACT";             color: var(--crimson); } }
+.example    { border-color: var(--slate);   &::before { content: "EXAMPLE";          color: var(--slate);   } }
+.experience { border-color: var(--gold);    &::before { content: "FROM MY OWN WORK"; color: #9a7212;        } }
+.caution    { border-color: #b3261e;        &::before { content: "WATCH OUT";        color: #b3261e;        } }
+
+// ── Inline tones ─────────────────────────────────────────────────────────────
+
+.danger { color: #b3261e; font-weight: 700; }
+.assist { color: var(--sage); font-weight: 700; }
