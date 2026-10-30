@@ -505,38 +505,31 @@ whole conversation, your files and the answer, every turn. It is counted in toke
 
 ## DeepSeek's contribution to reasoning models
 
-- Week 1 covered R1's release: open weights, a visible chain of thought, and reasoning
-  that emerged from reward alone in R1-Zero. Three further contributions:
-- **A cheaper training method:** [GRPO](https://arxiv.org/abs/2402.03300) (DeepSeekMath,
-  February 2024) samples a group of answers to one question and scores each against the
-  group's average. It drops the separate "critic" model that standard reinforcement
-  learning needs, which cuts memory and cost.
-- **Small models can reason too:** about 800,000 R1 answers were used to train small
-  Qwen and Llama models; a 32B student beat o1-mini on maths benchmarks.
-- **A low price for reasoning:** the reasoning stage of R1 cost about **US$294,000** of
-  compute, on top of its base model (reported in the
-  [*Nature*](https://www.nature.com/articles/s41586-025-09422-z) paper, September 2025).
-
-::: {.source-line}
-[@shao2024deepseekmath; @deepseek2025r1arxiv; @deepseek2025r1; @gibney2025deepseeknature]
+:::: {.columns}
+::: {.column width="52%"}
+- **[GRPO](https://arxiv.org/abs/2402.03300)** (2024): scores each sampled answer against
+  its group's average, so no separate critic model is needed.
+- **Outcome rewards, not process rewards:** a
+  [process reward model](https://arxiv.org/abs/2305.20050) scores every step of a
+  solution. R1's team tried one and dropped it: steps are hard to define and check, and a
+  learned scorer invites reward hacking. R1 is rewarded on the final answer and format.
+- **Distillation:** 800,000 R1 answers taught small Qwen and Llama models to reason.
 :::
-
-## DeepSeek's reasoning models after R1
-
-| Date | Release | What changed for reasoning |
+::: {.column width="48%"}
+::: {style="font-size:0.8em;"}
+| Date | Release | Reasoning change |
 |---|---|---|
-| Aug 2025 | [V3.1](https://api-docs.deepseek.com/news/news250821) | one model, two modes: **Think** and **Non-Think** (the DeepThink button); the API's `deepseek-reasoner` becomes its thinking mode |
-| Dec 2025 | [V3.2, V3.2-Speciale](https://api-docs.deepseek.com/news/news251201) | **thinking inside tool use**: it reasons between tool calls. Speciale: gold-level results at IMO, IOI and ICPC 2025 |
-| Apr 2026 | [V4 Preview](https://api-docs.deepseek.com/news/news260424) | Pro (1.6T parameters, 49B active) and Flash (284B, 13B); **1M-token context** by default |
-| Sep–Oct 2026 | [V4.1-Flash, then -1017](https://api-docs.deepseek.com/news/news261017) | effort levels **low, high, max** (default high); same scores with shorter outputs; tuned for DeepSeek Harness |
-
-- The direction since R1: reasoning became a **setting** on one model, and moved into
-  agent work, with thinking between tool calls.
-- The effort names do not match across vendors. DeepSeek's API maps *medium* and *xhigh*
-  to **high**, so asking for medium gets you high.
+| Jan 2025 | R1 | open weights, visible thinking |
+| Aug 2025 | [V3.1](https://api-docs.deepseek.com/news/news250821) | Think / Non-Think in one model |
+| Dec 2025 | [V3.2](https://api-docs.deepseek.com/news/news251201) | thinking between tool calls |
+| Apr 2026 | [V4 Preview](https://api-docs.deepseek.com/news/news260424) | 1M-token context |
+| Oct 2026 | [V4.1-Flash](https://api-docs.deepseek.com/news/news261017) | effort: low, high, max |
+:::
+:::
+::::
 
 ::: {.source-line}
-[@deepseek2025v31; @deepseek2025v32; @deepseek2026v4; @deepseek2026v41flash1017; @deepseek_thinking2026]
+[@shao2024deepseekmath; @lightman2023verify; @deepseek2025r1arxiv; @deepseek2025v31; @deepseek2025v32; @deepseek2026v4; @deepseek2026v41flash1017]
 :::
 
 ## Effort in two harnesses
@@ -589,26 +582,6 @@ whole conversation, your files and the answer, every turn. It is counted in toke
 ::: {.source-line}
 [@anthropic_effort2026; @anthropic2026opus55; @openai2026sol; @batch2026sol]
 :::
-
-## Effort settings, measured on one question
-
-One statistics question: pooled SD and 95% CI for a difference in mean SBP (correct: SD
-11.10, CI 0.27 to 12.33). Three runs per setting, temperature 0, NRP, 20 October 2026.
-
-| Model | Setting | Correct | Seconds | Tokens written |
-|---|---|---|---|---|
-| Qwen3.8-27B | thinking off | 3/3 | 10 | 1,030 |
-| | low | 3/3 | 22–23 | 2,360–2,510 |
-| | highest (default) | 3/3 | 71–103 | 3,470–5,330 |
-| GLM-5.3 | low | 3/3 | 8–12 | 350–450 |
-| | high | 3/3 | 18–24 | 700–940 |
-| | thinking "off" | **2/3** | 46–358 | up to 16,384 |
-
-- On this question, more effort cost 3–10× the time and gave the same answer.
-- GLM-5.3 with thinking switched off did the arithmetic longhand in its answer instead,
-  and once ran out of room before finishing.
-- In a chat app: the default mode for everyday work; the thinking or extended mode for a
-  derivation, a tricky bug, or a plan.
 
 # 5 · Model knowledge and app memory
 
