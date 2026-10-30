@@ -43,7 +43,9 @@ jobs:
           set -euo pipefail
           mkdir -p _site/slides
           shopt -s nullglob
-          decks=(slides/week-*/week-*.qmd)
+          # slides/setup/setup.qmd is the public copy of the course-hub setup
+          # guide; like a week deck, its folder and file share a name.
+          decks=(slides/week-*/week-*.qmd slides/setup/setup.qmd)
           if [ ${#decks[@]} -eq 0 ]; then
             echo "No decks found under slides/week-*/ -- nothing to render."
           fi
@@ -141,6 +143,9 @@ jobs:
                 label="Week $((10#${week#week-}))"
                 echo "<li><a href=\"slides/$week/$week.html\">$label</a></li>"
               done
+              if [ -f _site/slides/setup/setup.html ]; then
+                echo '<li><a href="slides/setup/setup.html">Cloud setup: NRP and Jetstream2</a></li>'
+              fi
               echo '</ul>'
             fi
 
