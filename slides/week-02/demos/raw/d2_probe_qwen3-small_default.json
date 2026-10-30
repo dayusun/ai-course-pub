@@ -1,0 +1,58 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 0.74,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is 17 * 23? Answer with the number."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 4096
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\n391",
+          "function_call": null,
+          "reasoning": "We need answer user's simple arithmetic. Need final only number. 17*23 = 391. Ensure no extra.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542707,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-8ff4a3f5-2ffe-9ece-af1d-c4624c951c71",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-94b4d640",
+    "usage": {
+      "completion_tokens": 36,
+      "completion_tokens_details": {
+        "reasoning_tokens": 30
+      },
+      "prompt_tokens": 67,
+      "prompt_tokens_details": null,
+      "total_tokens": 103
+    }
+  }
+}

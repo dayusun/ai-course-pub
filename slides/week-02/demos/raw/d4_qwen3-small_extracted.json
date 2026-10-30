@@ -1,0 +1,61 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 6.31,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Convert the reference list below into a JSON array of 8 objects with keys authors (string), first_author_surname, year (integer or null), title, journal, doi (string or null; without https://doi.org/). Copy values exactly as written; do not correct anything. Output only the JSON.\n\n\n\nI can point you toward several well-known papers in this area, but I want to be upfront: **I cannot guarantee the exact DOIs below without a meaningful risk of error.** DOIs are precise identifiers, and even a single wrong digit makes them useless. I'd strongly recommend verifying each entry in PubMed or Crossref before citing.\n\nHere are papers I'm reasonably confident exist in this literature:\n\n| # | Authors | Year | Title (approx.) | Journal |\n|---|---------|------|-----------------|---------|\n| 1 | Carney C, Salsitz A, et al. | 2012 | Text messaging for medication adherence in a community mental health setting | *American Journal of Preventive Medicine* |\n| 2 | Hwang W, Carney C, et al. | 2013 | Text messaging for medication adherence in a community mental health setting: a randomized controlled trial | *Journal of Medical Internet Research* |\n| 3 | Bland R, et al. | 2014 | Text messaging for medication adherence: a systematic review | *Journal of Medical Internet Research* |\n| 4 | Hwang W, Carney C, et al. | 2018 | Mobile phone and/or SMS interventions for adherence to medication | *Cochrane Database of Systematic Reviews* |\n| 5 | Rost MH, et al. | 2012 | Text messaging for medication adherence: a systematic review | *Journal of General Internal Medicine* |\n| 6 | Carney C, Salsitz A, et al. | 2012 | Text messaging for medication adherence in a community mental health setting | *American Journal of Preventive Medicine* |\n| 7 | Bland R, et al. | 2014 | Text messaging for medication adherence: a systematic review | *Journal of Medical Internet Research* |\n| 8 | Hwang W, Carney C, et al. | 2013 | Text messaging for medication adherence in a community mental health setting: a randomized controlled trial | *Journal of Medical Internet Research* |\n\n**Important caveats:**\n\n- I've noticed I'm repeating some entries, which signals my recall is not reliable enough to give you a clean list of 8 *distinct* papers with verified DOIs.\n- The exact titles, author order, and years may be slightly off.\n- I am **not** providing DOIs because I would be guessing, and a wrong DOI is worse than no DOI.\n\n**What I'd recommend instead:**\n\nSearch PubMed with terms like `\"text message\" AND \"medication adherence\"` or `\"SMS\" AND \"medication adherence\"` and filter by peer-reviewed. That will give you verified DOIs instantly. The Cochrane review (entry 4) is a particularly good starting point because it will cite many of the primary trials.\n\nI'd rather be honest about the limits of my recall than risk handing you fabricated DOIs that look authoritative but aren't."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 8192,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "[\n  {\n    \"authors\": \"Carney C, Salsitz A, et al.\",\n    \"first_author_surname\": \"Carney\",\n    \"year\": 2012,\n    \"title\": \"Text messaging for medication adherence in a community mental health setting\",\n    \"journal\": \"American Journal of Preventive Medicine\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Hwang W, Carney C, et al.\",\n    \"first_author_surname\": \"Hwang\",\n    \"year\": 2013,\n    \"title\": \"Text messaging for medication adherence in a community mental health setting: a randomized controlled trial\",\n    \"journal\": \"Journal of Medical Internet Research\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Bland R, et al.\",\n    \"first_author_surname\": \"Bland\",\n    \"year\": 2014,\n    \"title\": \"Text messaging for medication adherence: a systematic review\",\n    \"journal\": \"Journal of Medical Internet Research\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Hwang W, Carney C, et al.\",\n    \"first_author_surname\": \"Hwang\",\n    \"year\": 2018,\n    \"title\": \"Mobile phone and/or SMS interventions for adherence to medication\",\n    \"journal\": \"Cochrane Database of Systematic Reviews\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Rost MH, et al.\",\n    \"first_author_surname\": \"Rost\",\n    \"year\": 2012,\n    \"title\": \"Text messaging for medication adherence: a systematic review\",\n    \"journal\": \"Journal of General Internal Medicine\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Carney C, Salsitz A, et al.\",\n    \"first_author_surname\": \"Carney\",\n    \"year\": 2012,\n    \"title\": \"Text messaging for medication adherence in a community mental health setting\",\n    \"journal\": \"American Journal of Preventive Medicine\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Bland R, et al.\",\n    \"first_author_surname\": \"Bland\",\n    \"year\": 2014,\n    \"title\": \"Text messaging for medication adherence: a systematic review\",\n    \"journal\": \"Journal of Medical Internet Research\",\n    \"doi\": null\n  },\n  {\n    \"authors\": \"Hwang W, Carney C, et al.\",\n    \"first_author_surname\": \"Hwang\",\n    \"year\": 2013,\n    \"title\": \"Text messaging for medication adherence in a community mental health setting: a randomized controlled trial\",\n    \"journal\": \"Journal of Medical Internet Research\",\n    \"doi\": null\n  }\n]",
+          "function_call": null,
+          "reasoning": null,
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543326,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-42f8859b-4e38-9be4-a4c8-75889abf8f28",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-94b4d640",
+    "usage": {
+      "completion_tokens": 658,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 712,
+      "prompt_tokens_details": null,
+      "total_tokens": 1370
+    }
+  }
+}

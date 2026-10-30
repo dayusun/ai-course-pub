@@ -1,0 +1,130 @@
+{
+ "ranking": [
+  {
+   "rank": 1,
+   "id": "stephtn:p. 5",
+   "paper": "STEP-HTN: walking plus diet advice (synthetic)",
+   "text": "Primary outcome: 24-hour ambulatory SBP at 24 weeks.",
+   "cosine": 0.7135,
+   "keyword_overlap": 1
+  },
+  {
+   "rank": 2,
+   "id": "stephtn:p. 7",
+   "paper": "STEP-HTN: walking plus diet advice (synthetic)",
+   "text": "Ambulatory SBP fell by 4.0 mmHg more with walking plus diet advice (95% CI 1.1 to 6.9). No serious adverse events were attributed to the intervention.",
+   "cosine": 0.6354,
+   "keyword_overlap": 1
+  },
+  {
+   "rank": 3,
+   "id": "walk2:p. 4",
+   "paper": "WALK-2: unsupervised walking with step counters (synthetic)",
+   "text": "The primary outcome was change in home SBP at 24 weeks.",
+   "cosine": 0.6229,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 4,
+   "id": "walk1:p. 5",
+   "paper": "WALK-1: a brisk-walking programme for stage 1 hypertension (synthetic)",
+   "text": "The primary outcome was change in office systolic blood pressure (SBP) at 24 weeks.",
+   "cosine": 0.5922,
+   "keyword_overlap": 2
+  },
+  {
+   "rank": 5,
+   "id": "walk1:p. 3",
+   "paper": "WALK-1: a brisk-walking programme for stage 1 hypertension (synthetic)",
+   "text": "We randomised 240 adults with stage 1 hypertension at two community clinics to a 24-week supervised brisk-walking programme (n = 120) or usual care (n = 120).",
+   "cosine": 0.5904,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 6,
+   "id": "walk2:p. 6",
+   "paper": "WALK-2: unsupervised walking with step counters (synthetic)",
+   "text": "The between-group difference in home SBP was 2.4 mmHg (95% CI -0.3 to 5.1). The authors describe the effect as \"small and uncertain\".",
+   "cosine": 0.5557,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 7,
+   "id": "walk1:p. 7",
+   "paper": "WALK-1: a brisk-walking programme for stage 1 hypertension (synthetic)",
+   "text": "At 24 weeks, mean SBP fell by 6.1 mmHg more in the walking group than in usual care (95% CI 3.2 to 9.0). Adherence, defined as attending 70% of sessions, was 64%.",
+   "cosine": 0.542,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 8,
+   "id": "stephtn:p. 3",
+   "paper": "STEP-HTN: walking plus diet advice (synthetic)",
+   "text": "STEP-HTN randomised 186 adults between 2022 and 2024 to walking plus a two-session diet consultation, or to diet consultation alone.",
+   "cosine": 0.4415,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 9,
+   "id": "walk2:p. 2",
+   "paper": "WALK-2: unsupervised walking with step counters (synthetic)",
+   "text": "WALK-2 enrolled 410 adults (2020-2022) and gave the intervention group a step counter and a weekly text message, without supervised sessions.",
+   "cosine": 0.4405,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 10,
+   "id": "walk1:p. 9",
+   "paper": "WALK-1: a brisk-walking programme for stage 1 hypertension (synthetic)",
+   "text": "Limitation: participants were recruited in 2018 and 2019, before the 2020 change in clinic referral rules.",
+   "cosine": 0.3503,
+   "keyword_overlap": 0
+  },
+  {
+   "rank": 11,
+   "id": "walk2:p. 8",
+   "paper": "WALK-2: unsupervised walking with step counters (synthetic)",
+   "text": "31% of the intervention group stopped wearing the counter before week 12.",
+   "cosine": 0.2687,
+   "keyword_overlap": 0
+  }
+ ],
+ "runs": [
+  {
+   "retriever": "embedding",
+   "k": 1,
+   "retrieved": [
+    "stephtn:p. 5"
+   ],
+   "answer": "Yes. According to the excerpt from **stephtn (p. 5)**, the trial's primary outcome was **24-hour ambulatory SBP at 24 weeks**, confirming that ambulatory blood pressure was measured."
+  },
+  {
+   "retriever": "embedding",
+   "k": 3,
+   "retrieved": [
+    "stephtn:p. 5",
+    "stephtn:p. 7",
+    "walk2:p. 4"
+   ],
+   "answer": "Yes. The STEPHTN trial measured ambulatory blood pressure, with its primary outcome being \"24-hour ambulatory SBP at 24 weeks\" (stephtn:p. 5). The WALK2 trial, by contrast, used home SBP as its primary outcome (walk2:p. 4)."
+  },
+  {
+   "retriever": "keyword",
+   "k": 1,
+   "retrieved": [
+    "walk1:p. 5"
+   ],
+   "answer": "Based on the provided excerpts, there is no mention of ambulatory blood pressure. The only excerpt references \"office systolic blood pressure (SBP)\" as a primary outcome. The excerpts do not contain enough information to answer whether any trial measured ambulatory blood pressure."
+  },
+  {
+   "retriever": "keyword",
+   "k": 3,
+   "retrieved": [
+    "walk1:p. 5",
+    "stephtn:p. 5",
+    "stephtn:p. 7"
+   ],
+   "answer": "Yes. The Stephenson trial (stephtn) measured ambulatory blood pressure, with its primary outcome being 24-hour ambulatory SBP at 24 weeks."
+  }
+ ]
+}

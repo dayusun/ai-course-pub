@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="The agent loop: the model proposes a tool call, the harness runs it and returns the result">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="620" fill="#f7f3ea"/>
+<rect x="60.0" y="250.0" width="230.0" height="110.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="175.0" y="300.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Goal</text>
+<text x="175.0" y="334.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">from you</text>
+<rect x="470.0" y="70.0" width="560.0" height="130.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="750.0" y="122.0" font-size="32" fill="#4b0000" text-anchor="middle" font-weight="700">Model</text>
+<text x="750.0" y="162.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">reads the context, decides the next step</text>
+<rect x="470.0" y="410.0" width="560.0" height="150.0" rx="12" fill="#fffdf8" stroke="#e3a617" stroke-width="3"/>
+<text x="750.0" y="460.0" font-size="32" fill="#4b0000" text-anchor="middle" font-weight="700">Harness</text>
+<text x="750.0" y="498.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">checks permission, runs the tool,</text>
+<text x="750.0" y="530.0" font-size="22" fill="#20201e" text-anchor="middle" font-weight="400">adds the result to the context</text>
+<rect x="1180.0" y="250.0" width="260.0" height="110.0" rx="12" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2"/>
+<text x="1310.0" y="300.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Tools</text>
+<text x="1310.0" y="334.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">code, search, files</text>
+<line x1="290.0" y1="290.0" x2="466.0" y2="150.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<path d="M 860 204 C 980 280, 980 330, 880 404" fill="none" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="1000.0" y="300.0" font-size="21" fill="#990000" text-anchor="start" font-weight="600">tool call (text)</text>
+<path d="M 620 406 C 520 330, 520 280, 620 204" fill="none" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="500.0" y="300.0" font-size="21" fill="#990000" text-anchor="end" font-weight="600">result → tokens</text>
+<line x1="1034" y1="470" x2="1176" y2="330" stroke="#68635d" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="750.0" y="600.0" font-size="22" fill="#68635d" text-anchor="middle" font-weight="400">Repeat until done or stopped. Each pass costs tokens and is a chance to go wrong.</text>
+</svg>

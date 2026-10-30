@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 98.93,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Two groups of adults had systolic blood pressure measured.\nGroup A: n = 25, mean = 132.4 mmHg, SD = 10.2.\nGroup B: n = 30, mean = 126.1 mmHg, SD = 11.8.\nAssuming equal variances, compute the pooled standard deviation and the 95% confidence interval for the difference in means (A minus B) using the t distribution. Give both to two decimals.\nEnd with exactly one line: ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 16384,
+    "reasoning_effort": "xhigh"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nANSWER: pooled_sd=11.10; ci=(0.27, 12.33)",
+          "function_call": null,
+          "reasoning": "We need answer stats computation. Need compute pooled SD and 95% CI for difference means A-B assuming equal variances, t distribution. Need two decimals. Let's calculate carefully.\n\nGiven:\nGroup A: n1=25, mean1=132.4, sd1=10.2\nGroup B: n2=30, mean2=126.1, sd2=11.8\nPooled variance sp^2 = ((n1-1)s1^2 + (n2-1)s2^2)/(n1+n2-2)\nsp = sqrt.\nDifference d = 132.4 - 126.1 = 6.3.\nSE = sp * sqrt(1/n1 + 1/n2).\ndf = 53.\n95% CI: d ± t_{0.975,53} * SE.\nNeed t critical. Need compute accurately. t 0.975 df=53. Approx 2.0057? Let's check. For df=50 t=2.008559, df=60 t=2.000298, df=53 maybe 2.005746? Need precise enough to two decimals. Let's compute.\n\nFirst sp:\ns1^2 = 10.2^2 = 104.04. (n1-1)=24 => 2496.96.\ns2^2 = 11.8^2 = 139.24. (n2-1)=29 => 4037.96? 139.24*30=4177.2 minus 139.24=4037.96.\nSum = 6534.92. df=53. sp^2 = 6534.92/53.\n53*123 = 6519. remainder 15.92. 15.92/53=0.300377. So 123.300377. sp = sqrt(123.300377). 11.1^2=123.21. 11.104? Let's compute. sqrt 123.300377.\n11.10407^2? 11.104^2 = (11.1 +0.004)^2=123.21+0.0888+0.000016=123.298816. Need +0.001561. derivative 22.208 => +0.0000703. So 11.10407. To two decimals 11.10.\n\nSE = sp * sqrt(1/25 + 1/30). 1/25=0.04, 1/30=0.033333333, sum=0.073333333 = 11/150? 0.073333. sqrt = sqrt(11/150). sqrt 0.0733333. 0.270799? Let's compute: 0.2708^2=0.07333264. yes.\nSE = 11.10407 * 0.270799 =? 11.10407*0.27=2.9981; plus *0.000799=0.00887; total 3.00697. More exact: 0.2707995*11.10407.\n11.10407*0.2707995 = 11.10407*(0.27 +0.0007995)=2.9980989 +0.008877? 11.10407*0.0007995 = 0.008877? 11.10407*0.0008=0.008883256 minus 11.10407*0.0000005=0.000005552 =>0.008877704. Sum=3.0069766. SE ~3.00698.\n\nt critical df=53. Need maybe 2.005746. Margin = 2.005746*3.006977 =? 3.006977*2 =6.013954; plus *0.005746 = 0.017277? 3.006977*0.005 =0.0150349; *0.000746=0.002243? total 0.017278. Sum=6.031232. CI = 6.3 ± 6.0312 = (0.2688, 12.3312). To two decimals (0.27, 12.33). If t slightly 2.006, margin 6.0316, same. If t=2.005, margin 6.029, lower 0.271. So (0.27,12.33).\n\nNeed ensure pooled sd to two decimals: 11.10. CI endpoints two decimals.\n\nLet's verify t critical. Could use approximation. t_{.975,53}. Let's compute more accurately maybe using known values or approximation.\nKnown t table: df 50: 2.009; df 60: 2.000; df 53 maybe 2.006. Some tables: df=53 t=2.0057. Good.\n\nNeed final exactly one line: ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)\nNo extra? User says End with exactly one line. We can just output that line. Need ensure format. Maybe no spaces? They specified with spaces after semicolon? \"ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)\". We'll follow exactly: ANSWER: pooled_sd=11.10; ci=(0.27, 12.33)\n\nDouble-check if they want 95% CI for difference in means using t distribution. Yes.\n\nPotential nuance: pooled standard deviation formula uses sample SDs. Yes.\n\nLet's recalc with high precision to ensure rounding.\nsp^2 = (24*104.04 + 29*139.24)/53.\n24*104.04 = 2496.96.\n29*139.24 = 139.24*30 -139.24 = 4177.2 -139.24 = 4037.96.\nSum 6534.92.\nDivide 53: 53*123.3 = 6534.9? 123.3*53 = 123.3*50=6165; +369.9=6534.9. Remainder 0.02. So 123.3003773585. sqrt.\nLet's Newton: x0=11.10407. Square: 11.10407^2.\n11.10407*11.10407:\n11.10407*(11 +0.10407)=122.14477 + 1.155? compute 11.10407*0.10407 = 11.10407*(0.1 +0.00407)=1.110407 +0.045? 11.10407*0.00407 = 11.10407*(0.004 +0.00007)=0.04441628 +0.000777285=0.045193565. Sum=1.155600565. Total=123.300370565. Slight low by 0.000006793. derivative 22.20814 => add 0.000000306. sp=11.104070306.\nsqrt(1/25+1/30)=sqrt(11/150). 11/150=0.0733333333333.\nsqrt: Let's compute. 0.270799524? Since 0.2708^2=0.07333264. Difference 0.000000693333. derivative 0.5416 => add 0.00000128. So 0.27080128? Wait check: 0.2708^2: 2708^2=7,333,264; with 4 decimals? 0.2708^2 = 0.07333264 yes. Target 0.073333333333, diff 0.000000693333. / (2*0.2708=0.5416) = 0.000001280. So sqrt=0.27080128. But earlier I said 0.270799. Let's verify exact sqrt(11/150). 11/150 = 0.0733333333. sqrt(0.0733333). 0.270801? Square 0.27080128: (0.2708 +0.00000128)^2 =0.07333264 +2*0.2708*0.00000128 +1.6e-12 =0.07333264+0.000000693248=0.073333333248. yes. So sqrt=0.27080128.\nSE = 11.104070306 * 0.27080128.\nCompute precisely: 11.104070306 * 0.27080128 = 11.104070306*(0.27 +0.00080128).\n*0.27 = 2.99809898262.\n*0.00080128 = * (0.0008 +0.00000128).\n*0.0008 = 0.0088832562448.\n*0.00000128 = 11.104070306*1.28e-6 = 14.213210?e-6? 11.104070306*1e-6=0.000011104070306; *0.28e-6=0.000003109139686; sum=0.000014213209992.\nTotal *0.00080128 = 0.008897469454792.\nSum = 3.006996452074792. So SE=3.00699645.\n\nt critical. Need maybe 2.005746? Let's compute more accurately if possible. Use approximation or known. t_{0.975,53}. We can derive via Cornish-Fisher expansion from normal z=1.95996398454. For df ν, t ≈ z + (z^3+z)/(4ν) + (5z^5+16z^3+3z)/(96ν^2) + (3z^7+19z^5+17z^3-15z)/(384ν^3) ... Let's compute for ν=53.\nz=1.95996398454.\nz^2=3.84145882069.\nz^3=7.529? compute 3.84145882069*1.95996398454. 3.84145882*2=7.68291764 minus 3.84145882*0.04003601546=0.153795? 3.84145882*0.04=0.15365835; *0.000036015=0.00013835; total 0.1537967. z^3=7.5291209.\nz^5 = z^3*z^2 =7.5291209*3.8414588=28.922? 7.52912*3.84=28.9118 plus. Let's compute enough.\nTerm1 = (z^3+z)/(4ν) = (7.52912+1.959964)/(212) =9.489085/212=0.0447608.\nTerm2 = (5z^5+16z^3+3z)/(96ν^2). Need z^5. z^4=(z^2)^2=14.756814? 3.8414588^2. 3.84^2=14.7456. Let's compute: 3.84145882069^2. (3.8+0.0414588)^2=14.44+0.3150669+0.0017188=14.7567857. z^5=14.7567857*1.95996398 =14.7567857*2 -14.7567857*0.040036015 =29.5135714 -0.590785? 14.7567857*0.04=0.5902714; *0.000036015=0.0005315; total 0.5908029. z^5=28.9227685.\n5z^5=144.6138425.\n16z^3=120.4659344.\n3z=5.87989195.\nSum=270.9596689.\n96ν^2=96*2809=269664.\nTerm2=270.95967/269664=0.0010048.\nTerm3 = (3z^7+19z^5+17z^3-15z)/(384ν^3). Need z^7=z^5*z^2=28.9227685*3.8414588=111.104? 28.92277*3.84=111.0634 plus 0.0414588*28.92277=1.199? total 112.262? Let's compute: 28.9227685*3.8414588 = 28.9227685*(3.8 +0.0414588)=109.9065203 +1.199? 28.9227685*0.0414588 =28.9227685*0.04=1.15691074; *0.0014588=0.042199? 28.9227685*0.0014=0.0404919; *0.0000588=0.001700? total 0.042192; sum 1.199103. total 111.105623. Wait 109.9065+1.1991=111.1056. Good.\n3z^7=333.31687.\n19z^5=549.53260.\n17z^3=127.99506.\n-15z=-29.39946.\nSum=981.44507.\n384ν^3=384*148877=57,? 148877*400=59,550,800 minus *16=2,382,032 =>57,168,768.\nTerm3=0.00001717.\nTerm4 small maybe -? So t ≈1.95996398+0.0447608+0.0010048+0.0000172=2.0057468. Good.\nMargin = 2.0057468*3.00699645.\nCompute: 3.00699645*2 =6.01399290.\n*0.0057468 = 3.00699645*(0.005 +0.0007468).\n*0.005=0.0150349823.\n*0.0007468 = * (0.0007 +0.0000468).\n*0.0007=0.0021048975.\n*0.0000468 = * (0.00005 -0.0000032).\n*0.00005=0.0001503498.\n*0.0000032=0.0000096224.\nDifference=0.0001407274.\nSum *0.0007468=0.0022456249.\nSum *0.0057468=0.0172806072.\nTotal margin=6.03127351.\nCI lower=6.3-6.0312735=0.2687265 -> 0.27.\nUpper=12.3312735 -> 12.33.\nIf t=2.005746, same.\n\nNeed final exactly one line. Ensure no trailing explanation. Could include only line.\n\nCheck if pooled_sd to two decimals: 11.10. Some might round 11.10 not 11.1. They ask two decimals, so 11.10.\n\nPotential issue: If using t critical from table df=53 maybe 2.006, margin 6.031, same. If using df=53 and t=2.005, lower 0.271, upper 12.329 -> 12.33. Good.\n\nLet's consider if they expect CI for A minus B: mean difference 6.3. Yes.\n\nNo more.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542763,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-412a13d4-3da3-9168-9a82-4ad95f6690ad",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-tp4-c7ad8c3a",
+    "usage": {
+      "completion_tokens": 5117,
+      "completion_tokens_details": {
+        "reasoning_tokens": 5088
+      },
+      "prompt_tokens": 185,
+      "prompt_tokens_details": null,
+      "total_tokens": 5302
+    }
+  }
+}

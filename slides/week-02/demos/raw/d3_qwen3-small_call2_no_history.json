@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 6.67,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many participants are in my study?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nI don't have any information about your study. I don't have access to your documents, research data, or any personal details about your work.\n\nIf you'd like help with this, you could:\n\n- **Share relevant details** (e.g., paste a description of your study, a table, or a document excerpt)\n- **Ask a specific question** about sample size calculations, power analysis, or interpreting your data\n\nWhat can I help you with?",
+          "function_call": null,
+          "reasoning": "The user is asking \"How many participants are in my study?\" This is a question about their personal research or study. I have no information about the user's study, their research, or any participants they may have. I don't have access to their documents, databases, or any personal information. I need to let them know that I don't have this information and ask for clarification or context.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543151,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-1936da58-d1a4-92e9-8f48-c57baec6c2ff",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-tp4-c7ad8c3a",
+    "usage": {
+      "completion_tokens": 180,
+      "completion_tokens_details": {
+        "reasoning_tokens": 81
+      },
+      "prompt_tokens": 48,
+      "prompt_tokens_details": null,
+      "total_tokens": 228
+    }
+  }
+}

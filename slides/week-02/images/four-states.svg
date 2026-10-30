@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="430" viewBox="0 0 1500 430" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Four states kept distinct: requested, running, produced, verified, each with the evidence that shows it; ask which file and which check">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="430" fill="#f7f3ea"/>
+<rect x="30.0" y="70.0" width="320.0" height="200.0" rx="16" fill="#fffdf8" stroke="#ddd5c6" stroke-width="3"/>
+<text x="190.0" y="128.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Requested</text>
+<text x="190.0" y="176.0" font-size="19" fill="#20201e" text-anchor="middle" font-weight="400">you asked for it</text>
+<text x="190.0" y="222.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">evidence: your prompt</text>
+<line x1="356.0" y1="170.0" x2="394.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="400.0" y="70.0" width="320.0" height="200.0" rx="16" fill="#e3eef9" stroke="#4b0000" stroke-width="3"/>
+<text x="560.0" y="128.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Running</text>
+<text x="560.0" y="176.0" font-size="19" fill="#20201e" text-anchor="middle" font-weight="400">a job or command started</text>
+<text x="560.0" y="222.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">evidence: a process, a log</text>
+<line x1="726.0" y1="170.0" x2="764.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="770.0" y="70.0" width="320.0" height="200.0" rx="16" fill="#fbefd6" stroke="#e3a617" stroke-width="3"/>
+<text x="930.0" y="128.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Produced</text>
+<text x="930.0" y="176.0" font-size="19" fill="#20201e" text-anchor="middle" font-weight="400">a file or output exists</text>
+<text x="930.0" y="222.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">evidence: the file, its size</text>
+<line x1="1096.0" y1="170.0" x2="1134.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="1140.0" y="70.0" width="320.0" height="200.0" rx="16" fill="#e2f0de" stroke="#3f7d3a" stroke-width="3"/>
+<text x="1300.0" y="128.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Verified</text>
+<text x="1300.0" y="176.0" font-size="19" fill="#20201e" text-anchor="middle" font-weight="400">someone checked it</text>
+<text x="1300.0" y="222.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">evidence: a named check passed</text>
+<text x="30.0" y="330.0" font-size="24" fill="#990000" text-anchor="start" font-weight="700">“Done”, “validated”, “comprehensive”: ask which file, and which check.</text>
+<text x="30.0" y="380.0" font-size="21" fill="#20201e" text-anchor="start" font-weight="400">A fluent summary from the agent is evidence of none of the four.</text>
+</svg>

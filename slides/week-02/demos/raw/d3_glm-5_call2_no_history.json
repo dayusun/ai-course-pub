@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 3.52,
+  "request": {
+    "model": "glm-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "How many participants are in my study?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "I don't have any information about your study — this is the start of our conversation, and you haven't shared any details yet.\n\nIf you'd like help figuring out or discussing your participant count, you could share:\n\n- **Your dataset** (e.g., a spreadsheet, table, or summary statistics)\n- **Your study design** (e.g., how many groups, conditions, or waves of data collection)\n- **What you're trying to determine** (e.g., whether your sample size is adequate for a planned analysis)\n\nIf you paste in your data or describe your study, I'm happy to help you count participants, check for missing data, or assess whether your sample size is sufficient for your goals.",
+          "function_call": null,
+          "reasoning": "User hasn't provided any study details.",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": 154827,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543163,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-71066f87-8222-90d9-8283-b1f492325124",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Inferact/GLM-5.3-NVFP4",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.1rc1.dev437+ge962733e0-tp4-4ace9678",
+    "usage": {
+      "completion_tokens": 155,
+      "completion_tokens_details": {
+        "reasoning_tokens": 8
+      },
+      "prompt_tokens": 20,
+      "prompt_tokens_details": null,
+      "total_tokens": 175
+    }
+  }
+}

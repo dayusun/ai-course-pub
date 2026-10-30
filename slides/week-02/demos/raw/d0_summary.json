@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-21T00:31:27+00:00",
+  "aliases": {
+    "qwen3-small": {
+      "served": "Qwen/Qwen3.8-27B",
+      "http": 200,
+      "latency_s": 0.91
+    },
+    "glm-5": {
+      "served": "Inferact/GLM-5.3-NVFP4",
+      "http": 200,
+      "latency_s": 0.74
+    },
+    "qwen3-vl": {
+      "served": "Qwen/Qwen3.8-Flash-Next-FP8",
+      "http": 200,
+      "latency_s": 5.49
+    },
+    "qwen3-embedding": {
+      "served": "Qwen/Qwen3-VL-Embedding-8B",
+      "http": 200,
+      "dim": 4096
+    }
+  }
+}

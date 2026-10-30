@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 1.26,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "What is 17 * 23? Answer with the number."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 4096,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\n391",
+          "function_call": null,
+          "reasoning": "The user wants me to multiply 17 by 23.\n\n17 × 23 = 17 × 20 + 17 × 3 = 340 + 51 = 391\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542708,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-b08b2804-4875-9796-8d93-672dd4b77341",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-tp4-c7ad8c3a",
+    "usage": {
+      "completion_tokens": 57,
+      "completion_tokens_details": {
+        "reasoning_tokens": 51
+      },
+      "prompt_tokens": 55,
+      "prompt_tokens_details": null,
+      "total_tokens": 112
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="The visual-agent loop: capture, interpret, act, check; and a list of things to verify by hand: small text, counts, chart values, spatial relations, mismatched labels">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="560" fill="#f7f3ea"/>
+<rect x="420.0" y="50.0" width="280.0" height="100.0" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="560.0" y="94.0" font-size="26" fill="#4b0000" text-anchor="middle" font-weight="700">Capture</text>
+<text x="560.0" y="128.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">screenshot or photo</text>
+<rect x="676.5" y="240.0" width="280.0" height="100.0" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="816.5" y="284.0" font-size="26" fill="#4b0000" text-anchor="middle" font-weight="700">Interpret</text>
+<text x="816.5" y="318.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">read text, find the button</text>
+<rect x="420.0" y="430.0" width="280.0" height="100.0" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="560.0" y="474.0" font-size="26" fill="#4b0000" text-anchor="middle" font-weight="700">Act</text>
+<text x="560.0" y="508.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">click, type, scroll</text>
+<rect x="163.5" y="240.0" width="280.0" height="100.0" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="303.5" y="284.0" font-size="26" fill="#4b0000" text-anchor="middle" font-weight="700">Check</text>
+<text x="303.5" y="318.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">capture the result</text>
+<line x1="710.0" y1="110.0" x2="776.5" y2="234.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<line x1="776.5" y1="346.0" x2="710.0" y2="470.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<line x1="410.0" y1="470.0" x2="343.5" y2="346.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<line x1="343.5" y1="234.0" x2="410.0" y2="110.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="1010.0" y="120.0" width="450.0" height="330.0" rx="14" fill="#f6dede" stroke="#990000" stroke-width="2.5"/>
+<text x="1235.0" y="170.0" font-size="26" fill="#990000" text-anchor="middle" font-weight="700">Verify by hand</text>
+<text x="1040.0" y="225.0" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">• small or blurred text</text>
+<text x="1040.0" y="269.0" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">• counts (cells, rows, people)</text>
+<text x="1040.0" y="313.0" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">• values read off a chart</text>
+<text x="1040.0" y="357.0" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">• left / right, above / below</text>
+<text x="1040.0" y="401.0" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">• labels that don't match the table</text>
+</svg>

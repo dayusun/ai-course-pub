@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 8.36,
+  "request": {
+    "model": "glm-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Two groups of adults had systolic blood pressure measured.\nGroup A: n = 25, mean = 132.4 mmHg, SD = 10.2.\nGroup B: n = 30, mean = 126.1 mmHg, SD = 11.8.\nAssuming equal variances, compute the pooled standard deviation and the 95% confidence interval for the difference in means (A minus B) using the t distribution. Give both to two decimals.\nEnd with exactly one line: ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 16384,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "**Pooled SD:**\ns_p² = [(24)(10.2²) + (29)(11.8²)] / 53 = (2496.96 + 4037.96)/53 = 123.30 → s_p = 11.10\n\n**Standard error:**\nSE = 11.10·√(1/25 + 1/30) = 11.10·√0.07333 = 3.01\n\n**CI:** diff = 132.4 − 126.1 = 6.3; df = 53, t₀.₉₇₅ ≈ 2.006\nME = 2.006 × 3.01 ≈ 6.03 → CI = (0.27, 12.33)\n\nANSWER: pooled_sd=11.10; ci=(0.27, 12.33)",
+          "function_call": null,
+          "reasoning": "Pooled variance: ((24)(10.2²)+(29)(11.8²))/53 = (24·104.04 + 29·139.24)/53 = (2496.96 + 4037.96)/53 = 6534.92/53 = 123.30. sd = 11.10.\n\nSE = 11.10·√(1/25+1/30) = 11.10·√(0.07333)=11.10·0.27080=3.006. Diff = 6.3. df=53, t≈2.0057. ME = 6.03. CI: (0.27, 12.33).",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": 154827,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542822,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-af693fc7-13ac-95d8-bbbe-7679afc176e2",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Inferact/GLM-5.3-NVFP4",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.1rc1.dev437+ge962733e0-tp4-4ace9678",
+    "usage": {
+      "completion_tokens": 354,
+      "completion_tokens_details": {
+        "reasoning_tokens": 157
+      },
+      "prompt_tokens": 134,
+      "prompt_tokens_details": null,
+      "total_tokens": 488
+    }
+  }
+}

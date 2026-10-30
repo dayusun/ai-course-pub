@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 23.79,
+  "request": {
+    "model": "glm-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Two groups of adults had systolic blood pressure measured.\nGroup A: n = 25, mean = 132.4 mmHg, SD = 10.2.\nGroup B: n = 30, mean = 126.1 mmHg, SD = 11.8.\nAssuming equal variances, compute the pooled standard deviation and the 95% confidence interval for the difference in means (A minus B) using the t distribution. Give both to two decimals.\nEnd with exactly one line: ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 16384,
+    "reasoning_effort": "high"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "## Pooled Standard Deviation\n\n$$s_p^2 = \\frac{(n_A-1)s_A^2 + (n_B-1)s_B^2}{n_A+n_B-2} = \\frac{24(10.2)^2 + 29(11.8)^2}{53} = \\frac{2496.96 + 4037.96}{53} = \\frac{6534.92}{53} = 123.30$$\n\n$$s_p = \\sqrt{123.30} = 11.10 \\text{ mmHg}$$\n\n## Standard Error of the Difference\n\n$$SE = s_p\\sqrt{\\frac{1}{25}+\\frac{1}{30}} = 11.104\\sqrt{0.07333} = 11.104 \\times 0.2708 = 3.007$$\n\n## Confidence Interval\n\n- Difference in means: $\\bar{x}_A - \\bar{x}_B = 132.4 - 126.1 = 6.3$\n- Degrees of freedom: $df = 25 + 30 - 2 = 53$\n- Critical value: $t_{0.975, 53} \\approx 2.006$\n\n$$6.3 \\pm 2.006 \\times 3.007 = 6.3 \\pm 6.03$$\n\n$$CI = (0.27, \\ 12.33)$$\n\nSince the interval excludes 0, the difference in means is statistically significant at the 5% level.\n\nANSWER: pooled_sd=11.10; ci=(0.27, 12.33)",
+          "function_call": null,
+          "reasoning": "Pooled variance: sp² = [(24)(10.2²)+(29)(11.8²)]/(53).\n\n10.2²=104.04; ×24=2496.96. 11.8²=139.24; ×29=4037.96. Sum=6534.92. /53=123.30... compute: 53×123=6519, remainder 15.92, /53=0.30038. So sp²=123.30038. sp=11.1000... sqrt(123.30038): 11.1²=123.21, diff 0.09038, /(2×11.1)=0.004071. sp≈11.1041. So 11.10.\n\nSE = sp*sqrt(1/25+1/30) = 11.1041*sqrt(0.04+0.033333)=11.1041*sqrt(0.0733333). sqrt(0.0733333)=0.270801. SE=3.0073.\n\nDiff = 132.4-126.1=6.3.\n\ndf=53, t(0.975,53)≈2.0057 (t for df=53: 2.005746? For df=50 it's 2.009, df=60 2.000; df=53 ≈ 2.0057).\n\nMargin = 2.0057×3.0073=6.0359. Compute: 3.0073×2=6.0146; ×0.0057=0.01714; total 6.0317. Hmm let me be more precise: t=2.005746. 3.0073×2.005746 = 6.0146 + 3.0073×0.005746=0.017284 → 6.03188.\n\nCI: 6.3 ± 6.032 → (0.27, 12.33).\n\nCheck SE more precisely: sp²=123.300377, sp=11.104071. sqrt(0.0733333): 0.2708²=0.07333264, so ≈0.2708013. SE=11.104071×0.2708013=3.00727. Margin=3.00727×2.005746=6.0318. CI=(0.268, 12.332) → (0.27, 12.33).",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": 154827,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542845,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-b30e485e-bf9a-9b9c-af3c-904824c5652d",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Inferact/GLM-5.3-NVFP4",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.1rc1.dev437+ge962733e0-tp4-4ace9678",
+    "usage": {
+      "completion_tokens": 941,
+      "completion_tokens_details": {
+        "reasoning_tokens": 583
+      },
+      "prompt_tokens": 134,
+      "prompt_tokens_details": null,
+      "total_tokens": 1075
+    }
+  }
+}

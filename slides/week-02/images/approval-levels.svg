@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="520" viewBox="0 0 1500 520" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Three columns sorting a desktop-agent plan: automatic (rename files, draft an email), approval required (send the email, share or delete files), denied (upload restricted data, pay, change security settings)">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="520" fill="#f7f3ea"/>
+<rect x="40.0" y="40.0" width="440.0" height="440.0" rx="16" fill="#e2f0de" stroke="#3f7d3a" stroke-width="3"/>
+<text x="260.0" y="92.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Automatic</text>
+<text x="260.0" y="128.0" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">reversible, inside the workspace</text>
+<rect x="64.0" y="160.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="80.0" y="196.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">rename files in the project folder</text>
+<rect x="64.0" y="234.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="80.0" y="270.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">draft an email (not sent)</text>
+<rect x="64.0" y="308.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="80.0" y="344.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">summarize the meeting notes</text>
+<rect x="520.0" y="40.0" width="440.0" height="440.0" rx="16" fill="#fbefd6" stroke="#e3a617" stroke-width="3"/>
+<text x="740.0" y="92.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Approval required</text>
+<text x="740.0" y="128.0" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">you see it first, then say go</text>
+<rect x="544.0" y="160.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="560.0" y="196.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">send the email</text>
+<rect x="544.0" y="234.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="560.0" y="270.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">share a file with a collaborator</text>
+<rect x="544.0" y="308.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="560.0" y="344.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">submit a form</text>
+<rect x="544.0" y="382.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="560.0" y="418.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">delete or move files</text>
+<rect x="1000.0" y="40.0" width="440.0" height="440.0" rx="16" fill="#f6dede" stroke="#990000" stroke-width="3"/>
+<text x="1220.0" y="92.0" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Denied</text>
+<text x="1220.0" y="128.0" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">never by the agent</text>
+<rect x="1024.0" y="160.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1040.0" y="196.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">restricted data into an unapproved tool</text>
+<rect x="1024.0" y="234.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1040.0" y="270.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">pay, sign or accept terms</text>
+<rect x="1024.0" y="308.0" width="392.0" height="58.0" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1040.0" y="344.0" font-size="18" fill="#20201e" text-anchor="start" font-weight="400">change account or security settings</text>
+</svg>

@@ -1,0 +1,164 @@
+[
+ {
+  "authors": "Carney C, Salsitz A, et al.",
+  "first_author_surname": "Carney",
+  "year": 2012,
+  "title": "Text messaging for medication adherence in a community mental health setting",
+  "journal": "American Journal of Preventive Medicine",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Text messaging interventions boost medication adherence",
+   "title_sim": 0.565,
+   "doi": "10.1211/cp.2016.20200618",
+   "year": 2016,
+   "surnames": []
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Hwang W, Carney C, et al.",
+  "first_author_surname": "Hwang",
+  "year": 2013,
+  "title": "Text messaging for medication adherence in a community mental health setting: a randomized controlled trial",
+  "journal": "Journal of Medical Internet Research",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "The Impact of Text Messaging on Medication Adherence and Exercise Among Postmyocardial Infarction Patients: Randomized Controlled Pilot Trial",
+   "title_sim": 0.626,
+   "doi": "10.2196/mhealth.7144",
+   "year": 2017,
+   "surnames": [
+    "Pandey",
+    "Krumme",
+    "Patel",
+    "Choudhry"
+   ]
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Bland R, et al.",
+  "first_author_surname": "Bland",
+  "year": 2014,
+  "title": "Text messaging for medication adherence: a systematic review",
+  "journal": "Journal of Medical Internet Research",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Text messaging interventions boost medication adherence",
+   "title_sim": 0.649,
+   "doi": "10.1211/cp.2016.20200618",
+   "year": 2016,
+   "surnames": []
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Hwang W, Carney C, et al.",
+  "first_author_surname": "Hwang",
+  "year": 2018,
+  "title": "Mobile phone and/or SMS interventions for adherence to medication",
+  "journal": "Cochrane Database of Systematic Reviews",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Figure 3: Distribution of mobile health interventions in medication adherence studies.",
+   "title_sim": 0.5,
+   "doi": "10.7717/peerj-cs.3190/fig-3",
+   "year": null,
+   "surnames": []
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Rost MH, et al.",
+  "first_author_surname": "Rost",
+  "year": 2012,
+  "title": "Text messaging for medication adherence: a systematic review",
+  "journal": "Journal of General Internal Medicine",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Text messaging interventions boost medication adherence",
+   "title_sim": 0.649,
+   "doi": "10.1211/cp.2016.20200618",
+   "year": 2016,
+   "surnames": []
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Carney C, Salsitz A, et al.",
+  "first_author_surname": "Carney",
+  "year": 2012,
+  "title": "Text messaging for medication adherence in a community mental health setting",
+  "journal": "American Journal of Preventive Medicine",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Text messaging interventions boost medication adherence",
+   "title_sim": 0.565,
+   "doi": "10.1211/cp.2016.20200618",
+   "year": 2016,
+   "surnames": []
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Bland R, et al.",
+  "first_author_surname": "Bland",
+  "year": 2014,
+  "title": "Text messaging for medication adherence: a systematic review",
+  "journal": "Journal of Medical Internet Research",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Text messaging interventions boost medication adherence",
+   "title_sim": 0.649,
+   "doi": "10.1211/cp.2016.20200618",
+   "year": 2016,
+   "surnames": []
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Hwang W, Carney C, et al.",
+  "first_author_surname": "Hwang",
+  "year": 2013,
+  "title": "Text messaging for medication adherence in a community mental health setting: a randomized controlled trial",
+  "journal": "Journal of Medical Internet Research",
+  "doi": null,
+  "doi_org_status": null,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "Abstract 15249: A Text Messaging Intervention to Promote Medication Adherence for Patients with Coronary Heart Disease: A Randomized Controlled Trial",
+   "title_sim": 0.648,
+   "doi": "10.1161/circ.128.suppl_22.a533",
+   "year": 2013,
+   "surnames": [
+    "Park",
+    "Howie-Esquivel",
+    "Chung",
+    "Dracup"
+   ]
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ }
+]

@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 18.21,
+  "request": {
+    "model": "glm-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Two groups of adults had systolic blood pressure measured.\nGroup A: n = 25, mean = 132.4 mmHg, SD = 10.2.\nGroup B: n = 30, mean = 126.1 mmHg, SD = 11.8.\nAssuming equal variances, compute the pooled standard deviation and the 95% confidence interval for the difference in means (A minus B) using the t distribution. Give both to two decimals.\nEnd with exactly one line: ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 16384,
+    "reasoning_effort": "high"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "## Pooled Standard Deviation\n\n$$s_p^2 = \\frac{(n_A-1)s_A^2 + (n_B-1)s_B^2}{n_A+n_B-2} = \\frac{24(10.2)^2 + 29(11.8)^2}{53}$$\n\n$$s_p^2 = \\frac{2496.96 + 4037.96}{53} = \\frac{6534.92}{53} = 123.30$$\n\n$$s_p = \\sqrt{123.30} = 11.10 \\text{ mmHg}$$\n\n## Standard Error of the Difference\n\n$$SE = s_p\\sqrt{\\frac{1}{25}+\\frac{1}{30}} = 11.10\\sqrt{0.07333} = 11.10 \\times 0.2708 = 3.01$$\n\n## Confidence Interval\n\n- Difference in means: $\\bar{x}_A - \\bar{x}_B = 132.4 - 126.1 = 6.3$\n- Degrees of freedom: $25 + 30 - 2 = 53$\n- Critical value: $t_{0.975, 53} \\approx 2.006$\n\n$$6.3 \\pm 2.006 \\times 3.006 = 6.3 \\pm 6.03$$\n\n$$95\\% \\text{ CI}: (0.27, 12.33)$$\n\nSince the interval excludes 0, the difference is statistically significant at the 5% level.\n\nANSWER: pooled_sd=11.10; ci=(0.27, 12.33)",
+          "function_call": null,
+          "reasoning": "Pooled variance: ((24)(10.2²)+(29)(11.8²))/53.\n\n10.2²=104.04, ×24=2496.96\n11.8²=139.24, ×29=4037.96\nSum=6534.92, /53=123.30... 6534.92/53 = 123.3019. sqrt = 11.1001... sqrt(123.3019): 11.1²=123.21, so ≈11.1005. Pooled SD ≈ 11.10.\n\nSE = 11.1005*sqrt(1/25+1/30) = 11.1005*sqrt(0.04+0.033333)=11.1005*sqrt(0.0733333)=11.1005*0.270801=3.0061.\n\nDiff = 6.3. df=53. t(0.975,53)≈2.0057 (t for df=53: 2.0057). Margin = 2.0057*3.0061=6.0295. CI: (0.27, 12.33).\n\nCompute more precisely: t crit df=53 ≈ 2.005746. 2.005746*3.0061 = 6.0296. 6.3±6.03 → (0.27, 12.33).",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": 154827,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542840,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-ac672293-8812-9961-861f-7270bf22707c",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Inferact/GLM-5.3-NVFP4",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.1rc1.dev437+ge962733e0-tp4-4ace9678",
+    "usage": {
+      "completion_tokens": 696,
+      "completion_tokens_details": {
+        "reasoning_tokens": 330
+      },
+      "prompt_tokens": 134,
+      "prompt_tokens_details": null,
+      "total_tokens": 830
+    }
+  }
+}

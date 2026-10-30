@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="640" viewBox="0 0 1500 640" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Five information sources feed the model and harness: model world knowledge, current context, workspace memory, retrieved or live sources, and tool observations, each with what to check">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="640" fill="#f7f3ea"/>
+<rect x="600.0" y="270.0" width="300.0" height="120.0" rx="16" fill="#fbefd6" stroke="#e3a617" stroke-width="3"/>
+<text x="750.0" y="322.0" font-size="28" fill="#4b0000" text-anchor="middle" font-weight="700">Model + harness</text>
+<text x="750.0" y="358.0" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">the answer you see</text>
+<rect x="40.0" y="40.0" width="380.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="230.0" y="80.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Model world knowledge</text>
+<text x="230.0" y="112.0" font-size="18" fill="#20201e" text-anchor="middle" font-weight="400">learned in training</text>
+<text x="230.0" y="142.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">may be outdated; not a source you can cite</text>
+<line x1="292.4" y1="180.4" x2="552.4" y2="265.4" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="1080.0" y="40.0" width="380.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="1270.0" y="80.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Current context</text>
+<text x="1270.0" y="112.0" font-size="18" fill="#20201e" text-anchor="middle" font-weight="400">your prompt, files, this chat</text>
+<text x="1270.0" y="142.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">gone when the session ends</text>
+<line x1="1207.6" y1="180.4" x2="947.6" y2="265.4" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="40.0" y="470.0" width="380.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="230.0" y="510.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Workspace memory</text>
+<text x="230.0" y="542.0" font-size="18" fill="#20201e" text-anchor="middle" font-weight="400">project notes, saved instructions</text>
+<text x="230.0" y="572.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">can be stale, wrong or sensitive</text>
+<line x1="292.4" y1="453.2" x2="552.4" y2="383.2" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="1080.0" y="470.0" width="380.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="1270.0" y="510.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Retrieved / live sources</text>
+<text x="1270.0" y="542.0" font-size="18" fill="#20201e" text-anchor="middle" font-weight="400">search results, RAG passages</text>
+<text x="1270.0" y="572.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">open the original before relying on it</text>
+<line x1="1207.6" y1="453.2" x2="947.6" y2="383.2" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="560.0" y="520.0" width="380.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="750.0" y="560.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Tool observations</text>
+<text x="750.0" y="592.0" font-size="18" fill="#20201e" text-anchor="middle" font-weight="400">code output, file listings, screenshots</text>
+<text x="750.0" y="622.0" font-size="17" fill="#990000" text-anchor="middle" font-weight="600">check before the next action</text>
+<line x1="750.0" y1="497.2" x2="750.0" y2="402.2" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+</svg>

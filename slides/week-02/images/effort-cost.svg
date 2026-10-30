@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="620" viewBox="0 0 1500 620" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Line chart of Terminal-Bench 4.0 score against cost per task at five effort settings. Opus 5.5 rises from 38.5% at low ($1.29) to 66.4% at xhigh ($7.35), and falls to 64.8% at max ($11.24). Opus 5 rises from 28.5% ($4.25) to 52.3% at max ($15.83). GPT-6 Astra runs from 49.7% ($4.95) to a peak of 57.9% at high ($7.21). Opus 5.5 at medium, 57.6% for $2.94, beats Opus 5 at max.">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="620" fill="#f7f3ea"/>
+<text x="110.0" y="40.0" font-size="24" fill="#20201e" text-anchor="start" font-weight="600">Terminal-Bench 4.0: score against cost per task, at each effort setting</text>
+<line x1="110" y1="478.9" x2="1300" y2="478.9" stroke="#ddd5c6" stroke-width="1"/>
+<text x="96.0" y="485.9" font-size="18" fill="#68635d" text-anchor="end" font-weight="400">30%</text>
+<line x1="110" y1="376.7" x2="1300" y2="376.7" stroke="#ddd5c6" stroke-width="1"/>
+<text x="96.0" y="383.7" font-size="18" fill="#68635d" text-anchor="end" font-weight="400">40%</text>
+<line x1="110" y1="274.4" x2="1300" y2="274.4" stroke="#ddd5c6" stroke-width="1"/>
+<text x="96.0" y="281.4" font-size="18" fill="#68635d" text-anchor="end" font-weight="400">50%</text>
+<line x1="110" y1="172.2" x2="1300" y2="172.2" stroke="#ddd5c6" stroke-width="1"/>
+<text x="96.0" y="179.2" font-size="18" fill="#68635d" text-anchor="end" font-weight="400">60%</text>
+<line x1="110" y1="70.0" x2="1300" y2="70.0" stroke="#ddd5c6" stroke-width="1"/>
+<text x="96.0" y="77.0" font-size="18" fill="#68635d" text-anchor="end" font-weight="400">70%</text>
+<text x="110.0" y="560.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">$0</text>
+<text x="390.0" y="560.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">$4</text>
+<text x="670.0" y="560.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">$8</text>
+<text x="950.0" y="560.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">$12</text>
+<text x="1230.0" y="560.0" font-size="18" fill="#68635d" text-anchor="middle" font-weight="400">$16</text>
+<text x="705.0" y="600.0" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">Cost per task (USD)</text>
+<path d="M 200.3 392.0 L 315.8 196.8 L 381.6 129.3 L 624.5 106.8 L 896.8 123.2" fill="none" stroke="#2a78d6" stroke-width="2.5"/>
+<circle cx="200.3" cy="392.0" r="7" fill="#2a78d6" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="315.8" cy="196.8" r="7" fill="#2a78d6" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="381.6" cy="129.3" r="7" fill="#2a78d6" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="624.5" cy="106.8" r="7" fill="#2a78d6" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="896.8" cy="123.2" r="7" fill="#2a78d6" stroke="#f7f3ea" stroke-width="2"/>
+<text x="912.8" y="130.2" font-size="20" fill="#20201e" text-anchor="start" font-weight="700">Opus 5.5</text>
+<path d="M 407.5 494.2 L 600.0 364.4 L 854.8 305.1 L 1053.6 268.3 L 1218.1 250.9" fill="none" stroke="#eb6834" stroke-width="2.5"/>
+<circle cx="407.5" cy="494.2" r="7" fill="#eb6834" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="600.0" cy="364.4" r="7" fill="#eb6834" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="854.8" cy="305.1" r="7" fill="#eb6834" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="1053.6" cy="268.3" r="7" fill="#eb6834" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="1218.1" cy="250.9" r="7" fill="#eb6834" stroke="#f7f3ea" stroke-width="2"/>
+<text x="1234.1" y="257.9" font-size="20" fill="#20201e" text-anchor="start" font-weight="700">Opus 5</text>
+<path d="M 456.5 277.5 L 540.5 234.6 L 614.7 193.7 L 633.6 196.8 L 834.5 206.0" fill="none" stroke="#1baf7a" stroke-width="2.5"/>
+<circle cx="456.5" cy="277.5" r="7" fill="#1baf7a" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="540.5" cy="234.6" r="7" fill="#1baf7a" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="614.7" cy="193.7" r="7" fill="#1baf7a" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="633.6" cy="196.8" r="7" fill="#1baf7a" stroke="#f7f3ea" stroke-width="2"/>
+<circle cx="834.5" cy="206.0" r="7" fill="#1baf7a" stroke="#f7f3ea" stroke-width="2"/>
+<text x="850.5" y="213.0" font-size="20" fill="#20201e" text-anchor="start" font-weight="700">GPT-6 Astra</text>
+<text x="200.3" y="376.0" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">Low</text>
+<text x="315.8" y="180.8" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">Med</text>
+<text x="381.6" y="113.3" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">High</text>
+<text x="624.5" y="90.8" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">Xhigh</text>
+<text x="896.8" y="107.2" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">Max</text>
+<text x="329.8" y="226.8" font-size="17" fill="#990000" text-anchor="start" font-weight="600">default (medium)</text>
+<text x="1204.1" y="308.9" font-size="17" fill="#990000" text-anchor="end" font-weight="600">previous model at max</text>
+</svg>

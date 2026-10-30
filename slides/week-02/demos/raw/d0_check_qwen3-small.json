@@ -1,0 +1,58 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 0.91,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with OK."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 16
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "length",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": null,
+          "function_call": null,
+          "reasoning": "We need to respond to user: \"Reply with OK.\" Just output OK.",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792542688,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-6ecf80a1-fda7-93fe-bf3d-90be4ad62237",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-tp4-c7ad8c3a",
+    "usage": {
+      "completion_tokens": 16,
+      "completion_tokens_details": {
+        "reasoning_tokens": 16
+      },
+      "prompt_tokens": 56,
+      "prompt_tokens_details": null,
+      "total_tokens": 72
+    }
+  }
+}

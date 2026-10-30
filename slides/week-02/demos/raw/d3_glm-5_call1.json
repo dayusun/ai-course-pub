@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 3.32,
+  "request": {
+    "model": "glm-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "My name is Dana and my study has 412 participants."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "Hi Dana! Thanks for sharing that your study has 412 participants. That's a solid sample size for many types of research.\n\nWhat would you like help with? For example, I could assist with:\n\n- **Statistical analysis** — choosing tests, interpreting results, power considerations\n- **Writing up your methods or results** — reporting participant details in APA style\n- **Sample size justification** — discussing whether 412 is adequate for your design\n- **Data planning** — handling missing data, cleaning, or survey design\n\nJust let me know what your study is about and what you're working on!",
+          "function_call": null,
+          "reasoning": "User gives minimal info. Respond, ask what they need help with.",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": 154827,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543160,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-218b0a3e-ac15-9e6b-833f-1170fae10dad",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Inferact/GLM-5.3-NVFP4",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.1rc1.dev437+ge962733e0-tp4-4ace9678",
+    "usage": {
+      "completion_tokens": 141,
+      "completion_tokens_details": {
+        "reasoning_tokens": 14
+      },
+      "prompt_tokens": 25,
+      "prompt_tokens_details": null,
+      "total_tokens": 166
+    }
+  }
+}

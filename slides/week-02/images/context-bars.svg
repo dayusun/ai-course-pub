@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Context window and maximum output by model, log scale">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="560" fill="#f7f3ea"/>
+<line x1="300.0" y1="80" x2="300.0" y2="490" stroke="#ddd5c6"/>
+<text x="300.0" y="520.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">10K</text>
+<line x1="673.3" y1="80" x2="673.3" y2="490" stroke="#ddd5c6"/>
+<text x="673.3" y="520.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">100K</text>
+<line x1="1046.7" y1="80" x2="1046.7" y2="490" stroke="#ddd5c6"/>
+<text x="1046.7" y="520.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">1M</text>
+<line x1="1420.0" y1="80" x2="1420.0" y2="490" stroke="#ddd5c6"/>
+<text x="1420.0" y="520.0" font-size="21" fill="#68635d" text-anchor="middle" font-weight="400">10M</text>
+<rect x="300" y="30" width="22" height="22" rx="4" fill="#2a78d6"/>
+<text x="332.0" y="49.0" font-size="21" fill="#20201e" text-anchor="start" font-weight="400">Context window (input + output)</text>
+<rect x="700" y="30" width="22" height="22" rx="4" fill="#eb6834"/>
+<text x="732.0" y="49.0" font-size="21" fill="#20201e" text-anchor="start" font-weight="400">Maximum output</text>
+<text x="284.0" y="130.0" font-size="22" fill="#20201e" text-anchor="end" font-weight="400">Llama 4 Scout</text>
+<rect x="300" y="98.0" width="1120.0" height="26" rx="4" fill="#2a78d6"/>
+<text x="1428.0" y="119.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">10M</text>
+<text x="308.0" y="145.0" font-size="17" fill="#68635d" text-anchor="start" font-weight="400">max output not stated</text>
+<text x="284.0" y="196.7" font-size="22" fill="#20201e" text-anchor="end" font-weight="400">Gemini 4 Argon</text>
+<rect x="300" y="164.7" width="754.4" height="26" rx="4" fill="#2a78d6"/>
+<text x="1062.4" y="185.7" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">1.05M</text>
+<rect x="300" y="194.7" width="304.8" height="20" rx="4" fill="#eb6834"/>
+<text x="612.8" y="211.7" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">66K</text>
+<text x="284.0" y="263.3" font-size="22" fill="#20201e" text-anchor="end" font-weight="400">GPT-6.1 Sol</text>
+<rect x="300" y="231.3" width="754.6" height="26" rx="4" fill="#2a78d6"/>
+<text x="1062.6" y="252.3" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">1.05M</text>
+<rect x="300" y="261.3" width="413.4" height="20" rx="4" fill="#eb6834"/>
+<text x="721.4" y="278.3" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">128K</text>
+<text x="284.0" y="330.0" font-size="22" fill="#20201e" text-anchor="end" font-weight="400">Claude Opus 5.5</text>
+<rect x="300" y="298.0" width="746.7" height="26" rx="4" fill="#2a78d6"/>
+<text x="1054.7" y="319.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">1M</text>
+<rect x="300" y="328.0" width="413.4" height="20" rx="4" fill="#eb6834"/>
+<text x="721.4" y="345.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">128K</text>
+<text x="284.0" y="396.7" font-size="22" fill="#20201e" text-anchor="end" font-weight="400">DeepSeek V4</text>
+<rect x="300" y="364.7" width="746.7" height="26" rx="4" fill="#2a78d6"/>
+<text x="1054.7" y="385.7" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">1M</text>
+<rect x="300" y="394.7" width="591.5" height="20" rx="4" fill="#eb6834"/>
+<text x="899.5" y="411.7" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">384K</text>
+<text x="284.0" y="463.3" font-size="22" fill="#20201e" text-anchor="end" font-weight="400">Qwen3.8-Flash-Next</text>
+<rect x="300" y="431.3" width="529.6" height="26" rx="4" fill="#2a78d6"/>
+<text x="837.6" y="452.3" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">262K</text>
+<rect x="300" y="461.3" width="417.2" height="20" rx="4" fill="#eb6834"/>
+<text x="725.2" y="478.3" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">131K</text>
+</svg>

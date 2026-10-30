@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 2.5,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Answer the question using only the excerpts below. If the excerpts do not contain the answer, say so.\n\n[stephtn:p. 5] Primary outcome: 24-hour ambulatory SBP at 24 weeks.\n\n[stephtn:p. 7] Ambulatory SBP fell by 4.0 mmHg more with walking plus diet advice (95% CI 1.1 to 6.9). No serious adverse events were attributed to the intervention.\n\n[walk2:p. 4] The primary outcome was change in home SBP at 24 weeks.\n\nQuestion: Did any trial measure ambulatory blood pressure?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nYes. The STEPHTN trial measured ambulatory blood pressure, with its primary outcome being \"24-hour ambulatory SBP at 24 weeks\" (stephtn:p. 5). The WALK2 trial, by contrast, used home SBP as its primary outcome (walk2:p. 4).",
+          "function_call": null,
+          "reasoning": "The user asks whether any trial measured ambulatory blood pressure. Let me look at the excerpts:\n\n1. [stephtn:p. 5] states: \"Primary outcome: 24-hour ambulatory SBP at 24 weeks.\"\n2. [stephtn:p. 7] states: \"Ambulatory SBP fell by 4.0 mmHg more with walking plus diet advice...\"\n3. [walk2:p. 4] states: \"The primary outcome was change in home SBP at 24 weeks.\"\n\nSo the STEPHTN trial measured ambulatory blood pressure (24-hour ambulatory SBP), while the WALK2 trial measured home SBP. The answer is yes — the STEPHTN trial measured ambulatory blood pressure.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543271,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-3c0cb8bb-c6a6-909f-ab23-c21cb88c26ed",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-94b4d640",
+    "usage": {
+      "completion_tokens": 232,
+      "completion_tokens_details": {
+        "reasoning_tokens": 163
+      },
+      "prompt_tokens": 177,
+      "prompt_tokens_details": null,
+      "total_tokens": 409
+    }
+  }
+}

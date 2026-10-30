@@ -1,0 +1,5 @@
+Two groups of adults had systolic blood pressure measured.
+Group A: n = 25, mean = 132.4 mmHg, SD = 10.2.
+Group B: n = 30, mean = 126.1 mmHg, SD = 11.8.
+Assuming equal variances, compute the pooled standard deviation and the 95% confidence interval for the difference in means (A minus B) using the t distribution. Give both to two decimals.
+End with exactly one line: ANSWER: pooled_sd=<x>; ci=(<lo>, <hi>)

@@ -1,0 +1,8 @@
+variable,type,description,values
+study_id,string,Trial identifier,WALK-1; WALK-2; STEP-HTN
+enrol_year,integer,Year of enrolment,2018-2024
+arm,string,Randomised arm,intervention; control
+sbp_baseline,numeric,Systolic blood pressure at baseline (mmHg),90-200
+sbp_week24,numeric,Systolic blood pressure at week 24 (mmHg),90-200
+sbp_method,string,How SBP was measured,office; home; ambulatory
+adherent,binary,Met the trial's own adherence definition,0; 1

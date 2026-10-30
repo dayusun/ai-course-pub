@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 1.89,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Answer the question using only the excerpts below. If the excerpts do not contain the answer, say so.\n\n[walk1:p. 5] The primary outcome was change in office systolic blood pressure (SBP) at 24 weeks.\n\nQuestion: Did any trial measure ambulatory blood pressure?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nBased on the provided excerpts, there is no mention of ambulatory blood pressure. The only excerpt references \"office systolic blood pressure (SBP)\" as a primary outcome. The excerpts do not contain enough information to answer whether any trial measured ambulatory blood pressure.",
+          "function_call": null,
+          "reasoning": "The user is asking whether any trial measured ambulatory blood pressure. Let me look at the provided excerpt.\n\nThe excerpt from [walk1:p. 5] states: \"The primary outcome was change in office systolic blood pressure (SBP) at 24 weeks.\"\n\nThis mentions \"office systolic blood pressure\" but does not mention ambulatory blood pressure. The excerpt does not contain information about whether any trial measured ambulatory blood pressure. I should state that the excerpts do not contain the answer.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543274,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-d099d211-2aaf-9675-9fb2-dd5f59f14cdb",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-94b4d640",
+    "usage": {
+      "completion_tokens": 161,
+      "completion_tokens_details": {
+        "reasoning_tokens": 105
+      },
+      "prompt_tokens": 103,
+      "prompt_tokens_details": null,
+      "total_tokens": 264
+    }
+  }
+}

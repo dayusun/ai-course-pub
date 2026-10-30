@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 4.94,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "My name is Dana and my study has 412 participants."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nHi Dana! Nice to meet you. A study with 412 participants is a solid sample size. How can I help you with it? Whether it's about statistical analysis, power calculations, data interpretation, writing up results, or anything else — feel free to ask.",
+          "function_call": null,
+          "reasoning": "The user is introducing themselves and sharing a detail about their study. They've told me their name is Dana and that their study has 412 participants. This seems like a conversational opener, possibly leading to a question or request about their study. I should acknowledge this information and offer to help with whatever they might need regarding their study.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543146,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-ea95806b-6b84-98c9-9daf-91b65d235456",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-tp4-c7ad8c3a",
+    "usage": {
+      "completion_tokens": 129,
+      "completion_tokens_details": {
+        "reasoning_tokens": 70
+      },
+      "prompt_tokens": 54,
+      "prompt_tokens_details": null,
+      "total_tokens": 183
+    }
+  }
+}

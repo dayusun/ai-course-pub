@@ -1,0 +1,305 @@
+[
+ {
+  "authors": "Vervloet, M., Linn, A. J., van Weert, J. C. M., de Bakker, D. H., Bouvy, M. L., & van Dijk, L.",
+  "first_author_surname": "Vervloet",
+  "year": 2012,
+  "title": "The effectiveness of interventions using electronic reminders to improve adherence to chronic medication: A systematic review of the literature.",
+  "journal": "Journal of the American Medical Informatics Association",
+  "doi": "10.1136/amiajnl-2011-000748",
+  "doi_org_status": 302,
+  "crossref_doi": {
+   "title": "The effectiveness of interventions using electronic reminders to improve adherence to chronic medication: a systematic review of the literature",
+   "year": 2012,
+   "surnames": [
+    "Vervloet",
+    "Linn",
+    "van Weert",
+    "de Bakker",
+    "Bouvy",
+    "van Dijk"
+   ],
+   "journal": "Journal of the American Medical Informatics Association"
+  },
+  "crossref_search": {
+   "title": "The effectiveness of interventions using electronic reminders to improve adherence to chronic medication: a systematic review of the literature",
+   "title_sim": 1.0,
+   "doi": "10.1136/amiajnl-2011-000748",
+   "year": 2012,
+   "surnames": [
+    "Vervloet",
+    "Linn",
+    "van Weert",
+    "de Bakker",
+    "Bouvy",
+    "van Dijk"
+   ]
+  },
+  "class": "real-and-matching",
+  "why": "DOI resolves to this title"
+ },
+ {
+  "authors": "Thakkar, J., Kurup, R., Laba, T. L., et al.",
+  "first_author_surname": "Thakkar",
+  "year": 2016,
+  "title": "Mobile telephone text messaging for medication adherence in chronic disease: A meta-analysis.",
+  "journal": "JAMA Internal Medicine",
+  "doi": "10.1001/jamainternmed.2015.7667",
+  "doi_org_status": 302,
+  "crossref_doi": {
+   "title": "Mobile Telephone Text Messaging for Medication Adherence in Chronic Disease",
+   "year": 2016,
+   "surnames": [
+    "Thakkar",
+    "Kurup",
+    "Laba",
+    "Santo",
+    "Thiagalingam",
+    "Rodgers",
+    "Woodward",
+    "Redfern",
+    "Chow"
+   ],
+   "journal": "JAMA Internal Medicine"
+  },
+  "crossref_search": {
+   "title": "Mobile Telephone Text Messaging for Medication Adherence in Chronic Disease",
+   "title_sim": 0.909,
+   "doi": "10.1001/jamainternmed.2015.7667",
+   "year": 2016,
+   "surnames": [
+    "Thakkar",
+    "Kurup",
+    "Laba",
+    "Santo",
+    "Thiagalingam",
+    "Rodgers",
+    "Woodward",
+    "Redfern",
+    "Chow"
+   ]
+  },
+  "class": "real-and-matching",
+  "why": "DOI resolves to this title"
+ },
+ {
+  "authors": "Pop-Eleches, C., Thirumurthy, H., Habyarimana, J. P., et al.",
+  "first_author_surname": "Pop-Eleches",
+  "year": 2011,
+  "title": "Mobile phone technologies improve adherence to antiretroviral treatment in a resource-limited setting: A randomized controlled trial of text message reminders.",
+  "journal": "AIDS",
+  "doi": "10.1097/QAD.0b013e32834380c1",
+  "doi_org_status": 302,
+  "crossref_doi": {
+   "title": "Mobile phone technologies improve adherence to antiretroviral treatment in a resource-limited setting: a randomized controlled trial of text message reminders",
+   "year": 2011,
+   "surnames": [
+    "Pop-Eleches",
+    "Thirumurthy",
+    "Habyarimana",
+    "Zivin",
+    "Goldstein",
+    "de Walque",
+    "MacKeen",
+    "Haberer",
+    "Kimaiyo",
+    "Sidle",
+    "Ngare",
+    "Bangsberg"
+   ],
+   "journal": "AIDS"
+  },
+  "crossref_search": {
+   "title": "Mobile phone technologies improve adherence to antiretroviral treatment in a resource-limited setting: a randomized controlled trial of text message reminders",
+   "title_sim": 1.0,
+   "doi": "10.1097/qad.0b013e32834380c1",
+   "year": 2011,
+   "surnames": [
+    "Pop-Eleches",
+    "Thirumurthy",
+    "Habyarimana",
+    "Zivin",
+    "Goldstein",
+    "de Walque",
+    "MacKeen",
+    "Haberer",
+    "Kimaiyo",
+    "Sidle",
+    "Ngare",
+    "Bangsberg"
+   ]
+  },
+  "class": "real-and-matching",
+  "why": "DOI resolves to this title"
+ },
+ {
+  "authors": "Lester, R. T., Ritvo, P., Mills, E. J., et al.",
+  "first_author_surname": "Lester",
+  "year": 2010,
+  "title": "Effects of a mobile phone short message service on antiretroviral treatment adherence in Kenya (WelTel Kenya1): A randomised trial.",
+  "journal": "The Lancet",
+  "doi": "10.1016/S0140-6736(10)61997-6",
+  "doi_org_status": 302,
+  "crossref_doi": {
+   "title": "Effects of a mobile phone short message service on antiretroviral treatment adherence in Kenya (WelTel Kenya1): a randomised trial",
+   "year": 2010,
+   "surnames": [
+    "Lester",
+    "Ritvo",
+    "Mills",
+    "Kariri",
+    "Karanja",
+    "Chung",
+    "Jack",
+    "Habyarimana",
+    "Sadatsafavi",
+    "Najafzadeh",
+    "Marra",
+    "Estambale",
+    "Ngugi",
+    "Ball",
+    "Thabane",
+    "Gelmon",
+    "Kimani",
+    "Ackers",
+    "Plummer"
+   ],
+   "journal": "The Lancet"
+  },
+  "crossref_search": {
+   "title": "Effects of a mobile phone short message service on antiretroviral treatment adherence in Kenya (WelTel Kenya1): a randomised trial",
+   "title_sim": 1.0,
+   "doi": "10.1016/s0140-6736(10)61997-6",
+   "year": 2010,
+   "surnames": [
+    "Lester",
+    "Ritvo",
+    "Mills",
+    "Kariri",
+    "Karanja",
+    "Chung",
+    "Jack",
+    "Habyarimana",
+    "Sadatsafavi",
+    "Najafzadeh",
+    "Marra",
+    "Estambale",
+    "Ngugi",
+    "Ball",
+    "Thabane",
+    "Gelmon",
+    "Kimani",
+    "Ackers",
+    "Plummer"
+   ]
+  },
+  "class": "real-and-matching",
+  "why": "DOI resolves to this title"
+ },
+ {
+  "authors": "Mbuagbaw, L., van den Koppele, K. L., Ongolo-Zogo, P., et al.",
+  "first_author_surname": "Mbuagbaw",
+  "year": 2012,
+  "title": "The Cameroon Mobile Phone SMS (CAMPS) trial: A randomized trial of text messaging versus usual care for adherence to antiretroviral therapy.",
+  "journal": "JAIDS Journal of Acquired Immune Deficiency Syndromes",
+  "doi": "10.1097/QAI.0b013e318252d34b",
+  "doi_org_status": 404,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "The Cameroon Mobile Phone SMS (CAMPS) Trial: A Randomized Trial of Text Messaging versus Usual Care for Adherence to Antiretroviral Therapy",
+   "title_sim": 1.0,
+   "doi": "10.1371/journal.pone.0046909",
+   "year": 2012,
+   "surnames": [
+    "Mbuagbaw",
+    "Thabane",
+    "Ongolo-Zogo",
+    "Lester",
+    "Mills",
+    "Smieja",
+    "Dolovich",
+    "Kouanfack"
+   ]
+  },
+  "class": "real-but-wrong-details",
+  "why": "title found in Crossref but the given DOI does not resolve in Crossref"
+ },
+ {
+  "authors": "Wald, D. S., Butt, S., & Bestwick, J. P.",
+  "first_author_surname": "Wald",
+  "year": 2014,
+  "title": "One-way versus two-way text messaging on improving medication adherence: Meta-analysis of randomized trials.",
+  "journal": "American Journal of Medicine",
+  "doi": "10.1016/j.amjmed.2014.05.021",
+  "doi_org_status": 302,
+  "crossref_doi": {
+   "title": "New Thinking About Honor and Deceased Organ Donation",
+   "year": 2014,
+   "surnames": [
+    "Woodfine",
+    "Redelmeier"
+   ],
+   "journal": "The American Journal of Medicine"
+  },
+  "crossref_search": {
+   "title": "One-way Versus Two-way Text Messaging on Improving Medication Adherence: Meta-analysis of Randomized Trials",
+   "title_sim": 1.0,
+   "doi": "10.1016/j.amjmed.2015.05.035",
+   "year": 2015,
+   "surnames": [
+    "Wald",
+    "Butt",
+    "Bestwick"
+   ]
+  },
+  "class": "real-but-wrong-details",
+  "why": "title found in Crossref but the given DOI points to a different work"
+ },
+ {
+  "authors": "Kannry, J., et al. / alternatively: Buis, L. R., Hirzel, L., Turske, S. A., Des Jardins, T. R., Yarandi, H., & Bondurant, P.",
+  "first_author_surname": "Kannry",
+  "year": 2017,
+  "title": "Use of a text messaging platform to enhance adherence to weight loss behaviors in a diverse, low-income population.",
+  "journal": "JMIR mHealth and uHealth",
+  "doi": "10.2196/mhealth.6709",
+  "doi_org_status": 404,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "A Comment on Griffin et al “My Quest, an Intervention Using Text Messaging to Improve Dietary and Physical Activity Behaviors and Promote Weight Loss in Low-Income Women”",
+   "title_sim": 0.424,
+   "doi": "10.1016/j.jneb.2018.01.018",
+   "year": 2018,
+   "surnames": [
+    "Mattioli",
+    "Ballerini Puviani"
+   ]
+  },
+  "class": "not-found",
+  "why": "no Crossref match for DOI or title"
+ },
+ {
+  "authors": "Fisher, J. D., Fisher, W. A., Amico, K. R., & Harman, J. J. (2006) — this is the Information-Motivation-Behavioral Skills model paper, not text messaging specifically, so a better fit: DeKoekkoek, T., Given, B., Given, C. W., & Spoelstra, S. L.",
+  "first_author_surname": "Fisher",
+  "year": 2006,
+  "title": "mHealth SMS text messaging interventions and to promote medication adherence: An integrative review.",
+  "journal": "JMIR mHealth and uHealth",
+  "doi": "10.2196/mhealth.4395",
+  "doi_org_status": 404,
+  "crossref_doi": null,
+  "crossref_search": {
+   "title": "mHealth SMS text messaging interventions and to promote medication adherence: an integrative review",
+   "title_sim": 1.0,
+   "doi": "10.1111/jocn.12918",
+   "year": 2015,
+   "surnames": [
+    "DeKoekkoek",
+    "Given",
+    "Given",
+    "Ridenour",
+    "Schueller",
+    "Spoelstra"
+   ]
+  },
+  "class": "real-but-wrong-details",
+  "why": "title found in Crossref but the given DOI does not resolve in Crossref"
+ }
+]

@@ -1,0 +1,67 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 1.92,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "My name is Dana and my study has 412 participants."
+      },
+      {
+        "role": "assistant",
+        "content": "\n\nHi Dana! Nice to meet you. A study with 412 participants is a solid sample size. How can I help you with it? Whether it's about statistical analysis, power calculations, data interpretation, writing up results, or anything else — feel free to ask."
+      },
+      {
+        "role": "user",
+        "content": "How many participants are in my study?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nYour study has **412 participants**, Dana.",
+          "function_call": null,
+          "reasoning": "Dana just told me in the previous message that her study has 412 participants. This is a straightforward recall question.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543158,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-24154cac-87be-94b1-9331-b71ac4908c48",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-tp4-c7ad8c3a",
+    "usage": {
+      "completion_tokens": 41,
+      "completion_tokens_details": {
+        "reasoning_tokens": 27
+      },
+      "prompt_tokens": 132,
+      "prompt_tokens_details": null,
+      "total_tokens": 173
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Three turns of a chat: the app resends memory notes and the conversation each time; the model's weights stay frozen and store nothing between calls">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="560" fill="#f7f3ea"/>
+<text x="40.0" y="50.0" font-size="24" fill="#20201e" text-anchor="start" font-weight="600">Each turn is a fresh call: the app rebuilds the input from stored pieces</text>
+<text x="40.0" y="110.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="700">Turn 1</text>
+<rect x="40.0" y="130.0" width="400.0" height="46.0" rx="6" fill="#e2f0de" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="56.0" y="160.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">memory notes</text>
+<rect x="40.0" y="186.0" width="400.0" height="46.0" rx="6" fill="#fbefd6" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="56.0" y="216.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">question 1</text>
+<line x1="240.0" y1="246.0" x2="240.0" y2="392.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="520.0" y="110.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="700">Turn 2</text>
+<rect x="520.0" y="130.0" width="400.0" height="46.0" rx="6" fill="#e2f0de" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="536.0" y="160.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">memory notes</text>
+<rect x="520.0" y="186.0" width="400.0" height="46.0" rx="6" fill="#fbefd6" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="536.0" y="216.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">question 1</text>
+<rect x="520.0" y="242.0" width="400.0" height="46.0" rx="6" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="536.0" y="272.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">answer 1</text>
+<rect x="520.0" y="298.0" width="400.0" height="46.0" rx="6" fill="#fbefd6" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="536.0" y="328.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">question 2</text>
+<line x1="720.0" y1="358.0" x2="720.0" y2="392.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<text x="1000.0" y="110.0" font-size="24" fill="#4b0000" text-anchor="start" font-weight="700">Turn 3</text>
+<rect x="1000.0" y="130.0" width="400.0" height="46.0" rx="6" fill="#e2f0de" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1016.0" y="160.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">memory notes</text>
+<rect x="1000.0" y="186.0" width="400.0" height="46.0" rx="6" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1016.0" y="216.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">q1 · a1 · q2 · a2 (or a summary)</text>
+<rect x="1000.0" y="242.0" width="400.0" height="46.0" rx="6" fill="#fbefd6" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1016.0" y="272.0" font-size="19" fill="#20201e" text-anchor="start" font-weight="400">question 3</text>
+<line x1="1200.0" y1="302.0" x2="1200.0" y2="392.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="40.0" y="396.0" width="1360.0" height="70.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="720.0" y="440.0" font-size="22" fill="#4b0000" text-anchor="middle" font-weight="700">Model: the same frozen weights every call. Nothing from the chat is written into them.</text>
+<text x="40.0" y="520.0" font-size="20" fill="#990000" text-anchor="start" font-weight="600">Memory and history live in the app (the harness): you can usually view, edit and delete them.</text>
+</svg>

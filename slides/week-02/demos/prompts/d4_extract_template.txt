@@ -1,0 +1,3 @@
+Convert the reference list below into a JSON array of 8 objects with keys authors (string), first_author_surname, year (integer or null), title, journal, doi (string or null; without https://doi.org/). Copy values exactly as written; do not correct anything. Output only the JSON.
+
+{text}

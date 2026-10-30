@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 1.67,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Answer the question using only the excerpts below. If the excerpts do not contain the answer, say so.\n\n[stephtn:p. 5] Primary outcome: 24-hour ambulatory SBP at 24 weeks.\n\nQuestion: Did any trial measure ambulatory blood pressure?"
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 2048,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "\n\nYes. According to the excerpt from **stephtn (p. 5)**, the trial's primary outcome was **24-hour ambulatory SBP at 24 weeks**, confirming that ambulatory blood pressure was measured.",
+          "function_call": null,
+          "reasoning": "The user is asking whether any trial measured ambulatory blood pressure, based on the provided excerpt.\n\nThe excerpt from [stephtn:p. 5] states: \"Primary outcome: 24-hour ambulatory SBP at 24 weeks.\"\n\nThis clearly indicates that the trial (referred to as \"stephtn\") measured ambulatory blood pressure (specifically 24-hour ambulatory SBP) as its primary outcome.\n",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543269,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-562479a2-d3c7-9f80-8f47-98d99a7fdf3f",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-94b4d640",
+    "usage": {
+      "completion_tokens": 141,
+      "completion_tokens_details": {
+        "reasoning_tokens": 92
+      },
+      "prompt_tokens": 100,
+      "prompt_tokens_details": null,
+      "total_tokens": 241
+    }
+  }
+}

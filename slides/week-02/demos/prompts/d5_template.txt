@@ -1,0 +1,5 @@
+Answer the question using only the excerpts below. If the excerpts do not contain the answer, say so.
+
+{ctx}
+
+Question: {q}

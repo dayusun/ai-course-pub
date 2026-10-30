@@ -1,0 +1,14 @@
+[
+ {
+  "model": "qwen3-small",
+  "call1": "\n\nHi Dana! Nice to meet you. A study with 412 participants is a solid sample size. How can I help you with it? Whether it's about statistical analysis, power calculations, data interpretation, writing up results, or anything else — feel free to ask.",
+  "call2_no_history": "\n\nI don't have any information about your study. I don't have access to your documents, research data, or any personal details about your work.\n\nIf you'd like help with this, you could:\n\n- **Share relevant details** (e.g., paste a description of your study, a table, or a document excerpt)\n- **Ask a specific question** about sample size calculations, power analysis, or interpreting your data\n\nWhat can I help you with?",
+  "call2_with_history": "\n\nYour study has **412 participants**, Dana."
+ },
+ {
+  "model": "glm-5",
+  "call1": "Hi Dana! Thanks for sharing that your study has 412 participants. That's a solid sample size for many types of research.\n\nWhat would you like help with? For example, I could assist with:\n\n- **Statistical analysis** — choosing tests, interpreting results, power considerations\n- **Writing up your methods or results** — reporting participant details in APA style\n- **Sample size justification** — discussing whether 412 is adequate for your design\n- **Data planning** — handling missing data, cleaning, or survey design\n\nJust let me know what your study is about and what you're working on!",
+  "call2_no_history": "I don't have any information about your study — this is the start of our conversation, and you haven't shared any details yet.\n\nIf you'd like help figuring out or discussing your participant count, you could share:\n\n- **Your dataset** (e.g., a spreadsheet, table, or summary statistics)\n- **Your study design** (e.g., how many groups, conditions, or waves of data collection)\n- **What you're trying to determine** (e.g., whether your sample size is adequate for a planned analysis)\n\nIf you paste in your data or describe your study, I'm happy to help you count participants, check for missing data, or assess whether your sample size is sufficient for your goals.",
+  "call2_with_history": "Your study has **412 participants**, Dana."
+ }
+]

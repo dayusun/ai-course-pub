@@ -1,0 +1,61 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 10.51,
+  "request": {
+    "model": "qwen3-small",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Convert the reference list below into a JSON array of 8 objects with keys authors (string), first_author_surname, year (integer or null), title, journal, doi (string or null; without https://doi.org/). Copy values exactly as written; do not correct anything. Output only the JSON.\n\nHere are 8 peer-reviewed papers on text-message reminders for medication adherence. **Important caveat:** I'm providing these from memory, so citation details (especially DOIs) may contain errors—please verify each in PubMed or Google Scholar before citing.\n\n1. **Vervloet, M., Linn, A. J., van Weert, J. C. M., de Bakker, D. H., Bouvy, M. L., & van Dijk, L. (2012).** \"The effectiveness of interventions using electronic reminders to improve adherence to chronic medication: A systematic review of the literature.\" *Journal of the American Medical Informatics Association*. DOI: 10.1136/amiajnl-2011-000748\n\n2. **Thakkar, J., Kurup, R., Laba, T. L., et al. (2016).** \"Mobile telephone text messaging for medication adherence in chronic disease: A meta-analysis.\" *JAMA Internal Medicine*, 176(3), 340–349. DOI: 10.1001/jamainternmed.2015.7667\n\n3. **Pop-Eleches, C., Thirumurthy, H., Habyarimana, J. P., et al. (2011).** \"Mobile phone technologies improve adherence to antiretroviral treatment in a resource-limited setting: A randomized controlled trial of text message reminders.\" *AIDS*, 25(6), 825–834. DOI: 10.1097/QAD.0b013e32834380c1\n\n4. **Lester, R. T., Ritvo, P., Mills, E. J., et al. (2010).** \"Effects of a mobile phone short message service on antiretroviral treatment adherence in Kenya (WelTel Kenya1): A randomised trial.\" *The Lancet*, 376(9755), 1838–1845. DOI: 10.1016/S0140-6736(10)61997-6\n\n5. **Mbuagbaw, L., van den Koppele, K. L., Ongolo-Zogo, P., et al. (2012).** \"The Cameroon Mobile Phone SMS (CAMPS) trial: A randomized trial of text messaging versus usual care for adherence to antiretroviral therapy.\" *JAIDS Journal of Acquired Immune Deficiency Syndromes*, 60(2), e29–e32. DOI: 10.1097/QAI.0b013e318252d34b\n\n6. **Wald, D. S., Butt, S., & Bestwick, J. P. (2014).** \"One-way versus two-way text messaging on improving medication adherence: Meta-analysis of randomized trials.\" *American Journal of Medicine*, 127(9), 881–885. DOI: 10.1016/j.amjmed.2014.05.021\n\n7. **Kannry, J., et al. / alternatively: Buis, L. R., Hirzel, L., Turske, S. A., Des Jardins, T. R., Yarandi, H., & Bondurant, P. (2017).** \"Use of a text messaging platform to enhance adherence to weight loss behaviors in a diverse, low-income population.\" *JMIR mHealth and uHealth*, 5(2), e22. DOI: 10.2196/mhealth.6709\n\n8. **Fisher, J. D., Fisher, W. A., Amico, K. R., & Harman, J. J. (2006)** — this is the Information-Motivation-Behavioral Skills model paper, not text messaging specifically, so a better fit: **DeKoekkoek, T., Given, B., Given, C. W., & Spoelstra, S. L. (2015).** \"mHealth SMS text messaging interventions and to promote medication adherence: An integrative review.\" *JMIR mHealth and uHealth*, 3(3), e72. DOI: 10.2196/mhealth.4395\n\n**Recommendation:** Search PubMed with terms like \"text message reminder medication adherence\" and filter for RCTs or systematic reviews to confirm exact details. The Pop-Eleches, Lester, Thakkar, and Vervloet papers are among the most highly cited in this field and are good starting points."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 8192,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "[\n  {\n    \"authors\": \"Vervloet, M., Linn, A. J., van Weert, J. C. M., de Bakker, D. H., Bouvy, M. L., & van Dijk, L.\",\n    \"first_author_surname\": \"Vervloet\",\n    \"year\": 2012,\n    \"title\": \"The effectiveness of interventions using electronic reminders to improve adherence to chronic medication: A systematic review of the literature.\",\n    \"journal\": \"Journal of the American Medical Informatics Association\",\n    \"doi\": \"10.1136/amiajnl-2011-000748\"\n  },\n  {\n    \"authors\": \"Thakkar, J., Kurup, R., Laba, T. L., et al.\",\n    \"first_author_surname\": \"Thakkar\",\n    \"year\": 2016,\n    \"title\": \"Mobile telephone text messaging for medication adherence in chronic disease: A meta-analysis.\",\n    \"journal\": \"JAMA Internal Medicine\",\n    \"doi\": \"10.1001/jamainternmed.2015.7667\"\n  },\n  {\n    \"authors\": \"Pop-Eleches, C., Thirumurthy, H., Habyarimana, J. P., et al.\",\n    \"first_author_surname\": \"Pop-Eleches\",\n    \"year\": 2011,\n    \"title\": \"Mobile phone technologies improve adherence to antiretroviral treatment in a resource-limited setting: A randomized controlled trial of text message reminders.\",\n    \"journal\": \"AIDS\",\n    \"doi\": \"10.1097/QAD.0b013e32834380c1\"\n  },\n  {\n    \"authors\": \"Lester, R. T., Ritvo, P., Mills, E. J., et al.\",\n    \"first_author_surname\": \"Lester\",\n    \"year\": 2010,\n    \"title\": \"Effects of a mobile phone short message service on antiretroviral treatment adherence in Kenya (WelTel Kenya1): A randomised trial.\",\n    \"journal\": \"The Lancet\",\n    \"doi\": \"10.1016/S0140-6736(10)61997-6\"\n  },\n  {\n    \"authors\": \"Mbuagbaw, L., van den Koppele, K. L., Ongolo-Zogo, P., et al.\",\n    \"first_author_surname\": \"Mbuagbaw\",\n    \"year\": 2012,\n    \"title\": \"The Cameroon Mobile Phone SMS (CAMPS) trial: A randomized trial of text messaging versus usual care for adherence to antiretroviral therapy.\",\n    \"journal\": \"JAIDS Journal of Acquired Immune Deficiency Syndromes\",\n    \"doi\": \"10.1097/QAI.0b013e318252d34b\"\n  },\n  {\n    \"authors\": \"Wald, D. S., Butt, S., & Bestwick, J. P.\",\n    \"first_author_surname\": \"Wald\",\n    \"year\": 2014,\n    \"title\": \"One-way versus two-way text messaging on improving medication adherence: Meta-analysis of randomized trials.\",\n    \"journal\": \"American Journal of Medicine\",\n    \"doi\": \"10.1016/j.amjmed.2014.05.021\"\n  },\n  {\n    \"authors\": \"Kannry, J., et al. / alternatively: Buis, L. R., Hirzel, L., Turske, S. A., Des Jardins, T. R., Yarandi, H., & Bondurant, P.\",\n    \"first_author_surname\": \"Kannry\",\n    \"year\": 2017,\n    \"title\": \"Use of a text messaging platform to enhance adherence to weight loss behaviors in a diverse, low-income population.\",\n    \"journal\": \"JMIR mHealth and uHealth\",\n    \"doi\": \"10.2196/mhealth.6709\"\n  },\n  {\n    \"authors\": \"Fisher, J. D., Fisher, W. A., Amico, K. R., & Harman, J. J. (2006) — this is the Information-Motivation-Behavioral Skills model paper, not text messaging specifically, so a better fit: DeKoekkoek, T., Given, B., Given, C. W., & Spoelstra, S. L.\",\n    \"first_author_surname\": \"Fisher\",\n    \"year\": 2006,\n    \"title\": \"mHealth SMS text messaging interventions and to promote medication adherence: An integrative review.\",\n    \"journal\": \"JMIR mHealth and uHealth\",\n    \"doi\": \"10.2196/mhealth.4395\"\n  }\n]",
+          "function_call": null,
+          "reasoning": null,
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": null,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543358,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-c22536ea-965a-92f5-a29f-b5cd712edc70",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Qwen/Qwen3.8-27B",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.30.0-94b4d640",
+    "usage": {
+      "completion_tokens": 1155,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "prompt_tokens": 1120,
+      "prompt_tokens_details": null,
+      "total_tokens": 2275
+    }
+  }
+}

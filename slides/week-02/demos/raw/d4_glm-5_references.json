@@ -1,0 +1,59 @@
+{
+  "endpoint": "/chat/completions",
+  "http_status": 200,
+  "latency_s": 18.5,
+  "request": {
+    "model": "glm-5",
+    "messages": [
+      {
+        "role": "user",
+        "content": "List 8 peer-reviewed papers (authors, year, title, journal, DOI) on text-message reminders for medication adherence."
+      }
+    ],
+    "temperature": 0,
+    "max_tokens": 8192,
+    "reasoning_effort": "low"
+  },
+  "response": {
+    "choices": [
+      {
+        "finish_reason": "stop",
+        "index": 0,
+        "logprobs": null,
+        "message": {
+          "annotations": null,
+          "audio": null,
+          "content": "Here are 8 peer-reviewed papers on text-message reminders for medication adherence. **Important caveat:** I'm providing these from memory, so citation details (especially DOIs) may contain errors—please verify each in PubMed or Google Scholar before citing.\n\n1. **Vervloet, M., Linn, A. J., van Weert, J. C. M., de Bakker, D. H., Bouvy, M. L., & van Dijk, L. (2012).** \"The effectiveness of interventions using electronic reminders to improve adherence to chronic medication: A systematic review of the literature.\" *Journal of the American Medical Informatics Association*. DOI: 10.1136/amiajnl-2011-000748\n\n2. **Thakkar, J., Kurup, R., Laba, T. L., et al. (2016).** \"Mobile telephone text messaging for medication adherence in chronic disease: A meta-analysis.\" *JAMA Internal Medicine*, 176(3), 340–349. DOI: 10.1001/jamainternmed.2015.7667\n\n3. **Pop-Eleches, C., Thirumurthy, H., Habyarimana, J. P., et al. (2011).** \"Mobile phone technologies improve adherence to antiretroviral treatment in a resource-limited setting: A randomized controlled trial of text message reminders.\" *AIDS*, 25(6), 825–834. DOI: 10.1097/QAD.0b013e32834380c1\n\n4. **Lester, R. T., Ritvo, P., Mills, E. J., et al. (2010).** \"Effects of a mobile phone short message service on antiretroviral treatment adherence in Kenya (WelTel Kenya1): A randomised trial.\" *The Lancet*, 376(9755), 1838–1845. DOI: 10.1016/S0140-6736(10)61997-6\n\n5. **Mbuagbaw, L., van den Koppele, K. L., Ongolo-Zogo, P., et al. (2012).** \"The Cameroon Mobile Phone SMS (CAMPS) trial: A randomized trial of text messaging versus usual care for adherence to antiretroviral therapy.\" *JAIDS Journal of Acquired Immune Deficiency Syndromes*, 60(2), e29–e32. DOI: 10.1097/QAI.0b013e318252d34b\n\n6. **Wald, D. S., Butt, S., & Bestwick, J. P. (2014).** \"One-way versus two-way text messaging on improving medication adherence: Meta-analysis of randomized trials.\" *American Journal of Medicine*, 127(9), 881–885. DOI: 10.1016/j.amjmed.2014.05.021\n\n7. **Kannry, J., et al. / alternatively: Buis, L. R., Hirzel, L., Turske, S. A., Des Jardins, T. R., Yarandi, H., & Bondurant, P. (2017).** \"Use of a text messaging platform to enhance adherence to weight loss behaviors in a diverse, low-income population.\" *JMIR mHealth and uHealth*, 5(2), e22. DOI: 10.2196/mhealth.6709\n\n8. **Fisher, J. D., Fisher, W. A., Amico, K. R., & Harman, J. J. (2006)** — this is the Information-Motivation-Behavioral Skills model paper, not text messaging specifically, so a better fit: **DeKoekkoek, T., Given, B., Given, C. W., & Spoelstra, S. L. (2015).** \"mHealth SMS text messaging interventions and to promote medication adherence: An integrative review.\" *JMIR mHealth and uHealth*, 3(3), e72. DOI: 10.2196/mhealth.4395\n\n**Recommendation:** Search PubMed with terms like \"text message reminder medication adherence\" and filter for RCTs or systematic reviews to confirm exact details. The Pop-Eleches, Lester, Thakkar, and Vervloet papers are among the most highly cited in this field and are good starting points.",
+          "function_call": null,
+          "reasoning": "User wants 8 peer-reviewed papers. I must be careful about hallucination risk. I can list well-known real studies but should caveat that details should be verified. Provide plausible real ones I'm fairly confident about, with a disclaimer.",
+          "refusal": null,
+          "role": "assistant"
+        },
+        "routed_experts": null,
+        "stop_reason": 154827,
+        "token_ids": null
+      }
+    ],
+    "created": 1792543339,
+    "ec_transfer_params": null,
+    "id": "chatcmpl-c5a75a39-5ce8-90f3-943c-75a6d2b62d22",
+    "kv_transfer_params": null,
+    "metrics": null,
+    "model": "Inferact/GLM-5.3-NVFP4",
+    "object": "chat.completion",
+    "prompt_logprobs": null,
+    "prompt_text": null,
+    "prompt_token_ids": null,
+    "service_tier": null,
+    "system_fingerprint": "vllm-0.28.1rc1.dev437+ge962733e0-tp4-4ace9678",
+    "usage": {
+      "completion_tokens": 1014,
+      "completion_tokens_details": {
+        "reasoning_tokens": 47
+      },
+      "prompt_tokens": 37,
+      "prompt_tokens_details": null,
+      "total_tokens": 1051
+    }
+  }
+}
