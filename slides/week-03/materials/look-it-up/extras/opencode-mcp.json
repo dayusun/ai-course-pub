@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "arxiv": {
+      "type": "local",
+      "command": ["uvx", "arxiv-mcp-server"]
+    },
+    "crossref": {
+      "type": "local",
+      "command": ["uv", "run", "--with", "mcp>=2,<3", "extras/mcp/crossref_server.py"]
+    }
+  }
+}

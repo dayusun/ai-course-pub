@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "read": {
+      "*": "allow",
+      "*linkage-key*": "deny"
+    },
+    "bash": {
+      "*": "ask",
+      "ls*": "allow",
+      "wc *": "allow",
+      "head *": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "Rscript *": "allow",
+      "python3 *": "allow",
+      "rm *": "deny",
+      "git push*": "deny",
+      "*linkage-key*": "deny"
+    }
+  }
+}

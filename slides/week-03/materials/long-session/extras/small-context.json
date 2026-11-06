@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "nrp": {
+      "models": {
+        "qwen3-small": { "limit": { "context": 24000, "output": 4000 } }
+      }
+    }
+  }
+}

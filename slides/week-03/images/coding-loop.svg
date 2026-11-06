@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="600" viewBox="0 0 1500 600" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="The coding-agent loop: observe files and test output, reason about the next step, act by editing a file, running a command or calling a tool; the result comes back and is observed again. The loop stops when tests pass, it must ask you, or a limit is hit. The harness supplies tools, context, permissions, sandbox and limits">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker><marker id="arrg" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#b3aa9b"/></marker></defs>
+<rect width="1500" height="600" fill="#f7f3ea"/>
+<rect x="60" y="40" width="300" height="124" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="210.0" y="86" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Observe</text>
+<text x="210.0" y="120" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">files, test output,</text>
+<text x="210.0" y="144" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">error messages</text>
+<rect x="450" y="238" width="300" height="124" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="600.0" y="284" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Reason</text>
+<text x="600.0" y="318" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">the model picks</text>
+<text x="600.0" y="342" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">the next step</text>
+<rect x="60" y="436" width="300" height="124" rx="14" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="210.0" y="482" font-size="30" fill="#4b0000" text-anchor="middle" font-weight="700">Act</text>
+<text x="210.0" y="516" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">edit a file, run a</text>
+<text x="210.0" y="540" font-size="19" fill="#68635d" text-anchor="middle" font-weight="400">command, call a tool</text>
+<path d="M 360 102 L 600 102 L 600 230" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 600 362 L 600 498 L 368 498" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 210 436 L 210 172" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<text x="196" y="310" font-size="18" fill="#990000" text-anchor="end" font-weight="600">the result</text>
+<text x="196" y="334" font-size="18" fill="#990000" text-anchor="end" font-weight="600">comes back</text>
+<path d="M 750 300 L 812 300" fill="none" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="820" y="222" width="170" height="156" rx="12" fill="#fbe9e7" stroke="#990000" stroke-width="2"/>
+<text x="905" y="260" font-size="21" fill="#990000" text-anchor="middle" font-weight="700">Stop when</text>
+<text x="905" y="292" font-size="17" fill="#20201e" text-anchor="middle" font-weight="400">tests pass,</text>
+<text x="905" y="318" font-size="17" fill="#20201e" text-anchor="middle" font-weight="400">it must ask you,</text>
+<text x="905" y="344" font-size="17" fill="#20201e" text-anchor="middle" font-weight="400">or a limit is hit</text>
+<rect x="1030" y="40" width="440" height="520" rx="16" fill="#fbefd6" stroke="#e3a617" stroke-width="2.5"/>
+<text x="1250" y="88" font-size="26" fill="#4b0000" text-anchor="middle" font-weight="700">The harness supplies</text>
+<rect x="1052" y="120" width="396" height="74" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1070" y="151" font-size="21" fill="#4b0000" text-anchor="start" font-weight="700">Tools</text>
+<text x="1070" y="178" font-size="17" fill="#20201e" text-anchor="start" font-weight="400">read, edit, bash, search, MCP</text>
+<rect x="1052" y="206" width="396" height="74" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1070" y="237" font-size="21" fill="#4b0000" text-anchor="start" font-weight="700">Context</text>
+<text x="1070" y="264" font-size="17" fill="#20201e" text-anchor="start" font-weight="400">AGENTS.md, files you mention, history</text>
+<rect x="1052" y="292" width="396" height="74" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1070" y="323" font-size="21" fill="#4b0000" text-anchor="start" font-weight="700">Permissions</text>
+<text x="1070" y="350" font-size="17" fill="#20201e" text-anchor="start" font-weight="400">ask before bash; edits in the folder</text>
+<rect x="1052" y="378" width="396" height="74" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1070" y="409" font-size="21" fill="#4b0000" text-anchor="start" font-weight="700">Sandbox</text>
+<text x="1070" y="436" font-size="17" fill="#20201e" text-anchor="start" font-weight="400">your container: no other users, no host</text>
+<rect x="1052" y="464" width="396" height="74" rx="10" fill="#fffdf8" stroke="#ddd5c6" stroke-width="1.5"/>
+<text x="1070" y="495" font-size="21" fill="#4b0000" text-anchor="start" font-weight="700">Limits</text>
+<text x="1070" y="522" font-size="17" fill="#20201e" text-anchor="start" font-weight="400">time, steps, cost; when to stop and ask</text>
+</svg>

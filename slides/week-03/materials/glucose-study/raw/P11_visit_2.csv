@@ -1,0 +1,12 @@
+# Device: GlucoCheck 300 (synthetic export)
+# Subject: P11   Visit: 2
+# Units: mg/dL
+time;glucose
+07:00;100
+08:00;136
+09:00;112
+10:00;103
+12:00;111
+14:00;147
+17:00;106
+20:00;120

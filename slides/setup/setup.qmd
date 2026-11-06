@@ -177,7 +177,7 @@ title-slide-attributes:
 
 ## Opening a terminal
 
-![](images/09-launcher.png){fig-alt="JupyterLab in the course hub: files on the left, and the Launcher on the right with Terminal outlined in red, next to Text File and Markdown File." style="height:520px; width:auto; max-width:100%; display:block; margin:0 auto;"}
+![](images/09-launcher.png){fig-alt="JupyterLab in the course hub: files on the left, and the Launcher on the right with Python 3 and R notebooks, RStudio, and under Other, Terminal outlined in red." style="height:520px; width:auto; max-width:100%; display:block; margin:0 auto;"}
 
 - Your files are on the left; double-click `README-FIRST.txt` to read the workspace rules.
 - In the **Launcher**, click **Terminal**. The **+** next to the tabs opens a new Launcher.

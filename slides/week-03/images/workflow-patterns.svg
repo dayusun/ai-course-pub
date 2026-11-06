@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="660" viewBox="0 0 1500 660" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Five workflow patterns. Prompt chaining: extract, check, normalize, check, summarize. Routing: classify, then send each item to one specialist route. Parallelization: one input, several runs, then combine or vote; voting is not validation. Orchestrator-workers: a planner picks subtasks at run time, workers do them, results are synthesized; name a human owner. Evaluator-optimizer: a generator drafts, an evaluator gives feedback until the draft passes; write the criteria first">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker><marker id="arrg" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#b3aa9b"/></marker></defs>
+<rect width="1500" height="660" fill="#f7f3ea"/>
+<rect x="40" y="40" width="1420" height="104" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="70" y="84" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">Prompt chaining</text>
+<text x="70" y="120" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">fixed steps; a check between them</text>
+<text x="1430" y="102" font-size="20" fill="#990000" text-anchor="end" font-weight="600">check between steps</text>
+<rect x="40" y="162" width="1420" height="104" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="70" y="206" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">Routing</text>
+<text x="70" y="242" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">classify first, then one specialist</text>
+<text x="1430" y="224" font-size="20" fill="#990000" text-anchor="end" font-weight="600">mixed documents, triage</text>
+<rect x="40" y="284" width="1420" height="104" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="70" y="328" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">Parallelization</text>
+<text x="70" y="364" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">split the work, or vote on one task</text>
+<text x="1430" y="346" font-size="20" fill="#990000" text-anchor="end" font-weight="600">voting is not validation</text>
+<rect x="40" y="406" width="1420" height="104" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2"/>
+<text x="70" y="450" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">Orchestrator–workers</text>
+<text x="70" y="486" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">a planner picks subtasks at run time</text>
+<text x="1430" y="468" font-size="20" fill="#990000" text-anchor="end" font-weight="600">name a human owner</text>
+<rect x="40" y="528" width="1420" height="104" rx="12" fill="#fffdf8" stroke="#e3a617" stroke-width="2"/>
+<text x="70" y="572" font-size="26" fill="#4b0000" text-anchor="start" font-weight="700">Evaluator–optimizer</text>
+<text x="70" y="608" font-size="20" fill="#20201e" text-anchor="start" font-weight="400">produce, critique against criteria, repeat</text>
+<text x="1430" y="590" font-size="20" fill="#990000" text-anchor="end" font-weight="600">write the criteria first</text>
+<rect x="560" y="72" width="120" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="620.0" y="97.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">extract</text>
+<rect x="760" y="72" width="120" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="820.0" y="97.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">normalize</text>
+<rect x="960" y="72" width="120" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="1020.0" y="97.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">summarize</text>
+<path d="M 682 92 L 756 92" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<text x="718" y="82" font-size="15" fill="#990000" text-anchor="middle" font-weight="600">check</text>
+<path d="M 882 92 L 956 92" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<text x="918" y="82" font-size="15" fill="#990000" text-anchor="middle" font-weight="600">check</text>
+<rect x="560" y="194" width="120" height="40" rx="6" fill="#ffffff" stroke="#4b0000" stroke-width="1.5"/><text x="620.0" y="219.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">classify</text>
+<rect x="800" y="169" width="150" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5" stroke-dasharray="4 3"/><text x="875.0" y="187.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="400">protocol</text>
+<path d="M 682 214 L 796 182" fill="none" stroke="#b3aa9b" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrg)"/>
+<rect x="800" y="201" width="150" height="26" rx="6" fill="#ffffff" stroke="#4b0000" stroke-width="1.5"/><text x="875.0" y="219.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="600">consent form</text>
+<path d="M 682 214 L 796 214" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="800" y="233" width="150" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5" stroke-dasharray="4 3"/><text x="875.0" y="251.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="400">lab report</text>
+<path d="M 682 214 L 796 246" fill="none" stroke="#b3aa9b" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrg)"/>
+<text x="1010" y="219" font-size="15" fill="#68635d" text-anchor="start" font-weight="400" font-style="italic">one route</text>
+<rect x="560" y="316" width="90" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="605.0" y="341.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">input</text>
+<rect x="730" y="291" width="110" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="785.0" y="309.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="500">run 1</text>
+<path d="M 652 336 L 726 304" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 842 304 L 916 336" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="730" y="323" width="110" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="785.0" y="341.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="500">run 2</text>
+<path d="M 652 336 L 726 336" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 842 336 L 916 336" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="730" y="355" width="110" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="785.0" y="373.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="500">run 3</text>
+<path d="M 652 336 L 726 368" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 842 368 L 916 336" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="920" y="316" width="150" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="995.0" y="341.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">combine / vote</text>
+<rect x="560" y="438" width="120" height="40" rx="6" fill="#ffffff" stroke="#4b0000" stroke-width="1.5"/><text x="620.0" y="463.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">planner</text>
+<rect x="760" y="413" width="110" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5" stroke-dasharray="4 3"/><text x="815.0" y="431.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="500">subtask ?</text>
+<path d="M 682 458 L 756 426" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 872 426 L 946 458" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="760" y="445" width="110" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5" stroke-dasharray="4 3"/><text x="815.0" y="463.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="500">subtask ?</text>
+<path d="M 682 458 L 756 458" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 872 458 L 946 458" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="760" y="477" width="110" height="26" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5" stroke-dasharray="4 3"/><text x="815.0" y="495.4" font-size="15" fill="#20201e" text-anchor="middle" font-weight="500">subtask ?</text>
+<path d="M 682 458 L 756 490" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<path d="M 872 490 L 946 458" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="950" y="438" width="130" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="1015.0" y="463.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">synthesize</text>
+<rect x="560" y="560" width="130" height="40" rx="6" fill="#ffffff" stroke="#ddd5c6" stroke-width="1.5"/><text x="625.0" y="585.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">generator</text>
+<rect x="830" y="560" width="130" height="40" rx="6" fill="#ffffff" stroke="#e3a617" stroke-width="1.5"/><text x="895.0" y="585.76" font-size="16" fill="#20201e" text-anchor="middle" font-weight="500">evaluator</text>
+<path d="M 692 570 L 826 570" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<text x="759" y="562" font-size="15" fill="#68635d" text-anchor="middle" font-weight="600">draft</text>
+<path d="M 828 590 L 694 590" fill="none" stroke="#990000" stroke-width="2" marker-end="url(#arr)"/>
+<text x="759" y="610" font-size="15" fill="#990000" text-anchor="middle" font-weight="600">feedback</text>
+<path d="M 962 580 L 1040 580" fill="none" stroke="#4b0000" stroke-width="2" marker-end="url(#arr)"/>
+<text x="1001" y="571" font-size="15" fill="#68635d" text-anchor="middle" font-weight="600">passes</text>
+<text x="1046" y="585" font-size="16" fill="#20201e" text-anchor="start" font-weight="600">done</text>
+</svg>
