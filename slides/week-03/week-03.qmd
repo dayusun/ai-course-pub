@@ -47,7 +47,8 @@ title-slide-attributes:
   OpenCode on the course hub, then check what it did.
   - starting OpenCode, and how a coding agent works;
   - the files it reads: `AGENTS.md`, memory, plans, handoff notes; managing context;
-  - asking for work and checking it, with three controls: plan, approval, sandbox;
+  - writing a task, three controls on the agent (plan, approval, sandbox), and checking
+    the result;
   - skills, MCP, subagents, and shaping the harness with slash commands;
   - a reproducibility record of what the agent did.
 - What you do not finish carries into Week 4, which analyses the same kind of data.
@@ -929,7 +930,7 @@ know now, without opening any file.
 - A summary can be out of date: it may call finished work "not yet run", or list a step
   you refused as the next one. Check it against `git log` and `PLAN.md`.
 
-# 4 · Asking for work, and checking it
+# 4 · Tasks, controls and checks
 
 ## Writing a task for a coding agent
 
