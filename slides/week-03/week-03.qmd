@@ -161,7 +161,7 @@ linkage key that must never reach the model. All synthetic.
 | 4 | plan and run the merge, keep the key out, check the result | `glucose-study` |
 | 5–6 | turn the checks into a skill; connect an MCP server | `glucose-study` |
 | 7 | a reviewer subagent checks the summary step | `review-run` (a copy) |
-| 8–9 | slash commands and the record; a goal loop | `glucose-study`; `goal-run` (a copy) |
+| 8–9 | slash commands, `/goal`, and the record | `glucose-study` |
 
 - Each hands-on slide starts with a **Folder** line: where to be, and the command to get
   back there.
@@ -399,6 +399,7 @@ changes the configuration:
 | Approve everything | `opencode --auto` | `session.permissions: "autoaccept"` |
 | MCP servers, agents | `mcp`, `agent` | `mcp.servers`, `agents` |
 | Commands, plugins | `.opencode/commands/`, `.opencode/plugins/` | the same folders |
+| Keep working toward a goal | none | `/goal` (2.2.1 and later) |
 
 - A config file written for one version does not work in the other: check which one you
   run with `opencode --version`.
@@ -1989,15 +1990,15 @@ opencode -c
 ## Keeping an agent at work until it is done
 
 ::: {.where}
-**Folder** none · an overview, mostly Claude Code; nothing to type. The OpenCode exercise is *Running the loop on the merge functions*, four slides on.
+**Folder** none · an overview; nothing to type.
 :::
 
 :::: {.columns}
 ::: {.column width="55%"}
 - **Done when, with evidence:** "Done when `python -m unittest` passes; show the output."
 - **Persistence text:** "Keep working until everything the user asked for is done" ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5)); "keep going until the user's query is completely resolved" ([OpenAI](https://developers.openai.com/cookbook/examples/gpt-5/gpt-5_prompting_guide)).
-- **Stop hook:** exit code 2 sends Claude back to work. [`/goal`](https://code.claude.com/docs/en/goal) does the same with a model judging your condition. At most **8** forced continuations in a row.
-  OpenCode has neither; it uses the loop on the next slide.
+- **Stop hook:** exit code 2 sends Claude back to work. At most **8** forced continuations in a row.
+- **`/goal`:** a second model checks a condition after every turn (next slides).
 - **Split** the work into a pass/fail list, one item at a time.
 - **Review** the diff with a fresh subagent.
 :::
@@ -2017,6 +2018,91 @@ opencode -c
 [@lazy_anthropic_haiku55; @openai_gpt5guide; @claude_code_hooks; @lazy_claude_code_goal; @claude_code_best_practices]
 :::
 
+## Goal mode: how `/goal` works
+
+::: {.where}
+**Folder** none · an overview. The hub's OpenCode 1.19 has no `/goal`; Claude Code, Codex and OpenCode 2 do.
+:::
+
+:::: {.columns}
+::: {.column width="45%"}
+```text
+/goal <condition>
+   │
+   ▼
+the agent works one turn ◄──────────┐
+   │                                │
+   ▼                                │
+a reviewer reads the conversation   │
+   ├─ not yet: what is missing ─────┘
+   ├─ met: the goal clears, you get control
+   └─ blocked: it needs you, or cannot be done
+```
+:::
+::: {.column width="55%"}
+- You give a **condition**, not a task. Setting it starts the work; you do not prompt
+  each step.
+- After every turn a **reviewer** model judges the condition (Claude Code, OpenCode 2). Its "what is missing" becomes
+  the next instruction.
+- The reviewer **runs nothing**. It reads the transcript only: test output, command
+  results, file contents. OpenCode 2's reviewer prompt: "The assistant claiming the goal
+  is met is not evidence."
+- It **stops itself** when no progress is made: OpenCode 2 pauses after 3 rounds with no
+  tool use or the same complaint, and after 50 rounds.
+- It does **not** change permissions: unattended work still needs auto-approve.
+:::
+::::
+
+::: {.source-line}
+[@lazy_claude_code_goal; @opencode_v2_goal_source]
+:::
+
+## Writing a goal condition
+
+::: {.where}
+**Folder** none · an overview; the examples are for the glucose study.
+:::
+
+| Part | Example |
+|---|---|
+| **One measurable end state** | `merge.py` writes `tidy.csv`, one row per reading, from every file in `raw/` |
+| **How to prove it** | `python -m unittest` exits 0 and its output is shown |
+| **What must not change** | nothing in `raw/` or `tests/` is modified (`git diff --stat` shown) |
+| **A bound** | or stop after 15 turns |
+
+- Weak: `/goal clean the data`. The reviewer has nothing to check, so it decides on the
+  agent's own description.
+- The condition is one line of up to **4,000 characters**. For more, write the spec in a
+  file and point the goal at it: "every item in `PLAN.md` is ticked and …".
+- The reviewer reads only what is printed, so ask for the evidence in the condition.
+
+::: {.source-line}
+[@lazy_claude_code_goal; @codex_cli_commands]
+:::
+
+## `/goal` in three agents
+
+::: {.where}
+**Folder** none · an overview; nothing to type.
+:::
+
+| | Claude Code | Codex | OpenCode 2 (2.2.1 and later) |
+|---|---|---|---|
+| Set | `/goal <condition>` | `/goal <objective>` | `/goal <objective>` |
+| Control | `/goal` (status), `/goal clear` | `/goal edit`, `pause`, `resume`, `clear` | `/goal pause`, `resume`, `clear` |
+| Reviewer | a small fast model, after each turn | not documented | the session's model, after each turn |
+| Limits | stops after several turns with no tool use; your own "stop after N turns" | not documented; you pause or clear | 50 rounds; pauses after 3 stalled rounds |
+| Without the screen | `claude -p "/goal …"` | — | — |
+
+- **On the course hub** (OpenCode 1.19): no `/goal`. Put the four parts of the condition
+  in your prompt and add "keep working until this holds; show the evidence". Then check
+  the evidence yourself.
+- An agent that says "done" is reporting; a command that passes is evidence.
+
+::: {.source-line}
+[@lazy_claude_code_goal; @codex_cli_commands; @opencode_v2_goal_release]
+:::
+
 ## The Ralph loop
 
 :::: {.columns}
@@ -2025,12 +2111,12 @@ opencode -c
   his words the technique is "deterministically bad in an undeterministic world".
 - **The idea.** "In its purest form, Ralph is a Bash loop":
   `while :; do cat PROMPT.md | claude-code ; done`. The same prompt runs again and again,
-  each time as a **new session** with an empty context.
-- **Why it works.** Nothing is remembered between passes except the **files**: the plan,
-  a notes file, the git history. A fresh context never fills up or rots (Part 3).
-- **Huntley's rule:** "one item per loop". Each pass does one thing, checks it, commits, stops.
-- **What it adds here:** a **goal check**, a command that decides when to stop, and a limit
-  on the number of passes. Without them the loop runs forever.
+  each time as a **new session** with an empty context; only the files carry over.
+- **Before `/goal`** this was the way to keep an agent going.
+- **Its costs.** Every pass re-reads the plan and the code from scratch (Huntley calls it
+  "wasteful"); it needs a script and a test outside the agent; it suits only work cut
+  into small items, "one item per loop". Without a pass limit it never stops.
+- Where `/goal` exists, use `/goal`. A worked Ralph loop for OpenCode is in Backup.
 :::
 ::: {.column width="22%"}
 ![](images/ralph-wiggum.png){fig-alt="Ralph Wiggum, the cartoon boy from The Simpsons, standing and smiling." style="height:420px; width:auto; display:block; margin:0.6em auto 0;"}
@@ -2040,95 +2126,6 @@ opencode -c
 ::: {.source-line}
 [@huntley_ralph]. Image: Ralph Wiggum, *The Simpsons* © 20th Television, via [Wikipedia](https://en.wikipedia.org/wiki/File:Ralph_Wiggum.png) (fair use)
 :::
-
-## The loop in the goal-loop folder
-
-::: {.where}
-**Folder** `~/week-03/goal-loop` · read the files, run nothing yet: `cd ~/week-03/goal-loop && cat ralph.sh check.sh PROMPT.md`
-:::
-
-:::: {.columns}
-::: {.column width="52%"}
-```sh
-# ralph.sh: same prompt, fresh session, until the check passes
-while [ "$pass" -le "$max" ]; do
-  sh check.sh && exit 0
-  opencode run --auto "$(cat PROMPT.md)" < /dev/null
-  pass=$((pass + 1))
-done
-```
-
-```sh
-# check.sh (shortened): the goal, as a command
-git diff --quiet start -- tests || exit 1
-python3 -m pytest -q --noconftest tests
-```
-:::
-::: {.column width="48%"}
-- OpenCode has no `/goal`, so a shell script does the job: run, check, run again.
-- Four functions for the study's exports; the tests are written, and are the spec.
-- Each pass: read `PLAN.md` and `NOTES.md`, do the first open item, test, tick, commit,
-  stop. The files carry what a compaction summary carried in Part 3.
-- Done is decided by `check.sh`, not by the agent. A limit on passes, deny rules for
-  `--auto`, a commit per item.
-- On the course hub: done in 4 passes, 2.5 min, one commit per item. Asked to change a
-  test, the edit tool was denied; `sed` in the shell got through, and `check.sh` failed it.
-:::
-::::
-
-::: {.source-line}
-[@huntley_ralph; @lazy_claude_code_goal; @opencode_docs_cli]
-:::
-
-## The same loop in other agents
-
-::: {.where}
-**Folder** none · an overview; nothing to type.
-:::
-
-| | Next turn | Done when | Session |
-|---|---|---|---|
-| `ralph.sh` (any agent; OpenCode's only option) | a new `opencode run` | `check.sh` exits 0 | new each pass |
-| Claude Code `/goal` | after each turn | a small model judges the condition from the conversation | one, compacted |
-| Codex `/goal` | while the goal is set | the goal is met, or you pause or clear it | one |
-| Claude Code Stop hook | after each turn | your script exits 0 | one |
-
-- Claude Code's checker reads the conversation and runs nothing, so the condition should
-  name a command and its result: "`pytest -q tests` passes and `git diff start -- tests`
-  is empty, or stop after 10 turns."
-- An agent that says "done" is reporting; a command that passes is evidence.
-
-::: {.source-line}
-[@lazy_claude_code_goal; @codex_cli_commands; @huntley_ralph]
-:::
-
-## Running the loop on the merge functions {.hands-on}
-
-::: {.where}
-**Folder** `~/week-03/goal-run` · a **new** folder, made below from `goal-loop`; no OpenCode window, the script runs it.
-:::
-
-The merge again, as four small functions whose tests are already written. Set up and run:
-
-```bash
-cp -r ~/week-03/goal-loop ~/week-03/goal-run
-cd ~/week-03/goal-run
-git init && git add -A && git commit -m start && git tag start
-sh check.sh        # fails: nothing is implemented yet
-sh ralph.sh 6      # at most 6 passes, each a fresh opencode run --auto
-```
-
-It runs in this terminal for a few minutes; each pass prints `=== pass N of 6 ===`.
-When it stops:
-
-```bash
-git log --oneline          # one commit per item?
-cat NOTES.md               # what did each pass leave for the next?
-sh check.sh && git diff start -- tests    # passes, and the tests unchanged?
-```
-
-- Read `PROMPT.md`, `PLAN.md` and `opencode.json` first: what may the agent not do under
-  `--auto`?
 
 # 9 · A reproducibility record
 
@@ -2700,6 +2697,45 @@ inherited R script, and OpenCode is told the model holds only 24,000 tokens, so 
 
 ::: {.source-line}
 [@opencode_docs_config; @claude_code_context_window]
+:::
+
+## A Ralph loop for OpenCode
+
+::: {.where}
+**Folder** `~/week-03/goal-loop` · optional; read the files: `cd ~/week-03/goal-loop && cat ralph.sh check.sh PROMPT.md`
+:::
+
+:::: {.columns}
+::: {.column width="52%"}
+```sh
+# ralph.sh: same prompt, fresh session, until the check passes
+while [ "$pass" -le "$max" ]; do
+  sh check.sh && exit 0
+  opencode run --auto "$(cat PROMPT.md)" < /dev/null
+  pass=$((pass + 1))
+done
+```
+
+```sh
+# check.sh (shortened): the goal, as a command
+git diff --quiet start -- tests || exit 1
+python3 -m pytest -q --noconftest tests
+```
+:::
+::: {.column width="48%"}
+- For OpenCode 1, which has no `/goal`: run, check, run again. `sh ralph.sh 6` runs it.
+- Four functions for the study's exports; the tests are written, and are the spec.
+- Each pass: read `PLAN.md` and `NOTES.md`, do the first open item, test, tick, commit,
+  stop. The files carry what a compaction summary carried in Part 3.
+- Done is decided by `check.sh`, not by the agent. A limit on passes, deny rules for
+  `--auto`, a commit per item.
+- On the course hub: done in 4 passes, 2.5 min, one commit per item. Asked to change a
+  test, the edit tool was denied; `sed` in the shell got through, and `check.sh` failed it.
+:::
+::::
+
+::: {.source-line}
+[@huntley_ralph; @lazy_claude_code_goal; @opencode_docs_cli]
 :::
 
 ## References {.smaller .scrollable}
