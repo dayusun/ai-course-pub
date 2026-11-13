@@ -2019,6 +2019,8 @@ opencode -c
 
 ## The Ralph loop
 
+:::: {.columns}
+::: {.column width="78%"}
 - **Origin.** Geoffrey Huntley, July 2025, named after Ralph Wiggum of *The Simpsons*. In
   his words the technique is "deterministically bad in an undeterministic world".
 - **The idea.** "In its purest form, Ralph is a Bash loop":
@@ -2029,9 +2031,14 @@ opencode -c
 - **Huntley's rule:** "one item per loop". Each pass does one thing, checks it, commits, stops.
 - **What it adds here:** a **goal check**, a command that decides when to stop, and a limit
   on the number of passes. Without them the loop runs forever.
+:::
+::: {.column width="22%"}
+![](images/ralph-wiggum.png){fig-alt="Ralph Wiggum, the cartoon boy from The Simpsons, standing and smiling." style="height:420px; width:auto; display:block; margin:0.6em auto 0;"}
+:::
+::::
 
 ::: {.source-line}
-[@huntley_ralph]
+[@huntley_ralph]. Image: Ralph Wiggum, *The Simpsons* © 20th Television, via [Wikipedia](https://en.wikipedia.org/wiki/File:Ralph_Wiggum.png) (fair use)
 :::
 
 ## The loop in the goal-loop folder
