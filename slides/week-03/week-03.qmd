@@ -183,6 +183,27 @@ git config --global user.email "$JUPYTERHUB_USER@hub.local"   # so commits work
 - Without the two `git config` lines, the first `git commit` stops with "Author identity
   unknown".
 
+## The workspace
+
+A coding agent's **workspace** is the folder it is started in, its project folder. It sets:
+
+| What | In the workspace |
+|---|---|
+| What the agent reads and edits | files in this folder; outside it, the agent asks first or is blocked |
+| Its instructions | `AGENTS.md` and settings files in this folder |
+| Its history | the session list, and the git history used to undo changes |
+
+- Claude Code asks whether you trust a new folder before it starts; `--add-dir` adds a
+  second one. Codex's default sandbox, `workspace-write`, lets it edit only inside it.
+  In VS Code, File → Open Folder sets it.
+- One project = one folder = one git repository. Start the agent there, never in `~`.
+- On the course hub, "your workspace" also means your whole server (home folder, 2 GB of
+  memory) started from the hub page. A project folder sits inside it.
+
+::: {.source-line}
+[@claude_code_permission_modes; @codex_security; @opencode_docs_cli]
+:::
+
 ## Starting OpenCode
 
 ```bash
