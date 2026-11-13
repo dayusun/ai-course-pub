@@ -1988,11 +1988,16 @@ opencode -c
 
 ## Keeping an agent at work until it is done
 
+::: {.where}
+**Folder** none · an overview, mostly Claude Code; nothing to type. The OpenCode exercise is *Running the loop on the merge functions*, four slides on.
+:::
+
 :::: {.columns}
 ::: {.column width="55%"}
 - **Done when, with evidence:** "Done when `python -m unittest` passes; show the output."
 - **Persistence text:** "Keep working until everything the user asked for is done" ([Anthropic](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-haiku-5-5)); "keep going until the user's query is completely resolved" ([OpenAI](https://developers.openai.com/cookbook/examples/gpt-5/gpt-5_prompting_guide)).
 - **Stop hook:** exit code 2 sends Claude back to work. [`/goal`](https://code.claude.com/docs/en/goal) does the same with a model judging your condition. At most **8** forced continuations in a row.
+  OpenCode has neither; it uses the loop on the next slide.
 - **Split** the work into a pass/fail list, one item at a time.
 - **Review** the diff with a fresh subagent.
 :::
@@ -2012,7 +2017,28 @@ opencode -c
 [@lazy_anthropic_haiku55; @openai_gpt5guide; @claude_code_hooks; @lazy_claude_code_goal; @claude_code_best_practices]
 :::
 
-## A goal check and a Ralph loop
+## The Ralph loop
+
+- **Origin.** Geoffrey Huntley, July 2025, named after Ralph Wiggum of *The Simpsons*. In
+  his words the technique is "deterministically bad in an undeterministic world".
+- **The idea.** "In its purest form, Ralph is a Bash loop":
+  `while :; do cat PROMPT.md | claude-code ; done`. The same prompt runs again and again,
+  each time as a **new session** with an empty context.
+- **Why it works.** Nothing is remembered between passes except the **files**: the plan,
+  a notes file, the git history. A fresh context never fills up or rots (Part 3).
+- **Huntley's rule:** "one item per loop". Each pass does one thing, checks it, commits, stops.
+- **What it adds here:** a **goal check**, a command that decides when to stop, and a limit
+  on the number of passes. Without them the loop runs forever.
+
+::: {.source-line}
+[@huntley_ralph]
+:::
+
+## The loop in the goal-loop folder
+
+::: {.where}
+**Folder** `~/week-03/goal-loop` · read the files, run nothing yet: `cd ~/week-03/goal-loop && cat ralph.sh check.sh PROMPT.md`
+:::
 
 :::: {.columns}
 ::: {.column width="52%"}
@@ -2032,6 +2058,7 @@ python3 -m pytest -q --noconftest tests
 ```
 :::
 ::: {.column width="48%"}
+- OpenCode has no `/goal`, so a shell script does the job: run, check, run again.
 - Four functions for the study's exports; the tests are written, and are the spec.
 - Each pass: read `PLAN.md` and `NOTES.md`, do the first open item, test, tick, commit,
   stop. The files carry what a compaction summary carried in Part 3.
@@ -2048,9 +2075,13 @@ python3 -m pytest -q --noconftest tests
 
 ## The same loop in other agents
 
+::: {.where}
+**Folder** none · an overview; nothing to type.
+:::
+
 | | Next turn | Done when | Session |
 |---|---|---|---|
-| `ralph.sh` (any agent) | a new `opencode run` | `check.sh` exits 0 | new each pass |
+| `ralph.sh` (any agent; OpenCode's only option) | a new `opencode run` | `check.sh` exits 0 | new each pass |
 | Claude Code `/goal` | after each turn | a small model judges the condition from the conversation | one, compacted |
 | Codex `/goal` | while the goal is set | the goal is met, or you pause or clear it | one |
 | Claude Code Stop hook | after each turn | your script exits 0 | one |
@@ -2080,6 +2111,7 @@ sh check.sh        # fails: nothing is implemented yet
 sh ralph.sh 6      # at most 6 passes, each a fresh opencode run --auto
 ```
 
+It runs in this terminal for a few minutes; each pass prints `=== pass N of 6 ===`.
 When it stops:
 
 ```bash
