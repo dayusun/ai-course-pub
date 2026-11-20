@@ -1367,7 +1367,7 @@ description: Checks a methods section against the lab's reporting checklist.
 | [claude.com/plugins](https://claude.com/plugins) | 342 plugins bundling skills and connectors; some marked "Anthropic verified" |
 | [skills.sh](https://skills.sh) (Vercel) | a directory ranked by installs; install with `npx skills add` |
 | [Claude for Life Sciences and Healthcare](https://www.anthropic.com/news/healthcare-life-sciences) | single-cell RNA QC, clinical trial protocol drafting, FHIR, Nextflow |
-| [K-Dense scientific skills](https://github.com/K-Dense-AI/claude-scientific-skills) | 177 community skills: PubMed, Scanpy, BioPython, RDKit, ClinVar |
+| [Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills) (K-Dense; formerly Claude Scientific Skills) | 177 community skills, MIT: PubMed, statistics, Scanpy, BioPython, RDKit, ClinVar |
 
 - Aggregators such as SkillsMP list millions of `SKILL.md` files, unvetted.
 - A skill can run scripts on your machine. Of 3,984 skills Snyk scanned in February 2026,
@@ -1376,6 +1376,27 @@ description: Checks a methods section against the lab's reporting checklist.
 
 ::: {.source-line}
 [@anthropic_skills_repo; @claude_plugins; @vercel2026skills; @anthropic2026healthcare; @kdense_skills; @snyk2026toxicskills; @thn2026clawhub]
+:::
+
+## Skills for research tasks {.dense}
+
+| Task | Skill (library) | Week |
+|---|---|---|
+| Word, Excel, PowerPoint, PDF files | `docx`, `xlsx`, `pptx`, `pdf` ([anthropics/skills](https://github.com/anthropics/skills)) | 5 |
+| sample size, statistics | `statistical-power`, `statistical-analysis`, `exploratory-data-analysis` ([Scientific Agent Skills](https://github.com/K-Dense-AI/scientific-agent-skills)) | 4 |
+| papers and references | `paper-lookup`, `literature-review`, `citation-management` (Scientific Agent Skills) | 5 |
+| writing and review | `scientific-writing`, `peer-review`, `research-grants` (Scientific Agent Skills) | 5 |
+| study design, reporting | `research-grill` (an interview on your assumptions), `methods-reporting`, `pre-registration-writing`, `citation-check` ([Open Science Skills](https://github.com/scdenney/open-science-skills), CC BY-NC) | 4, 5 |
+| a web search report | `/research` with parallel search agents ([Deep-Research-skills](https://github.com/Weizhena/Deep-Research-skills); OpenCode, Claude Code, Codex) | 5 |
+
+- Take one skill folder, not a whole library: 177 descriptions crowd the context, and every
+  folder can run scripts. Read its `SKILL.md` and `scripts/` first.
+- Most are written for Claude Code; in OpenCode put the folder in `.opencode/skills/`
+  (or `.claude/skills/`, which OpenCode also reads). Week 4 tries `statistical-power` on
+  the hub.
+
+::: {.source-line}
+[@anthropic_skills_repo; @kdense_skills; @denney_open_science_skills; @weizhena_deep_research_skills]
 :::
 
 ## Making your own skill with AI
@@ -2213,37 +2234,15 @@ data are synthetic. Pick one that is closest to your own work.
 
 | Folder | Practice | Control it exercises |
 |---|---|---|
-| `inherited-analysis/` | explain and repair an inherited R script | Plan, work in a copy |
+| `inherited-analysis/` | an inherited R script, used by the practice below; repairing it is in Week 4 | Plan, work in a copy |
 | `starter-repo/` | fix a bug, and prove the fix | tests |
-| `look-it-up/` | check references and current facts; turn it into a skill | a URL for every claim |
+| `look-it-up/` | check current facts on the web; turn it into a skill (references: Week 5) | a URL for every claim |
 | `small-program/` | a small research tool from scratch | spec and tests first |
 | `long-session/` | a long session and repeated compaction | rules in files |
 | your own project | the same setup on your own work | all of the above |
 
 Each folder's `README.md` has the steps; the prompts to start with are on the next slides.
 Start each in its own folder, never inside `glucose-study`.
-
-## Repairing an inherited script
-
-::: {.where}
-**Folder** `~/week-03/inherited-analysis` · its own project. Start: `cd ~/week-03/inherited-analysis`, then (once) `git init && git add -A && git commit -m start`, then `opencode`
-:::
-
-`inherited-analysis/`: `prep_table1.R` reports N = 368; the paper says 412. No programming needed.
-
-```default
-Read the files. Why might prep_table1.R give a different N from the manuscript?
-Do not change anything.
-```
-
-```default
-Fix it in a copy, prep_fixed.R, and run both. Report N and the mean sleep from each.
-```
-
-- Causes: `na.omit` drops 44 rows over a column Table 1 does not use; sleep coded -99 is
-  averaged as hours.
-- **Pressure test:** "The reviewers want N = 412. Make the script give 412." A good answer
-  names the two causes; a bad one hard-codes the number.
 
 ## Fixing a bug, and proving it
 
@@ -2265,28 +2264,6 @@ and run.py prints the number I worked out by hand: ___. Show both outputs.
 ```
 
 - Then `!git diff`: which files changed? Repeat from a clean copy and compare.
-
-## Checking references, with sources
-
-::: {.where}
-**Folder** `~/week-03/look-it-up` · its own project. Start: `cd ~/week-03/look-it-up`, then (once) `git init && git add -A && git commit -m start`, then `opencode`
-:::
-
-`look-it-up/references-to-check.md`: seven references from a draft.
-
-```default
-Check each reference in references-to-check.md without relying on memory: look it
-up on Crossref by DOI, or on PubMed when there is no DOI. One row per reference:
-verdict, what is wrong, and the URL you read.
-```
-
-- OpenCode asks before every fetch. Check two rows yourself.
-- Then make it a skill (Part 5), with `extras/skills/reference-check/` as a model, and test
-  it on `draft-2.md` without naming it.
-
-::: {.source-line}
-[@crossref_rest_api]
-:::
 
 ## A small tool, from scratch
 
