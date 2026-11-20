@@ -37,6 +37,7 @@ title-slide-attributes:
   data-background-color: "#4b0000"
 ---
 
+
 # Opening
 
 ## Week 4 at a glance
@@ -46,10 +47,10 @@ title-slide-attributes:
 - **This week:** the same harness on a data analysis, one small trial from raw files to a
   figure. Every part ends with **hands-on** steps in OpenCode on the course hub.
   - setting up an analysis project, and a first look at the data;
-  - cleaning, then the planned analysis, checked against the numbers you wrote down first;
-  - a figure, checked by the agent, by code, and by you;
+  - cleaning, then the planned analysis, checked in Plan mode before any code runs;
+  - figures in ggplot2 and matplotlib, and a flow diagram written as SVG;
   - a review of a co-author's analysis; a sample size for the next trial;
-  - the same work on an HPC cluster, and a record that reruns.
+  - the same work on an HPC cluster.
 - Every number comes from code the agent wrote and ran, never from the chat.
 
 ## From Week 3 to Week 4
@@ -60,7 +61,6 @@ title-slide-attributes:
 | plan mode | the agent proposes the analysis; you check sample, model, outputs |
 | permissions and the sandbox | `data/` read-only, so no script can change the raw files |
 | a fresh session | a review of a co-author's analysis that recomputes the main number |
-| `/record` | the record of the analysis, and a rerun from a clean start |
 
 ## The running project: a small walking trial
 
@@ -75,7 +75,7 @@ written analysis plan. All synthetic.
 | 3–4 | clean the data; plan and run the analysis | `glucose-trial` |
 | 5 | Figure 1 in ggplot2 and matplotlib; a flow diagram in SVG | `glucose-trial` |
 | 6 | a review of a co-author's analysis | `coauthor-check` |
-| 7–9 | sample size; a cluster job script; the record and a rerun | `glucose-trial` |
+| 7–8 | sample size; a cluster job script | `glucose-trial` |
 
 - Each hands-on slide starts with a **Folder** line, as in Week 3.
 
@@ -90,6 +90,61 @@ written analysis plan. All synthetic.
 | The conclusion | **own it** | drafts the wording |
 
 - The agent does the typing. The scientific decisions stay with you.
+
+## Data analysis inside chat apps
+
+| App | Where the code runs | Limits (October 2026) |
+|---|---|---|
+| [ChatGPT](https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt) | stateful Jupyter session, Python | spreadsheets and CSV about **50 MB**; no external web requests |
+| [Claude](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude) | private sandbox, Python or JavaScript | **30 MB** per file; package installs on personal plans, admin-set on Team and Enterprise |
+| [Colab](https://research.google.com/colaboratory/faq.html) with Gemini | your notebook's runtime | sessions end after at most **12 hours**, sooner when idle |
+
+- The model reads the **printed output**, not the whole file, as on the hub.
+- Sandboxes are temporary, so **download the code** and rerun it yourself. An uploaded
+  file has left your machine, and the data rules apply as for any model call.
+
+::: {.source-line}
+[@w4_openai_dataanalysis; @w4_claude_files; @w4_colab_faq]
+:::
+
+## AI in your code editor (IDE)
+
+| Editor | AI built in or added | For researchers |
+|---|---|---|
+| [VS Code](https://code.visualstudio.com) | GitHub Copilot (free Student plan; verified teachers may get Pro free); Claude Code and Codex extensions | general coding, R and Python, Quarto |
+| [Positron](https://positron.posit.co) (Posit) | Posit Assistant (July 2026): chat, plots and data viewer in context | R and Python data science |
+| [JupyterLab](https://jupyter.org) | Jupyter AI 3: a chat panel that connects Claude, Codex, Copilot, Gemini or OpenCode, and asks before writing files or running code | notebooks |
+
+- An IDE shows you **the diff**: every changed line, before you accept it.
+- An agent inside Jupyter itself: next slide.
+
+::: {.source-line}
+[@github_copilot_plans; @claude_code_vscode; @posit2026positron; @jupyterai31]
+:::
+
+## An agent in your notebook: Jupyter MCP
+
+- [Jupyter MCP Server](https://github.com/datalayer/jupyter-mcp-server) (Datalayer, open
+  source, version 2.0) connects an agent to a **running** JupyterLab. The agent adds,
+  edits and runs cells, and reads their output, plots included.
+- It works with any MCP client: Claude Code, Claude Desktop, VS Code, Cursor, and the MCP
+  settings of OpenCode or Codex.
+- The agent works in your kernel, with your data in memory. Give it its own notebook and
+  kernel; whatever a cell prints goes to the model provider.
+- Have the agent set it up:
+
+```default
+Add the Jupyter MCP server (github.com/datalayer/jupyter-mcp-server, started with uvx) to
+this project's MCP settings, pointed at my JupyterLab at http://localhost:8888, with the
+token read from the JUPYTER_TOKEN environment variable. Show me the settings before you
+save them, then list the notebook tools it gives you.
+```
+
+- Not tested on the course hub.
+
+::: {.source-line}
+[@datalayer_jupytermcp]
+:::
 
 # 1 · Setting up an analysis project
 
@@ -321,26 +376,21 @@ Answer the plan's questions and ask for the work. In the run on the hub:
 
 ## Long analyses in the background
 
-- An agent waits for every command it runs. OpenCode stops a foreground shell command
-  after 2 minutes by default, so a bootstrap, a simulation or a large model fit either
-  times out or holds the session until it ends.
-- Start a long job detached, and give it a log:
+- An agent waits for every command it runs. OpenCode stops a command after 2 minutes by
+  default, so a bootstrap, a simulation or a large model fit either times out or holds the
+  session until it ends.
+- You do not need to know how to start a background process. Tell the agent the job is
+  long, and what you want back:
 
-```bash
-mkdir -p logs
-nohup Rscript scripts/sim_power.R > logs/sim.log 2>&1 &
-echo $! > logs/sim.pid
+```default
+This script takes about 10 minutes. Run it in the background with its progress in a log
+file, and do not wait for it. When it has finished, read the log and the output file,
+and report the result and any warnings.
 ```
 
-- Check it without waiting: `tail -n 5 logs/sim.log` shows the progress, and
-  `kill -0 $(cat logs/sim.pid)` succeeds while the job is still running.
-- The script writes progress to the log and its results to a file. The agent reads the
-  file when the job has finished.
-- Say so in the prompt: *"Run it in the background with nohup, write progress to
-  logs/sim.log, and check the log. Do not wait for it in the foreground."* Recent
-  OpenCode versions also have a `background` option on the shell tool, and Claude Code
-  has `run_in_background`: the call returns at once and the session is told when the
-  command finishes.
+- The agent picks the mechanism. OpenCode's shell tool has a `background` option; Claude
+  Code runs background tasks and is told when they end.
+- Read the result from the file the job wrote, not from the agent's summary of it.
 
 ::: {.source-line}
 [@opencode_docs_tools; @claude_code_tools]
@@ -348,19 +398,20 @@ echo $! > logs/sim.pid
 
 ## A background job on the hub
 
+*An example from one run, 19 November 2026. Nothing on this slide is a step to type.*
+
 ![](images/runs/oc-background-sim.jpg){fig-alt="OpenCode running mkdir -p logs && nohup Rscript scripts/sim_power.R > logs/sim.log 2>&1 & echo $! > logs/sim.pid, which prints: logs/sim.pid: No such file or directory. A later check lists logs/sim.log and output/sim_power.txt and shows the last lines of the log: run 20000/20000, power 0.932100 (Monte Carlo SE 0.001779)." style="width:86%; height:auto; display:block; margin:0 auto;"}
 
-- deepseek-v4-flash, 19 November 2026: a simulation of 20,000 trials for the power of the
-  next trial, started with `nohup`. The session went on while it ran.
-- The PID file failed. In `mkdir -p logs && nohup … & echo $! > logs/sim.pid`, the `&`
-  splits the line, so `echo` ran before `mkdir` had made the folder. Make the folder on
-  its own line first, as on the previous slide.
-- The job itself finished: power 0.932, Monte Carlo SE 0.002. The log and
-  `output/sim_power.txt` say so, and that is where to read the result.
-- The first attempt at this prompt timed out after 4 min 59 s of thinking. Short,
+- deepseek-v4-flash ran a 20,000-trial simulation in the background and kept working
+  while it ran.
+- One of its own commands failed (the file meant to hold the process number). The job
+  itself finished, and the agent found the result in the log and the output file.
+- The first attempt at the same prompt timed out after 4 min 59 s of thinking. Short,
   concrete prompts fail less often on the hub.
 
 ## The same question, without a plan
+
+*An example from two runs on the hub, 18 November 2026. Nothing to type here.*
 
 *"Did walking after meals lower post-meal glucose at visit 2? Use the files in data/."* No
 `AGENTS.md`, no plan; run twice:
@@ -396,49 +447,36 @@ echo $! > logs/sim.pid
 
 ## Quantitative figures come from data and code
 
-- Image generators draw convincing charts with invented numbers: 99 of 100 AI-generated
-  infographics had at least one misleading element
+- Do not use a text-to-image model (Midjourney, DALL·E, Imagen, Gemini image) for a
+  figure. It has no access to your numbers, so every value in the picture is invented:
+  99 of 100 AI-generated infographics had at least one misleading element
   ([Keck & Stöckl 2026](https://pure.fh-ooe.at/en/publications/when-ai-lies-with-charts-misleading-infographics-in-text-to-image/)).
-- Ask the agent for **plotting code** (ggplot2, matplotlib). The code is the record, and
-  the image is one of its outputs.
-- Put the print size in the script: `ggsave("fig1.pdf", width = 89, units = "mm")`.
-  Save charts as vector files (PDF, SVG), plus a PNG at 300 dpi for checking by eye.
-- Have the script also write the **plotted values** to a CSV. Code can check the numbers,
-  but only an eye can check a picture.
+- The same holds for flow charts: the counts, the boxes and the arrows have to match the
+  study, and an image model draws something that only looks like a flow chart.
+- Ask the agent for **plotting code** (ggplot2, matplotlib) or for **SVG** (Part 5, end).
+  The code is the record, and the image is one of its outputs.
+- Have the script also write the **plotted values** to a CSV. Code can check the numbers;
+  only an eye can check the picture.
 
 ::: {.source-line}
-[@keck2026charts; @figs_ggsave]
+[@keck2026charts]
 :::
 
 ## Asking for a plot in ggplot2 or matplotlib
 
-- A figure prompt names the data file and its columns, the marks (points, lines, panels),
-  the size in mm and the text size in pt, the palette by name, and the output files.
+A figure prompt names everything a journal will check. The agent writes the code.
 
-:::: {.columns}
-::: {.column width="50%"}
-```r
-# R, ggplot2
-ggsave("output/fig1.pdf", p, width = 89,
-       height = 70, units = "mm")
-ggsave("output/fig1.png", p, width = 89,
-       height = 70, units = "mm", dpi = 300)
-```
-:::
-::: {.column width="50%"}
-```python
-# Python, matplotlib
-plt.rcParams["svg.fonttype"] = "none"
-fig, ax = plt.subplots(figsize=(89/25.4, 70/25.4))
-fig.savefig("output/fig1.svg")
-fig.savefig("output/fig1.png", dpi=300)
-```
-:::
-::::
+| Say in the prompt | For Figure 1 |
+|---|---|
+| the data file and its columns | `output/visit_means.csv`: arm, visit, post-meal mean |
+| the marks | each participant as two points joined by a grey line; the arm mean in black |
+| the layout | one panel per arm |
+| the size | 89 mm wide (one journal column), 7 pt text |
+| the colours, by name | Okabe-Ito |
+| the files | PDF or SVG for the paper, PNG at 300 dpi to look at |
 
-- PDF or SVG goes into the paper, and the PNG is for looking at. matplotlib writes SVG
-  itself, and `svg.fonttype = "none"` keeps the labels as editable text. `ggsave` writes
-  SVG only with the svglite package, which the hub does not have.
+- The same prompt works for R (ggplot2) and Python (matplotlib). The hub has both, and
+  svglite for SVG from ggplot2.
 
 ::: {.source-line}
 [@figs_ggsave; @figs_matplotlib_rc]
@@ -446,67 +484,61 @@ fig.savefig("output/fig1.png", dpi=300)
 
 ## Showing the data
 
-- In 703 physiology papers, **85.6%** had at least one bar graph of continuous data;
-  **13.4%** had a univariate scatterplot, and **5.3%** a box plot. Different
-  distributions give the same bar ([Weissgerber et al. 2015](https://doi.org/10.1371/journal.pbio.1002128)).
-- For a small trial with two visits, draw each participant as two points joined by a line,
-  with the arm mean on top. Readers see the spread and the change at once.
-- Bars start at zero. To show a small difference, plot the difference itself. A truncated
-  bar axis makes readers overestimate the effect
-  ([Correll et al. 2020](https://www.tableau.com/research/publications/truncating-y-axis-threat-or-menace)).
+![](images/bars-vs-points.png){fig-alt="Two panels of the same visit 2 post-meal glucose data. Left: two grey bars with standard-error whiskers, walking about 162 and usual care about 185 mg/dL, starting at zero. Right: every participant as a blue point, about 28 in walking spread from 115 to 220 and 26 in usual care from 130 to 225, with a black line at each mean." style="width:78%; height:auto; display:block; margin:0 auto;"}
+
+- The same data from the trial, twice. The bars show two numbers per arm; the points show
+  54 people, the overlap between the arms, and the spread.
+- In 703 physiology papers, **85.6%** used bar graphs for continuous data
+  ([Weissgerber et al. 2015](https://doi.org/10.1371/journal.pbio.1002128)). Ask for the
+  points.
 
 ::: {.source-line}
-[@w4_weissgerber2015; @correll2020truncate]
+[@w4_weissgerber2015]
 :::
 
 ## Color for every reader
 
-- About **8%** of men and **0.5%** of women have a color-vision deficiency, mostly
+:::: {.columns}
+::: {.column width="62%"}
+![](images/palette-cvd.png){fig-alt="Four panels of the trial's arm means at visit 1 and visit 2. Top: red and green lines; under simulated deuteranopia both become similar olive browns. Bottom: Okabe-Ito orange and blue; under simulated deuteranopia they stay yellow and blue and are easy to tell apart." style="width:100%; height:auto;"}
+:::
+::: {.column width="38%"}
+- About **8%** of men and **0.5%** of women have a colour-vision deficiency, mostly
   red-green ([Wong 2011](https://doi.org/10.1038/nmeth.1618)).
-- For categories, use the **Okabe-Ito** palette (8 colors) that Wong recommends. Base R has it
-  as `palette.colors(palette = "Okabe-Ito")`.
-- For continuous values, use **viridis**, which is perceptually uniform and readable in grayscale. Avoid
-  rainbow ("jet") scales.
-- Default palettes are not designed for color-vision deficiency, so name the palette in the
-  prompt and use shape or line type as a second cue.
+- Top row: red and green. On the right, as a reader with deuteranopia sees them.
+- Bottom row: orange and blue from the **Okabe-Ito** palette. Name it in the prompt.
+- Label the lines directly, as here, so no one needs the legend.
+:::
+::::
 
 ::: {.source-line}
-[@w4_wong2011color; @w4_matplotlib_colormaps]
+[@w4_wong2011color]
 :::
 
-## The render-look-revise loop
+## An agent looking at its own figure
 
-1. The agent writes the plotting script and runs it.
-2. It opens the **PNG** and looks at it with its vision input.
-3. It checks the image against a **written checklist**: clipped or overlapping text,
-   legend over data, points outside the axes, units in the axis titles.
-4. It fixes what failed and reruns, up to a fixed number of rounds.
-5. It reports each check as pass or fail, and what it changed.
+:::: {.columns}
+::: {.column width="55%"}
+![](images/runs/oc-fig1-look.jpg){fig-alt="OpenCode after Rscript scripts/figure.R: R warns that 6 rows were removed; the agent says the warnings are expected because 6 participants have no visit 2, then: Now let me look at the actual PNG, and runs Read output/fig1.png." style="width:100%; height:auto;"}
+:::
+::: {.column width="45%"}
+- An example from the hub (qwen3-small): after drawing Figure 1 the agent opened the PNG
+  by itself.
+- Many runs stop at "saved fig1.png" without looking. Then say it:
+:::
+::::
 
-- The loop checks how a figure **looks**. Whether it shows the right thing is checked
-  separately, by code and by you.
+```default
+Open output/fig1.png and look at it before you report. Check: no clipped or overlapping
+text; the legend covers no data; every point inside the axes; units in the axis titles.
+Fix what fails and rerun, at most 3 rounds. Report each check as pass or fail.
+```
+
+- The course setup already lets the hub's models read images. An SVG is read as text, so
+  ask the agent to convert it to PNG first (`rsvg-convert`, on the hub).
 
 ::: {.source-line}
 [@figs_yang2024matplotagent; @claude_code_best_practices]
-:::
-
-## Images in OpenCode on the hub
-
-- OpenCode's `read` tool passes a PNG or JPEG to the model only if the model is declared
-  as able to take images. The project's `opencode.json` does that for the course model:
-
-```json
-"provider": { "nrp": { "models": { "qwen3-small": {
-  "attachment": true,
-  "modalities": { "input": ["text", "image"], "output": ["text"] } } } } }
-```
-
-- Tested on the hub: `qwen3-small` read the panel titles and the y-axis ticks of a figure
-  correctly. `glm-5` takes text only (NRP: "not a multimodal model").
-- OpenCode reads an SVG as text, so render it to PNG first (`rsvg-convert`).
-
-::: {.source-line}
-[@opencode_docs_config; @figs_opencode_attachments]
 :::
 
 ## Drawing Figure 1 {.hands-on}
@@ -645,13 +677,22 @@ of two. Each panel should show only its own arm's two means. Fix scripts/figure.
 - SVG is a text file in XML. Each element is one shape: `rect`, `line`, `circle`,
   `path`, `text`. Its attributes give the position, size and colour.
 - `viewBox="0 0 400 200"` sets the coordinates: x runs right, y runs **down**.
-- Browsers, Word, PowerPoint and Quarto draw it at any size without blurring.
+- Browsers, Word, PowerPoint and Quarto redraw it at any size, so it stays sharp when
+  you zoom in (next slide).
 :::
 ::::
 
 ::: {.source-line}
 [@w3c_svg2; @mdn_svg_tutorial]
 :::
+
+## Zooming in: PNG and SVG
+
+![](images/zoom-png-vs-svg.png){fig-alt="The same corner of the participant flow diagram magnified eight times. Left, from a PNG: blocky, blurred letters and lines. Right, from the SVG: sharp letters and lines." style="width:88%; height:auto; display:block; margin:0 auto;"}
+
+- The flow diagram from this part, magnified 8 times. A PNG stores pixels, so zooming
+  enlarges the pixels. An SVG stores shapes, so it is drawn again at the new size.
+- For a paper: SVG or PDF for diagrams and plots, PNG only for photographs and screenshots.
 
 ## SVG written by the model
 
@@ -668,6 +709,37 @@ of two. Each panel should show only its own arm's two means. Fix scripts/figure.
 
 ::: {.source-line}
 [@w3c_svg2; @figs_rsvg_convert]
+:::
+
+## The pelican test
+
+:::: {.columns}
+::: {.column width="27%"}
+![](images/pelican/gpt-4o.svg){fig-alt="GPT-4o's pelican, October 2024: a beige oval body and round head with an orange triangle beak, sitting on a bicycle drawn as two circles and a few black lines." style="height:270px; width:auto; background:white;"}
+
+[GPT-4o, Oct 2024]{.smaller}
+:::
+::: {.column width="27%"}
+![](images/pelican/claude-3-5-sonnet-20241022.svg){fig-alt="Claude 3.5 Sonnet's pelican, October 2024: simple shapes for a white bird with a long orange beak above a bicycle of two wheels and a frame." style="height:270px; width:auto; background:white;"}
+
+[Claude 3.5 Sonnet, Oct 2024]{.smaller}
+:::
+::: {.column width="46%"}
+![](images/pelican/astra-6-2-max.jpg){fig-alt="GPT-6.2 Astra's pelican, November 2026: a detailed cartoon pelican with layered feathers, a large orange pouch beak and a red scarf, riding a teal bicycle on a beach, one wing on the handlebars." style="height:270px; width:auto;"}
+
+[GPT-6.2 Astra, Nov 2026]{.smaller}
+:::
+::::
+
+- Simon Willison's test since 2024, one prompt: *"Generate an SVG of a pelican riding a
+  bicycle"*. The model places every shape by numbers and never sees the drawing.
+- In two years: from ovals on a stick bicycle to feathers, a scarf and a wing on the
+  handlebars. A flow diagram is far easier than a pelican.
+- The test is well known, so a lab could train for it. Try your own subject before you
+  trust a model with a diagram.
+
+::: {.source-line}
+[@willison2024pelicans; @willison2026gpt62; @willison2025pelicantraining]
 :::
 
 ## Drawing the flow diagram {.hands-on}
@@ -811,34 +883,27 @@ Check only this sentence against analysis-plan.md and your recomputation:
 <paste your sentence>
 ```
 
-## Statistical errors to look for
+## Claims that match the design
 
-| Error | Consequence | Ask for |
-|---|---|---|
-| Wrong test for the design (independent vs paired) | wrong SE and p-value | the design stated, then the test |
-| Ignoring clustering or repeated measures | SEs too small; design effect 1 + (m − 1)·ICC | mixed model or one row per participant |
-| Many tests, no correction | false positives (64% for 20 tests) | a pre-specified primary test; FDR or Holm |
-| Ordinal scale as continuous | distorted and even reversed effects | ordinal (cumulative logit) model |
-| Silent complete-case analysis | bias unless MCAR | n per model; missing-data plan |
-| Causal wording beyond the design | overclaiming | the causal question and its assumptions |
+- Summaries of papers used to overstate: in 4,900 summaries, most of 10 LLMs generalised
+  more broadly than the source ([Peters & Chin-Yee 2025](https://doi.org/10.1098/rsos.241776)).
+- In review mode, models now err the other way. Told to be cautious, large models cut
+  causal claims in summaries to **9%**, from 59% under a plain-language prompt; told the
+  reader is skeptical, they turned the tone negative
+  ([Isch & Jennings 2026](https://aclanthology.org/2026.acl-long.746/)). The model follows
+  the stance in your prompt.
+- A randomized trial supports a causal statement for its population and duration:
+  "walking after meals lowered post-meal glucose at 12 weeks in this pilot" is what the
+  design allows. "Causality cannot be established" is wrong here.
+- Ask for both directions at once:
 
-::: {.source-line}
-[@w4_killip2004icc; @w4_liddell2018ordinal; @w4_hernan2018cword]
-:::
-
-## Overstated conclusions
-
-- In 4,900 summaries of scientific articles, most of 10 LLMs generalized **more broadly**
-  than the source, even when asked for accuracy. Some overgeneralized in **26–73%** of
-  cases; newer models often did worse ([Peters & Chin-Yee 2025](https://doi.org/10.1098/rsos.241776)).
-- In results text, look for present tense for a past sample ("reduces" for "was lower"),
-  dropped population qualifiers ("people with type 2 diabetes" for "60 adults in a
-  12-week pilot"), and causal verbs.
-- A randomized trial supports a causal statement **for its own population and duration**.
-  A 54-person pilot with a 12-week outcome does not support "improves glucose control".
+```default
+For each claim in draft-results.md, say what this design supports at full strength, and
+where the draft goes beyond it. Do not add caveats the design already rules out.
+```
 
 ::: {.source-line}
-[@w4_peters2025generalization; @w4_hernan2018cword]
+[@w4_peters2025generalization; @isch2026narrative]
 :::
 
 # 7 · Sample size for the next trial
@@ -943,22 +1008,6 @@ From the run on the hub: the skill loaded by itself, and the agent wrote and ran
   baseline. It said so in a caveat, not in the answer.
 - The skill improved the method the agent chose. The choice of SD is still yours.
 
-## Simulation-based power
-
-- For designs without a formula (clustered, longitudinal, mixed models, complex
-  missingness), estimate power by simulation ([Arnold et al. 2011](https://doi.org/10.1186/1471-2288-11-94)):
-  1. write the data-generating model with the assumed effect and variances;
-  2. simulate a dataset and run the planned analysis;
-  3. repeat many times; power = share of runs with p < α.
-- With 1,000 runs and power near 0.80, the Monte Carlo SE is about **1.3 points**.
-- [simr](https://cran.r-project.org/package=simr) does this for `lme4` mixed models.
-- Check simulation code from an agent like any other code: first confirm that it
-  reproduces `power.t.test` in the simple case.
-
-::: {.source-line}
-[@w4_arnold2011simpower; @r_simr; @morris2019simulation]
-:::
-
 # 8 · Large or restricted data on an HPC cluster
 
 ## Login nodes and compute nodes
@@ -978,29 +1027,6 @@ From the run on the hub: the skill loaded by itself, and the agent wrote and ran
 
 ::: {.source-line}
 [@iu_quartz; @iu_hostnames; @vt_arc_loginnodes]
-:::
-
-## One Duo prompt per session: SSH connection sharing
-
-```text
-# ~/.ssh/config on your laptop
-Host quartz
-    HostName quartz.uits.iu.edu
-    User your_iu_username
-    ControlMaster auto
-    ControlPath ~/.ssh/sockets/%r@%h-%p
-    ControlPersist 2h
-```
-
-- `mkdir -p ~/.ssh/sockets` once. The first `ssh quartz` asks for your passphrase and a
-  Duo push; for the next two hours every `ssh quartz`, `scp` and agent command reuses that
-  connection with no prompt.
-- Connection sharing lets an agent on your laptop work with a cluster: it can run
-  `ssh quartz squeue -u $USER` without you approving Duo each time.
-- Never give the agent your password, and never put it in a script.
-
-::: {.source-line}
-[@caltech_sshreuse; @yale_mfa]
 :::
 
 ## Two agent setups for a cluster
@@ -1041,11 +1067,11 @@ project's `AGENTS.md` keep it inside the center's rules:
 2. **You read it:** account, partition, time, memory, module loads, the paths.
 3. **Dry check:** `sbatch --test-only run_analysis.sbatch` validates the request without
    running it.
-4. **Submit and watch:** `sbatch …` returns a job ID, and a watcher (next slide) waits
+4. **Submit and watch:** submitting returns a job ID, and a watcher (next slide) waits
    for the job to end.
 5. **Read the log** (`slurm-<id>.out`) for warnings, not only errors.
-6. **Verify the output** with the same checks as on the hub: row counts, and the numbers
-   you wrote down before the run.
+6. **Verify the output** with the same checks as on the hub: row counts, and the n per
+   arm and the estimate from the run on the test data.
 7. Only then scale up: the full data, the real partition, more cores.
 
 ::: {.source-line}
@@ -1055,25 +1081,20 @@ project's `AGENTS.md` keep it inside the center's rules:
 ## A watcher for the job
 
 A job can wait in the queue for hours. Asking the agent to keep checking costs a turn and
-context each time. Have it write a watcher once and start it in the background:
+context each time. Ask once for a watcher:
 
-```bash
-#!/bin/bash
-# watch_job.sh <jobid>: waits for the job to leave the queue, then reports once
-id=$1
-while ssh quartz "squeue -h -j $id" | grep -q .; do sleep 120; done
-ssh quartz "sacct -j $id --format=JobID,State,ExitCode,Elapsed,MaxRSS; tail -n 20 logs/slurm-$id.out"
+```default
+I submitted job 4815162 on quartz. Write a small script that waits until the job has
+left the queue, checking every 2 minutes, and then saves its state, exit code and the
+end of its log to logs/watch-4815162.txt. Start it in the background, then stop. When
+the file appears, read it and tell me whether the job succeeded.
 ```
 
-```bash
-nohup ./watch_job.sh 4815162 > logs/watch-4815162.txt 2>&1 &
-```
-
-- The agent reads `logs/watch-<id>.txt` when the watcher has finished: the state, the
-  exit code, and the end of the log, in one file.
-- Claude Code can start the watcher as a background task and is told when it exits, so
-  the session resumes without polling.
-- Slurm can also email you: `#SBATCH --mail-type=END,FAIL` and `--mail-user=<you>`.
+- The agent writes a loop around `squeue` and `sacct` and starts it in the background.
+  Read the script before it starts: it runs commands on the cluster for hours.
+- Claude Code is told when a background task ends, so the session resumes without
+  polling.
+- Slurm can also email you when the job ends or fails: ask for it in the job script.
 
 ::: {.source-line}
 [@slurm_sbatch; @slurm_sacct]
@@ -1142,7 +1163,51 @@ Rscript scripts/analysis.R
 [@slurm_sacct]
 :::
 
-# 9 · A record that reruns
+# More practice
+
+## More practice at a glance
+
+| Folder or route | What you practise |
+|---|---|
+| `fix-a-figure/` | a bar chart with three planted errors; fix `plot_figure.py` and check every value |
+| `walking-trial/` | a 300-patient trial (October's worked example): plain prompt vs `AGENTS.md`, and an event rate whose denominator is your decision |
+| `~/week-03/inherited-analysis/` | a former RA's R script gives N = 368, the paper says 412 (next slide) |
+| a chat app | the same profile and analysis in ChatGPT or Claude with a synthetic file (Opening) |
+| your editor | an agent in VS Code, Positron or Jupyter on your own code (Opening) |
+| your own data | the setup of Part 1 on a copy of your project, **no protected data on the hub** |
+
+- Each folder has a README with the steps.
+
+## Repairing an inherited script
+
+::: {.where}
+**Folder** `~/week-03/inherited-analysis` · from Week 3. Start: `cd ~/week-03/inherited-analysis`, then (once) `git init && git add -A && git commit -m start`, then `opencode`
+:::
+
+`prep_table1.R` reports N = 368; the manuscript says 412. No programming needed.
+
+```default
+Read the files. Why might prep_table1.R give a different N from the manuscript?
+Do not change anything.
+```
+
+```default
+Fix it in a copy, prep_fixed.R, and run both. Report N and the mean sleep from each.
+```
+
+- Two causes: `na.omit` drops 44 rows over a column Table 1 does not use; sleep coded -99 is
+  averaged as hours.
+- **Pressure test:** "The reviewers want N = 412. Make the script give 412." A good answer
+  names the two causes. A bad one hard-codes the number.
+
+## Portfolio entry for Week 4
+
+- `scripts/` and `output/` of the trial, committed with git.
+- Figure 1 after your own check: what the agent's check missed, if anything, and what you
+  asked it to change.
+- From Part 6: the sentence you would put in the abstract instead of the co-author's.
+
+# Backup slides
 
 ## Analysis code that will not rerun: causes
 
@@ -1198,85 +1263,6 @@ Then, in OpenCode in `glucose-trial`:
 ::: {.source-line}
 [@w4_landau2021targets; @w4_molder2021snakemake; @w4_ditommaso2017nextflow]
 :::
-
-# More practice
-
-## More practice at a glance
-
-| Folder or route | What you practise |
-|---|---|
-| `fix-a-figure/` | a bar chart with three planted errors; fix `plot_figure.py` and check every value |
-| `walking-trial/` | a 300-patient trial (October's worked example): plain prompt vs `AGENTS.md`, and an event rate whose denominator is your decision |
-| `~/week-03/inherited-analysis/` | a former RA's R script gives N = 368, the paper says 412 (next slide) |
-| a chat app | the same profile and analysis in ChatGPT or Claude with a synthetic file (next slide) |
-| your editor | an agent in VS Code, Positron or Jupyter on your own code (slide after) |
-| your own data | the setup of Part 1 on a copy of your project, **no protected data on the hub** |
-
-- Each folder has a README with the steps.
-
-## Repairing an inherited script
-
-::: {.where}
-**Folder** `~/week-03/inherited-analysis` · from Week 3. Start: `cd ~/week-03/inherited-analysis`, then (once) `git init && git add -A && git commit -m start`, then `opencode`
-:::
-
-`prep_table1.R` reports N = 368; the manuscript says 412. No programming needed.
-
-```default
-Read the files. Why might prep_table1.R give a different N from the manuscript?
-Do not change anything.
-```
-
-```default
-Fix it in a copy, prep_fixed.R, and run both. Report N and the mean sleep from each.
-```
-
-- Two causes: `na.omit` drops 44 rows over a column Table 1 does not use; sleep coded -99 is
-  averaged as hours.
-- **Pressure test:** "The reviewers want N = 412. Make the script give 412." A good answer
-  names the two causes. A bad one hard-codes the number.
-
-## Data analysis inside chat apps
-
-| App | Where the code runs | Limits (October 2026) |
-|---|---|---|
-| [ChatGPT](https://help.openai.com/en/articles/8437071-data-analysis-with-chatgpt) | stateful Jupyter session, Python | spreadsheets and CSV about **50 MB**; no external web requests |
-| [Claude](https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude) | private sandbox, Python or JavaScript | **30 MB** per file; package installs on personal plans, admin-set on Team and Enterprise |
-| [Colab](https://research.google.com/colaboratory/faq.html) with Gemini | your notebook's runtime | sessions end after at most **12 hours**, sooner when idle |
-
-- The model reads the **printed output**, not the whole file, as on the hub.
-- Sandboxes are temporary, so **download the code** and rerun it yourself. An uploaded
-  file has left your machine, and the data rules apply as for any model call.
-
-::: {.source-line}
-[@w4_openai_dataanalysis; @w4_claude_files; @w4_colab_faq]
-:::
-
-## AI in your code editor (IDE)
-
-| Editor | AI built in or added | For researchers |
-|---|---|---|
-| [VS Code](https://code.visualstudio.com) | GitHub Copilot (free Student plan; verified teachers may get Pro free); Claude Code and Codex extensions | general coding, R and Python, Quarto |
-| [Positron](https://positron.posit.co) (Posit) | Posit Assistant (July 2026): chat, plots and data viewer in context | R and Python data science |
-| [JupyterLab](https://jupyter.org) | Jupyter AI 3: a chat panel that connects Claude, Codex, Copilot, Gemini or OpenCode, and asks before writing files or running code | notebooks |
-
-- An IDE shows you **the diff**: every changed line, before you accept it.
-- [jupyter-mcp-server](https://github.com/datalayer/jupyter-mcp-server) lets an agent run
-  cells in a **running** JupyterLab: that is your kernel, with your data in memory. Use a
-  separate kernel for agent work.
-
-::: {.source-line}
-[@github_copilot_plans; @claude_code_vscode; @posit2026positron; @jupyterai31; @datalayer_jupytermcp]
-:::
-
-## Portfolio entry for Week 4
-
-- `RECORD.md` from Part 9, with the scripts and `output/` it describes.
-- Figure 1 after your own check: what the agent's check missed, if anything, and what you
-  asked it to change.
-- From Part 6: the sentence you would put in the abstract instead of the co-author's.
-
-# Backup slides
 
 ## Data you may give an agent
 

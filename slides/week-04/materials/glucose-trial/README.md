@@ -53,11 +53,9 @@ Check: `wc -l output/visit_means.csv` gives 115 (114 rows and the header).
 3. Before you read the estimate, check the n analysed against Part 3: 28 walking, 26 usual
    (six people have no visit 2).
 
-A long analysis can run in the background, so the agent's session does not hang:
-
-    mkdir -p logs && nohup Rscript scripts/analysis.R > logs/analysis.log 2>&1 &
-    echo $! > logs/analysis.pid
-    tail logs/analysis.log
+For a long analysis, tell the agent: "This takes a while. Run it in the background with
+its progress in a log file, do not wait for it, and report the result from the log and
+the output file when it has finished."
 
 ## Part 5: figures
 
@@ -67,11 +65,13 @@ A long analysis can run in the background, so the agent's session does not hang:
 - The participant flow diagram as hand-written SVG (`output/flow.svg`): the prompt is on
   "Drawing the flow diagram". Check every count against the data yourself.
 
-## Parts 7-9
+## Parts 7-8
 
 - Sample size: the prompt on "Planning the next trial"; check one n with statsmodels.
 - Cluster job script: the prompt on "Drafting a job script"; read it line by line.
-- Rerun from a clean start, then `/record`:
+
+## Optional: rerun from a clean start, then `/record`
+
 
       mv output output-old
       Rscript scripts/clean.R && Rscript scripts/analysis.R && Rscript scripts/figure.R
