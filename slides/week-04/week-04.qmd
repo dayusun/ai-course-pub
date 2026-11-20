@@ -464,33 +464,49 @@ and report the result and any warnings.
 
 ## Asking for a plot in ggplot2 or matplotlib
 
-A figure prompt names everything a journal will check. The agent writes the code.
+:::: {.columns}
+::: {.column width="56%"}
+```default
+Write scripts/compare_v2.R: from output/visit_means.csv,
+visit 2 post-meal mean by arm. Each participant as a
+point, the arm mean as a black horizontal line. Arms
+labelled Walking and Usual care, with n under each.
+89 mm wide, 70 mm high, 7 pt text, no title (it goes in
+the caption), units in the y-axis title, Okabe-Ito
+colours. Save output/compare_v2.pdf and
+output/compare_v2.png (300 dpi). Run it and report the
+n and mean per arm.
+```
 
-| Say in the prompt | For Figure 1 |
-|---|---|
-| the data file and its columns | `output/visit_means.csv`: arm, visit, post-meal mean |
-| the marks | each participant as two points joined by a grey line; the arm mean in black |
-| the layout | one panel per arm |
-| the size | 89 mm wide (one journal column), 7 pt text |
-| the colours, by name | Okabe-Ito |
-| the files | PDF or SVG for the paper, PNG at 300 dpi to look at |
-
-- The same prompt works for R (ggplot2) and Python (matplotlib). The hub has both, and
-  svglite for SVG from ggplot2.
-
-::: {.source-line}
-[@figs_ggsave; @figs_matplotlib_rc]
+- The prompt names the data, the marks, the labels, the size, the colours and the files.
+  The agent writes the code.
+- On the hub, deepseek-v4-flash, 20 November 2026, 6.5 min: every item in the prompt is
+  in the figure. It reported n 28 and 26, means 162.5 and 185.2.
 :::
+::: {.column width="44%"}
+![](images/runs/specified-prompt-figure.png){fig-alt="The agent's figure from the specified prompt: visit 2 post-meal glucose, Walking (n = 28) in blue points and Usual care (n = 26) in orange points, each with a black horizontal line at the mean, about 162 and 185 mg/dL; no title; y axis titled Visit 2 mean post-meal glucose (mg/dL)." style="width:100%; height:auto;"}
+
+:::
+::::
 
 ## Showing the data
 
-![](images/bars-vs-points.png){fig-alt="Two panels of the same visit 2 post-meal glucose data. Left: two grey bars with standard-error whiskers, walking about 162 and usual care about 185 mg/dL, starting at zero. Right: every participant as a blue point, about 28 in walking spread from 115 to 220 and 26 in usual care from 130 to 225, with a black line at each mean." style="width:78%; height:auto; display:block; margin:0 auto;"}
-
-- The same data from the trial, twice. The bars show two numbers per arm; the points show
-  54 people, the overlap between the arms, and the spread.
+:::: {.columns}
+::: {.column width="52%"}
+![](images/runs/plain-prompt-figure.png){fig-alt="The agent's figure from a one-line prompt: boxplots of visit 2 post-meal glucose for usual (n = 26) and walking (n = 28) with every participant as a grey point and a white diamond at each mean, a title and subtitle inside the figure, and lowercase arm names." style="width:100%; height:auto;"}
+:::
+::: {.column width="48%"}
+- One line on the hub: *"Make a figure that compares post-meal glucose at visit 2
+  between the two arms, from output/visit_means.csv."* deepseek-v4-flash, 2 min 22 s.
+- It showed every participant, not a bar of means, put the n under each arm, and said
+  why 6 people were missing.
+- Not ready for a paper: 7 × 5 inches, a title inside the figure, the arm codes
+  `usual` and `walking` as labels. The previous slide's prompt fixes all three.
 - In 703 physiology papers, **85.6%** used bar graphs for continuous data
-  ([Weissgerber et al. 2015](https://doi.org/10.1371/journal.pbio.1002128)). Ask for the
-  points.
+  ([Weissgerber et al. 2015](https://doi.org/10.1371/journal.pbio.1002128)). Check what
+  your agent draws.
+:::
+::::
 
 ::: {.source-line}
 [@w4_weissgerber2015]
@@ -534,8 +550,8 @@ text; the legend covers no data; every point inside the axes; units in the axis 
 Fix what fails and rerun, at most 3 rounds. Report each check as pass or fail.
 ```
 
-- The course setup already lets the hub's models read images. An SVG is read as text, so
-  ask the agent to convert it to PNG first (`rsvg-convert`, on the hub).
+- On the hub only qwen3-small takes images. deepseek-v4-flash opens the PNG and says it
+  cannot see it: then you look. An SVG is read as text; ask for a PNG first (`rsvg-convert`).
 
 ::: {.source-line}
 [@figs_yang2024matplotagent; @claude_code_best_practices]
