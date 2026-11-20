@@ -1,0 +1,1 @@
+Follow AGENTS.md. Report the mean change in systolic BP from baseline to week 24 in each arm, and the cardiovascular event rate in each arm.

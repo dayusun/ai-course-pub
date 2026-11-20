@@ -1,0 +1,92 @@
+
+> build · qwen3-small
+
+$ ls; head -5 cohort.csv; wc -l cohort.csv
+cohort.csv
+data-dictionary.csv
+id,arm,age,sbp_baseline,sbp_week24,followed_up,cv_event
+S001,walking,74,150,134,1,0
+S002,usual care,56,144,143,1,0
+S003,walking,50,157,145,1,0
+S004,usual care,66,153,-9,0,-9
+301 cohort.csv
+
+→ Read data-dictionary.csv
+
+$ python3 -c "import pandas; print(pandas.__version__)" 2>&1; python3 --version
+3.0.6
+Python 3.13.16
+
+$ python3 << 'EOF'
+import pandas as pd
+df = pd.read_csv('cohort.csv')
+print(df['arm'].value_counts(dropna=False))
+print("followed_up:", df['followed_up'].value_counts(dropna=False).to_dict())
+print("sbp_baseline -9 count:", (df['sbp_baseline']==-9).sum())
+print("sbp_week24 -9 count:", (df['sbp_week24']==-9).sum())
+print("cv_event -9 count:", (df['cv_event']==-9).sum())
+print("week24 present but not followed_up:", ((df['sbp_week24']!=-9) & (df['followed_up']==0)).sum())
+print("followed_up but no week24:", ((df['sbp_week24']==-9) & (df['followed_up']==1)).sum())
+print(df.dtypes)
+EOF
+arm
+walking       150
+usual care    150
+Name: count, dtype: int64
+followed_up: {1: 256, 0: 44}
+sbp_baseline -9 count: 0
+sbp_week24 -9 count: 44
+cv_event -9 count: 44
+week24 present but not followed_up: 0
+followed_up but no week24: 0
+id                str
+arm               str
+age             int64
+sbp_baseline    int64
+sbp_week24      int64
+followed_up     int64
+cv_event        int64
+dtype: object
+
+Data is clean: 150 per arm; the 44 missing week-24 BP values and 44 missing `cv_event` values coincide with `followed_up=0`. Now computing and saving.
+$ python3 << 'EOF'
+import json, os
+import pandas as pd
+
+df = pd.read_csv('cohort.csv')
+df['change'] = df['sbp_week24'] - df['sbp_baseline']
+
+results = {}
+for arm, key in [('walking', 'walking'), ('usual care', 'usual')]:
+    sub = df[df['arm'] == arm]
+    ch = sub[sub['sbp_week24'] != -9]['change']
+    ev = sub[sub['cv_event'] != -9]['cv_event']
+    results[f'mean_change_{key}'] = round(float(ch.mean()), 4)
+    results[f'n_change_{key}'] = int(len(ch))
+    results[f'events_{key}'] = int(ev.sum())
+    results[f'denom_{key}'] = int(len(ev))
+
+os.makedirs('output', exist_ok=True)
+with open('output/results.json', 'w') as f:
+    json.dump(results, f, indent=2)
+print(json.dumps(results, indent=2))
+EOF
+{
+  "mean_change_walking": -9.9065,
+  "n_change_walking": 139,
+  "events_walking": 7,
+  "denom_walking": 139,
+  "mean_change_usual": -5.0,
+  "n_change_usual": 117,
+  "events_usual": 14,
+  "denom_usual": 117
+}
+
+Saved to `output/results.json`. Summary:
+
+| Arm | Mean SBP change (n) | CV events (rate) |
+|---|---|---|
+| Walking | −9.91 mmHg (n=139) | 7/139 (5.0%) |
+| Usual care | −5.00 mmHg (n=117) | 14/117 (12.0%) |
+
+Excluded the 44 participants with missing week-24 data (sentinel −9, matching `followed_up=0`) from both the BP change and event-rate analyses.

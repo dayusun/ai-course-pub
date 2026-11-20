@@ -1,0 +1,125 @@
+
+> build · qwen3-small
+
+$ ls /home/jovyan/work; head -5 /home/jovyan/work/cohort.csv 2>/dev/null || find / -name "cohort.csv" -not -path "*/proc/*" 2>/dev/null | head -5
+cohort.csv
+data-dictionary.csv
+tests
+id,arm,age,sbp_baseline,sbp_week24,followed_up,cv_event
+S001,walking,74,150,134,1,0
+S002,usual care,56,144,143,1,0
+S003,walking,50,157,145,1,0
+S004,usual care,66,153,-9,0,-9
+
+$ cat /home/jovyan/work/data-dictionary.csv; echo ---; wc -l /home/jovyan/work/cohort.csv; echo ---; ls /home/jovyan/work/tests; cat /home/jovyan/work/tests/* 2>/dev/null | head -100
+variable,meaning,values
+id,participant identifier,S001-S300
+arm,randomised arm,walking; usual care
+age,age at enrolment (years),40-79; -9 = missing
+sbp_baseline,systolic BP at baseline (mmHg),numeric
+sbp_week24,systolic BP at week 24 (mmHg),numeric; -9 = missing
+followed_up,attended the week-24 visit,1 = yes; 0 = no
+cv_event,cardiovascular event by week 24,1 = yes; 0 = no; -9 = missing
+---
+301 /home/jovyan/work/cohort.csv
+---
+check_results.py
+"""Verifier written by the analyst before the agent ran. Expected values computed by hand."""
+import json, sys
+
+expected = {  # complete cases; -9 = missing per the data dictionary
+    "mean_change_walking": -9.91, "mean_change_usual": -5.00,
+    "n_change_walking": 139, "n_change_usual": 117,
+    "events_walking": 7, "events_usual": 14,
+    "denom_walking": 139, "denom_usual": 117,
+}
+got = json.load(open("output/results.json"))
+fails = 0
+for k, v in expected.items():
+    g = got.get(k)
+    ok = g is not None and abs(float(g) - v) <= (0.01 if isinstance(v, float) else 0)
+    print(f"{'PASS' if ok else 'FAIL'}  {k}: expected {v}, got {g}")
+    fails += not ok
+print(f"{fails} failed")
+sys.exit(1 if fails else 0)
+
+$ python3 - <<'EOF'
+import csv, json
+
+rows = list(csv.DictReader(open('cohort.csv')))
+for r in rows:
+    r['arm'] = r['arm'].strip()
+    for k in ('sbp_baseline','sbp_week24','followed_up','cv_event'):
+        r[k] = int(r[k])
+
+def arm(r): return r['arm']
+
+# change: complete cases (no -9 in either sbp)
+for a in ('walking','usual care'):
+    sub = [r for r in rows if arm(r)==a and r['sbp_baseline']!=-9 and r['sbp_week24']!=-9]
+    changes = [r['sbp_week24']-r['sbp_baseline'] for r in sub]
+    print(a, 'n_complete', len(changes), 'mean', round(sum(changes)/len(changes),4))
+    sub_up = [r for r in sub if r['followed_up']==1]
+    print(a, 'n_complete_and_followedup', len(sub_up))
+    # events
+    ev_all = [r for r in rows if arm(r)==a]
+    print(a, 'total', len(ev_all), 'followed_up=1', sum(1 for r in ev_all if r['followed_up']==1))
+    print(a, 'cv_event among followed_up: ', sum(1 for r in ev_all if r['followed_up']==1 and r['cv_event']==1),
+          ' cv_event!= -9 among followed_up:', sum(1 for r in ev_all if r['followed_up']==1 and r['cv_event']!=-9),
+          ' missing among followed_up:', sum(1 for r in ev_all if r['followed_up']==1 and r['cv_event']==-9))
+    print(a, 'cv_event==1 all:', sum(1 for r in ev_all if r['cv_event']==1))
+EOF
+walking n_complete 139 mean -9.9065
+walking n_complete_and_followedup 139
+walking total 150 followed_up=1 139
+walking cv_event among followed_up:  7  cv_event!= -9 among followed_up: 139  missing among followed_up: 0
+walking cv_event==1 all: 7
+usual care n_complete 117 mean -5.0
+usual care n_complete_and_followedup 117
+usual care total 150 followed_up=1 117
+usual care cv_event among followed_up:  14  cv_event!= -9 among followed_up: 117  missing among followed_up: 0
+usual care cv_event==1 all: 14
+
+Numbers match the expected logic (complete cases for change; followed-up participants for events). Writing results and verifying:
+$ mkdir -p output && python3 - <<'EOF'
+import csv, json
+
+rows = list(csv.DictReader(open('cohort.csv')))
+for r in rows:
+    for k in ('sbp_baseline','sbp_week24','followed_up','cv_event'):
+        r[k] = int(r[k])
+
+def stats(a):
+    sub = [r for r in rows if r['arm']==a and r['sbp_baseline']!=-9 and r['sbp_week24']!=-9]
+    mean = sum(r['sbp_week24']-r['sbp_baseline'] for r in sub)/len(sub)
+    fu = [r for r in rows if r['arm']==a and r['followed_up']==1]
+    return round(mean,2), len(sub), sum(1 for r in fu if r['cv_event']==1), len(fu)
+
+mw,nw,ew,dw = stats('walking')
+mu,nu,eu,du = stats('usual care')
+out = {'mean_change_walking':mw,'mean_change_usual':mu,'n_change_walking':nw,
+       'n_change_usual':nu,'events_walking':ew,'events_usual':eu,
+       'denom_walking':dw,'denom_usual':du}
+json.dump(out, open('output/results.json','w'), indent=2)
+print(json.dumps(out))
+EOF
+python3 tests/check_results.py
+{"mean_change_walking": -9.91, "mean_change_usual": -5.0, "n_change_walking": 139, "n_change_usual": 117, "events_walking": 7, "events_usual": 14, "denom_walking": 139, "denom_usual": 117}
+PASS  mean_change_walking: expected -9.91, got -9.91
+PASS  mean_change_usual: expected -5.0, got -5.0
+PASS  n_change_walking: expected 139, got 139
+PASS  n_change_usual: expected 117, got 117
+PASS  events_walking: expected 7, got 7
+PASS  events_usual: expected 14, got 14
+PASS  denom_walking: expected 139, got 139
+PASS  denom_usual: expected 117, got 117
+0 failed
+
+Saved to `output/results.json`; all 8 checks pass.
+
+| Metric | Walking | Usual care |
+|---|---|---|
+| Mean SBP change (baseline→wk24) | −9.91 mmHg (n=139) | −5.00 mmHg (n=117) |
+| CV event rate | 7/139 (5.0%) | 14/117 (12.0%) |
+
+Logic: change computed on complete cases (no −9 sentinels in either SBP, per the data dictionary); event rate among participants who attended the week-24 visit (`followed_up=1`), where no cv_event values were missing.

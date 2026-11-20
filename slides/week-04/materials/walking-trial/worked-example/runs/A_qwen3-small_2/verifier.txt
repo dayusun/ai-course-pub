@@ -1,0 +1,9 @@
+PASS  mean_change_walking: expected -9.91, got -9.91
+PASS  mean_change_usual: expected -5.0, got -5.0
+PASS  n_change_walking: expected 139, got 139
+PASS  n_change_usual: expected 117, got 117
+PASS  events_walking: expected 7, got 7
+PASS  events_usual: expected 14, got 14
+PASS  denom_walking: expected 139, got 139
+PASS  denom_usual: expected 117, got 117
+0 failed

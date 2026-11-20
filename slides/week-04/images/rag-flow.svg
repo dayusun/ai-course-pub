@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="560" viewBox="0 0 1500 560" font-family="Aptos, &apos;Segoe UI&apos;, Arial, sans-serif" role="img" aria-label="Retrieval-augmented generation: question, search the collection, top passages, model answers, answer with citations; failure points: missed, stale or irrelevant, overloaded, unsupported claim">
+<defs><marker id="arr" viewBox="0 0 12 12" refX="8" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M 2 1.5 L 9 6 L 2 10.5 Z" fill="#4b0000"/></marker></defs>
+<rect width="1500" height="560" fill="#f7f3ea"/>
+<rect x="30.0" y="110.0" width="250.0" height="120.0" rx="12" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2.5"/>
+<text x="155.0" y="162.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Question</text>
+<text x="155.0" y="198.0" font-size="17" fill="#68635d" text-anchor="middle" font-weight="400">“What dose did trial X use?”</text>
+<line x1="284.0" y1="170.0" x2="318.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="322.0" y="110.0" width="250.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="447.0" y="162.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Search</text>
+<text x="447.0" y="198.0" font-size="17" fill="#68635d" text-anchor="middle" font-weight="400">papers, protocols, notes</text>
+<line x1="576.0" y1="170.0" x2="610.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="614.0" y="110.0" width="250.0" height="120.0" rx="12" fill="#fbefd6" stroke="#e3a617" stroke-width="2.5"/>
+<text x="739.0" y="162.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Top passages</text>
+<text x="739.0" y="198.0" font-size="17" fill="#68635d" text-anchor="middle" font-weight="400">3–10 chunks, with source IDs</text>
+<line x1="868.0" y1="170.0" x2="902.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="906.0" y="110.0" width="250.0" height="120.0" rx="12" fill="#fffdf8" stroke="#4b0000" stroke-width="2.5"/>
+<text x="1031.0" y="162.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Model answers</text>
+<text x="1031.0" y="198.0" font-size="17" fill="#68635d" text-anchor="middle" font-weight="400">from the passages in context</text>
+<line x1="1160.0" y1="170.0" x2="1194.0" y2="170.0" stroke="#4b0000" stroke-width="2.5" marker-end="url(#arr)"/>
+<rect x="1198.0" y="110.0" width="250.0" height="120.0" rx="12" fill="#fffdf8" stroke="#ddd5c6" stroke-width="2.5"/>
+<text x="1323.0" y="162.0" font-size="23" fill="#4b0000" text-anchor="middle" font-weight="700">Cited answer</text>
+<text x="1323.0" y="198.0" font-size="17" fill="#68635d" text-anchor="middle" font-weight="400">check it against the source</text>
+<text x="30.0" y="60.0" font-size="24" fill="#20201e" text-anchor="start" font-weight="600">Retrieval-augmented generation: the model reads fetched passages for this call only</text>
+<path d="M 447.0 236 L 447.0 410" stroke="#990000" stroke-width="2.5" stroke-dasharray="6 5"/>
+<rect x="277.0" y="414.0" width="340.0" height="92.0" rx="10" fill="#fffdf8" stroke="#990000" stroke-width="2"/>
+<text x="447.0" y="450.0" font-size="21" fill="#990000" text-anchor="middle" font-weight="700">Missed</text>
+<text x="447.0" y="482.0" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">the decisive passage was never retrieved</text>
+<path d="M 739.0 236 L 739.0 300" stroke="#990000" stroke-width="2.5" stroke-dasharray="6 5"/>
+<rect x="569.0" y="304.0" width="340.0" height="92.0" rx="10" fill="#fffdf8" stroke="#990000" stroke-width="2"/>
+<text x="739.0" y="340.0" font-size="21" fill="#990000" text-anchor="middle" font-weight="700">Stale or irrelevant</text>
+<text x="739.0" y="372.0" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">an old version, or a near-miss topic</text>
+<path d="M 1031.0 236 L 1031.0 410" stroke="#990000" stroke-width="2.5" stroke-dasharray="6 5"/>
+<rect x="861.0" y="414.0" width="340.0" height="92.0" rx="10" fill="#fffdf8" stroke="#990000" stroke-width="2"/>
+<text x="1031.0" y="450.0" font-size="21" fill="#990000" text-anchor="middle" font-weight="700">Overloaded</text>
+<text x="1031.0" y="482.0" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">too many passages; the key one gets ignored</text>
+<path d="M 1323.0 236 L 1323.0 300" stroke="#990000" stroke-width="2.5" stroke-dasharray="6 5"/>
+<rect x="1130.0" y="304.0" width="340.0" height="92.0" rx="10" fill="#fffdf8" stroke="#990000" stroke-width="2"/>
+<text x="1300.0" y="340.0" font-size="21" fill="#990000" text-anchor="middle" font-weight="700">Unsupported claim</text>
+<text x="1300.0" y="372.0" font-size="16" fill="#68635d" text-anchor="middle" font-weight="400">the answer says more than the passage</text>
+<text x="30.0" y="540.0" font-size="19" fill="#68635d" text-anchor="start" font-weight="400">The model's weights do not change: next call, it knows nothing of these papers.</text>
+</svg>

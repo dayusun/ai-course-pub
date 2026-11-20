@@ -1,0 +1,8 @@
+variable,meaning,values
+id,participant identifier,S001-S300
+arm,randomised arm,walking; usual care
+age,age at enrolment (years),40-79; -9 = missing
+sbp_baseline,systolic BP at baseline (mmHg),numeric
+sbp_week24,systolic BP at week 24 (mmHg),numeric; -9 = missing
+followed_up,attended the week-24 visit,1 = yes; 0 = no
+cv_event,cardiovascular event by week 24,1 = yes; 0 = no; -9 = missing

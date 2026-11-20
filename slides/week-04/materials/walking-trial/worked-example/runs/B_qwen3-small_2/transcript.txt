@@ -1,0 +1,88 @@
+
+> build · qwen3-small
+
+→ Read .
+→ Read data-dictionary.csv
+
+$ head -1 cohort.csv && wc -l cohort.csv
+id,arm,age,sbp_baseline,sbp_week24,followed_up,cv_event
+301 cohort.csv
+
+← Write scripts/validate.py
+Wrote file successfully.
+
+Data dictionary read. Now writing the validation script per the workflow.
+← Write scripts/validate.py
+Wrote file successfully.
+
+← Edit scripts/validate.py
+Index: /home/jovyan/work/scripts/validate.py
+===================================================================
+--- /home/jovyan/work/scripts/validate.py
++++ /home/jovyan/work/scripts/validate.py
+@@ -40,9 +40,10 @@
+ if row["arm"] not in valid_arms:
+     problems["arm"] += 1
+ if row["age"] not in valid_age:
+     problems["age"] += 1
+-if not is_numeric(row["sbp_baseline"]):
++# dictionary lists no missing code for sbp_baseline
++if not is_numeric(row["sbp_baseline"]) or row["sbp_baseline"] == MISSING:
+     problems["sbp_baseline"] += 1
+ if not is_numeric(row["sbp_week24"]):
+     problems["sbp_week24"] += 1
+ if row["followed_up"] not in valid_followed_up:
+
+
+← Write scripts/analysis.py
+Wrote file successfully.
+
+Now the analysis script.
+$ rm -rf output && mkdir -p output && python3 scripts/validate.py && python3 scripts/analysis.py
+rows: 300
+id: 0 problems
+arm: 0 problems
+age: 0 problems
+sbp_baseline: 0 problems
+sbp_week24: 0 problems
+followed_up: 0 problems
+cv_event: 0 problems
+total problems: 0
+Mean change in systolic BP, baseline to week 24 (mmHg)
+  walking: mean change = -9.91 mmHg, n = 139 (participants with non-missing baseline and week-24 BP)
+  usual care: mean change = -5.00 mmHg, n = 117 (participants with non-missing baseline and week-24 BP)
+Cardiovascular event rate by week 24
+  walking: 7/139 = 0.0504 (denominator = participants with non-missing cv_event)
+  usual care: 14/117 = 0.1197 (denominator = participants with non-missing cv_event)
+Saved output/results.json
+
+Running both scripts from a clean start:
+Both scripts ran cleanly from a fresh `output/` directory. Verbatim output:
+
+```
+rows: 300
+id: 0 problems
+arm: 0 problems
+age: 0 problems
+sbp_baseline: 0 problems
+sbp_week24: 0 problems
+followed_up: 0 problems
+cv_event: 0 problems
+total problems: 0
+Mean change in systolic BP, baseline to week 24 (mmHg)
+  walking: mean change = -9.91 mmHg, n = 139 (participants with non-missing baseline and week-24 BP)
+  usual care: mean change = -5.00 mmHg, n = 117 (participants with non-missing baseline and week-24 BP)
+Cardiovascular event rate by week 24
+  walking: 7/139 = 0.0504 (denominator = participants with non-missing cv_event)
+  usual care: 14/117 = 0.1197 (denominator = participants with non-missing cv_event)
+Saved output/results.json
+```
+
+**Results** (missing codes −9 recoded as missing, per `data-dictionary.csv`):
+
+| Arm | Mean SBP change (wk 24 − baseline) | n | CV event rate |
+|---|---|---|---|
+| walking | −9.91 mmHg | 139 | 7/139 = 5.0% |
+| usual care | −5.00 mmHg | 117 | 14/117 = 12.0% |
+
+The walking arm showed a larger SBP reduction (−9.9 vs −5.0 mmHg) and roughly half the CV event rate of usual care. Results saved to `output/results.json`.

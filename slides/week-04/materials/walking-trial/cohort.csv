@@ -1,0 +1,301 @@
+id,arm,age,sbp_baseline,sbp_week24,followed_up,cv_event
+S001,walking,74,150,134,1,0
+S002,usual care,56,144,143,1,0
+S003,walking,50,157,145,1,0
+S004,usual care,66,153,-9,0,-9
+S005,walking,71,155,136,1,0
+S006,usual care,78,144,144,1,0
+S007,walking,56,126,115,1,0
+S008,usual care,70,149,131,1,0
+S009,walking,49,148,136,1,0
+S010,usual care,46,152,137,1,0
+S011,walking,57,140,134,1,0
+S012,usual care,74,159,153,1,0
+S013,walking,42,166,160,1,0
+S014,usual care,40,170,162,1,0
+S015,walking,45,157,152,1,0
+S016,usual care,51,143,143,1,0
+S017,walking,51,157,153,1,0
+S018,usual care,58,157,155,1,0
+S019,walking,60,166,159,1,0
+S020,usual care,60,152,-9,0,-9
+S021,walking,74,142,129,1,0
+S022,usual care,47,137,-9,0,-9
+S023,walking,54,156,154,1,0
+S024,usual care,77,152,135,1,0
+S025,walking,41,143,138,1,0
+S026,usual care,76,152,149,1,0
+S027,walking,42,135,125,1,0
+S028,usual care,55,157,142,1,0
+S029,walking,50,132,117,1,0
+S030,usual care,48,156,152,1,1
+S031,walking,45,128,120,1,0
+S032,usual care,43,154,155,1,0
+S033,walking,71,156,153,1,0
+S034,usual care,47,149,-9,0,-9
+S035,walking,42,155,147,1,1
+S036,usual care,69,146,146,1,0
+S037,walking,79,135,142,1,0
+S038,usual care,41,148,130,1,1
+S039,walking,41,163,160,1,0
+S040,usual care,52,156,151,1,0
+S041,walking,76,166,164,1,0
+S042,usual care,69,169,161,1,0
+S043,walking,44,149,146,1,0
+S044,usual care,61,130,110,1,0
+S045,walking,59,146,137,1,0
+S046,usual care,78,148,139,1,0
+S047,walking,74,149,137,1,0
+S048,usual care,61,127,124,1,0
+S049,walking,40,126,116,1,0
+S050,usual care,79,155,149,1,0
+S051,walking,51,147,-9,0,-9
+S052,usual care,44,155,156,1,0
+S053,walking,73,158,-9,0,-9
+S054,usual care,49,144,-9,0,-9
+S055,walking,54,156,142,1,0
+S056,usual care,58,149,-9,0,-9
+S057,walking,78,153,147,1,0
+S058,usual care,45,132,117,1,1
+S059,walking,63,148,115,1,0
+S060,usual care,-9,126,115,1,0
+S061,walking,48,158,161,1,0
+S062,usual care,64,153,138,1,0
+S063,walking,71,145,139,1,0
+S064,usual care,48,163,179,1,0
+S065,walking,61,119,-9,0,-9
+S066,usual care,66,169,155,1,0
+S067,walking,56,134,129,1,0
+S068,usual care,61,140,128,1,1
+S069,walking,50,142,122,1,0
+S070,usual care,79,145,143,1,0
+S071,walking,47,140,132,1,0
+S072,usual care,52,158,-9,0,-9
+S073,walking,74,163,146,1,0
+S074,usual care,50,160,162,1,0
+S075,walking,66,135,132,1,0
+S076,usual care,79,153,152,1,0
+S077,walking,44,156,135,1,0
+S078,usual care,77,146,141,1,0
+S079,walking,74,137,119,1,0
+S080,usual care,57,142,-9,0,-9
+S081,walking,70,134,-9,0,-9
+S082,usual care,50,152,-9,0,-9
+S083,walking,46,146,147,1,0
+S084,usual care,75,142,138,1,0
+S085,walking,-9,148,133,1,1
+S086,usual care,53,172,160,1,0
+S087,walking,64,140,134,1,0
+S088,usual care,53,108,103,1,0
+S089,walking,76,148,138,1,0
+S090,usual care,48,154,159,1,0
+S091,walking,63,153,151,1,0
+S092,usual care,66,153,144,1,1
+S093,walking,75,139,128,1,0
+S094,usual care,71,150,147,1,0
+S095,walking,51,161,-9,0,-9
+S096,usual care,61,163,146,1,0
+S097,walking,64,144,134,1,0
+S098,usual care,72,145,-9,0,-9
+S099,walking,57,157,135,1,0
+S100,usual care,71,133,127,1,0
+S101,walking,51,148,135,1,0
+S102,usual care,58,155,136,1,0
+S103,walking,69,133,130,1,0
+S104,usual care,55,151,153,1,0
+S105,walking,75,172,174,1,0
+S106,usual care,78,157,159,1,0
+S107,walking,41,177,187,1,0
+S108,usual care,54,149,150,1,1
+S109,walking,77,141,131,1,0
+S110,usual care,62,151,-9,0,-9
+S111,walking,47,164,158,1,0
+S112,usual care,59,164,152,1,0
+S113,walking,47,143,123,1,0
+S114,usual care,45,145,142,1,0
+S115,walking,45,153,157,1,0
+S116,usual care,57,153,-9,0,-9
+S117,walking,75,164,167,1,0
+S118,usual care,68,142,136,1,0
+S119,walking,76,131,109,1,0
+S120,usual care,52,146,138,1,0
+S121,walking,75,165,140,1,0
+S122,usual care,50,139,-9,0,-9
+S123,walking,44,162,156,1,0
+S124,usual care,76,137,128,1,0
+S125,walking,60,137,125,1,0
+S126,usual care,53,125,117,1,0
+S127,walking,56,152,-9,0,-9
+S128,usual care,43,153,146,1,0
+S129,walking,70,156,146,1,0
+S130,usual care,77,169,160,1,0
+S131,walking,40,140,134,1,0
+S132,usual care,55,131,115,1,1
+S133,walking,40,129,110,1,0
+S134,usual care,75,151,140,1,0
+S135,walking,50,133,130,1,0
+S136,usual care,71,145,122,1,0
+S137,walking,42,180,175,1,0
+S138,usual care,69,136,124,1,0
+S139,walking,67,167,153,1,0
+S140,usual care,46,141,-9,0,-9
+S141,walking,55,156,162,1,0
+S142,usual care,48,127,-9,0,-9
+S143,walking,73,142,132,1,0
+S144,usual care,49,151,134,1,0
+S145,walking,66,159,152,1,0
+S146,usual care,66,133,125,1,1
+S147,walking,60,133,-9,0,-9
+S148,usual care,53,153,-9,0,-9
+S149,walking,62,169,158,1,0
+S150,usual care,50,161,163,1,0
+S151,walking,49,151,137,1,0
+S152,usual care,59,160,-9,0,-9
+S153,walking,79,138,130,1,0
+S154,usual care,67,158,166,1,0
+S155,walking,54,158,161,1,0
+S156,usual care,48,153,146,1,0
+S157,walking,44,157,132,1,0
+S158,usual care,47,164,-9,0,-9
+S159,walking,79,156,144,1,0
+S160,usual care,42,152,143,1,0
+S161,walking,79,152,128,1,1
+S162,usual care,41,144,-9,0,-9
+S163,walking,62,136,123,1,0
+S164,usual care,62,158,181,1,0
+S165,walking,47,139,124,1,0
+S166,usual care,74,143,149,1,0
+S167,walking,70,123,103,1,0
+S168,usual care,65,152,149,1,0
+S169,walking,78,151,148,1,0
+S170,usual care,76,150,142,1,0
+S171,walking,72,137,132,1,0
+S172,usual care,51,150,154,1,0
+S173,walking,45,141,143,1,0
+S174,usual care,53,154,-9,0,-9
+S175,walking,74,125,120,1,0
+S176,usual care,72,147,-9,0,-9
+S177,walking,65,158,143,1,0
+S178,usual care,51,147,136,1,0
+S179,walking,41,162,156,1,0
+S180,usual care,62,150,135,1,0
+S181,walking,49,168,141,1,0
+S182,usual care,69,147,-9,0,-9
+S183,walking,41,149,-9,0,-9
+S184,usual care,43,150,153,1,0
+S185,walking,73,128,120,1,0
+S186,usual care,62,126,130,1,0
+S187,walking,64,177,161,1,0
+S188,usual care,66,152,168,1,0
+S189,walking,64,138,127,1,0
+S190,usual care,47,138,134,1,0
+S191,walking,50,139,130,1,0
+S192,usual care,50,170,172,1,0
+S193,walking,52,153,142,1,0
+S194,usual care,69,141,-9,0,-9
+S195,walking,62,151,140,1,0
+S196,usual care,65,155,147,1,0
+S197,walking,69,179,170,1,0
+S198,usual care,51,158,149,1,0
+S199,walking,77,150,152,1,0
+S200,usual care,42,155,157,1,1
+S201,walking,52,147,126,1,0
+S202,usual care,42,156,-9,0,-9
+S203,walking,72,134,123,1,0
+S204,usual care,53,141,140,1,0
+S205,walking,66,154,142,1,0
+S206,usual care,60,146,132,1,0
+S207,walking,56,147,153,1,1
+S208,usual care,48,153,151,1,0
+S209,walking,60,143,128,1,1
+S210,usual care,77,133,136,1,1
+S211,walking,61,147,142,1,0
+S212,usual care,70,157,152,1,0
+S213,walking,50,149,127,1,0
+S214,usual care,59,136,132,1,0
+S215,walking,63,152,140,1,0
+S216,usual care,49,150,153,1,0
+S217,walking,54,146,-9,0,-9
+S218,usual care,60,167,173,1,0
+S219,walking,58,145,128,1,0
+S220,usual care,79,144,-9,0,-9
+S221,walking,50,135,-9,0,-9
+S222,usual care,50,132,133,1,0
+S223,walking,40,138,144,1,0
+S224,usual care,74,150,136,1,0
+S225,walking,48,159,156,1,1
+S226,usual care,74,152,-9,0,-9
+S227,walking,44,146,129,1,0
+S228,usual care,78,176,-9,0,-9
+S229,walking,53,154,-9,0,-9
+S230,usual care,75,148,137,1,0
+S231,walking,49,161,146,1,0
+S232,usual care,66,140,141,1,0
+S233,walking,65,171,157,1,0
+S234,usual care,48,133,122,1,0
+S235,walking,44,132,133,1,0
+S236,usual care,73,146,-9,0,-9
+S237,walking,73,157,143,1,0
+S238,usual care,43,146,146,1,0
+S239,walking,40,165,146,1,0
+S240,usual care,74,143,146,1,1
+S241,walking,42,146,129,1,0
+S242,usual care,65,158,157,1,0
+S243,walking,46,153,140,1,0
+S244,usual care,-9,135,129,1,0
+S245,walking,47,155,146,1,0
+S246,usual care,68,139,140,1,0
+S247,walking,49,151,133,1,0
+S248,usual care,75,153,-9,0,-9
+S249,walking,61,138,137,1,0
+S250,usual care,77,122,111,1,0
+S251,walking,54,137,113,1,0
+S252,usual care,50,143,129,1,0
+S253,walking,61,131,107,1,1
+S254,usual care,62,129,143,1,0
+S255,walking,-9,151,138,1,0
+S256,usual care,79,139,140,1,0
+S257,walking,67,156,131,1,0
+S258,usual care,63,163,147,1,0
+S259,walking,49,125,101,1,0
+S260,usual care,68,160,155,1,0
+S261,walking,72,168,157,1,0
+S262,usual care,67,162,-9,0,-9
+S263,walking,71,137,136,1,0
+S264,usual care,43,130,135,1,0
+S265,walking,59,121,118,1,0
+S266,usual care,62,141,140,1,0
+S267,walking,62,126,114,1,0
+S268,usual care,41,146,149,1,0
+S269,walking,68,161,171,1,0
+S270,usual care,75,129,118,1,0
+S271,walking,61,145,145,1,0
+S272,usual care,57,158,141,1,1
+S273,walking,53,163,150,1,0
+S274,usual care,79,165,163,1,1
+S275,walking,69,167,163,1,0
+S276,usual care,65,146,136,1,0
+S277,walking,60,151,143,1,0
+S278,usual care,64,142,144,1,0
+S279,walking,65,159,154,1,0
+S280,usual care,55,154,135,1,0
+S281,walking,60,147,137,1,0
+S282,usual care,63,139,145,1,0
+S283,walking,49,147,132,1,0
+S284,usual care,40,132,132,1,0
+S285,walking,42,142,134,1,0
+S286,usual care,71,156,-9,0,-9
+S287,walking,51,164,147,1,0
+S288,usual care,75,139,132,1,0
+S289,walking,51,149,148,1,0
+S290,usual care,61,151,154,1,0
+S291,walking,77,150,138,1,0
+S292,usual care,68,152,150,1,1
+S293,walking,78,149,127,1,0
+S294,usual care,71,153,-9,0,-9
+S295,walking,-9,140,125,1,0
+S296,usual care,58,160,-9,0,-9
+S297,walking,-9,152,137,1,0
+S298,usual care,43,146,141,1,0
+S299,walking,41,147,138,1,0
+S300,usual care,68,145,128,1,0

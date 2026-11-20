@@ -1,0 +1,12 @@
+{
+  "n_change_walking": 139,
+  "mean_change_walking": -9.906474820143885,
+  "n_change_usual care": 117,
+  "mean_change_usual care": -5.0,
+  "events_walking": 7,
+  "denom_walking": 139,
+  "rate_walking": 0.050359712230215826,
+  "events_usual care": 14,
+  "denom_usual care": 117,
+  "rate_usual care": 0.11965811965811966
+}

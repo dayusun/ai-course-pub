@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" font-family="Arial" font-size="14">
+  <rect x="120" y="10" width="160" height="36" fill="white" stroke="black"/>
+  <text x="200" y="33" text-anchor="middle">Randomized, n = 60</text>
+  <line x1="200" y1="46" x2="100" y2="130" stroke="black"/>
+  <line x1="200" y1="46" x2="300" y2="130" stroke="black"/>
+  <rect x="20" y="130" width="160" height="36" fill="#E69F00"/>
+  <text x="100" y="153" text-anchor="middle">Walking, n = 30</text>
+  <rect x="220" y="130" width="160" height="36" fill="#56B4E9"/>
+  <text x="300" y="153" text-anchor="middle">Usual care, n = 30</text>
+</svg>

@@ -1,0 +1,78 @@
+
+> build · qwen3-small
+
+$ ls -la && head -5 cohort.csv && wc -l cohort.csv
+total 28
+drwxrwxrwx 2 jovyan 1000  4096 Oct 22 03:31 .
+drwxrws--- 1 jovyan users 4096 Oct 22 03:31 ..
+-rw-rw-rw- 1 jovyan 1000  9207 Oct 22 03:31 cohort.csv
+-rw-rw-rw- 1 jovyan 1000   397 Oct 22 03:31 data-dictionary.csv
+id,arm,age,sbp_baseline,sbp_week24,followed_up,cv_event
+S001,walking,74,150,134,1,0
+S002,usual care,56,144,143,1,0
+S003,walking,50,157,145,1,0
+S004,usual care,66,153,-9,0,-9
+301 cohort.csv
+
+→ Read data-dictionary.csv
+
+$ cut -d, -f2,6,7 cohort.csv | sort | uniq -c
+1 arm,followed_up,cv_event
+     33 usual care,0,-9
+    103 usual care,1,0
+     14 usual care,1,1
+     11 walking,0,-9
+    132 walking,1,0
+      7 walking,1,1
+
+$ python3 - <<'EOF'
+import csv, json, os
+
+rows = list(csv.DictReader(open('cohort.csv')))
+for r in rows:
+    for k in ('age','sbp_baseline','sbp_week24','followed_up','cv_event'):
+        r[k] = int(r[k])
+
+# sanity checks
+bad = [r for r in rows if r['followed_up']==0 and (r['sbp_week24']!=-9 or r['cv_event']!=-9)]
+print("followed_up=0 but valid w24/event:", len(bad))
+bad2 = [r for r in rows if r['followed_up']==1 and (r['sbp_week24']==-9 or r['cv_event']==-9)]
+print("followed_up=1 but missing w24/event:", len(bad2))
+print("missing sbp_baseline:", sum(1 for r in rows if r['sbp_baseline']==-9))
+print("arm counts:", {a: sum(1 for r in rows if r['arm']==a) for a in ('walking','usual care')})
+
+res = {}
+for arm, key in (('walking','walking'), ('usual care','usual')):
+    ch = [r['sbp_week24']-r['sbp_baseline'] for r in rows if r['arm']==arm and r['sbp_week24']!=-9 and r['sbp_baseline']!=-9]
+    res[f'mean_change_{key}'] = round(sum(ch)/len(ch), 2)
+    res[f'n_change_{key}'] = len(ch)
+    ev = [r for r in rows if r['arm']==arm and r['cv_event'] in (0,1)]
+    res[f'events_{key}'] = sum(r['cv_event'] for r in ev)
+    res[f'denom_{key}'] = len(ev)
+
+os.makedirs('output', exist_ok=True)
+json.dump(res, open('output/results.json','w'), indent=2)
+print(json.dumps(res, indent=2))
+EOF
+followed_up=0 but valid w24/event: 0
+followed_up=1 but missing w24/event: 0
+missing sbp_baseline: 0
+arm counts: {'walking': 150, 'usual care': 150}
+{
+  "mean_change_walking": -9.91,
+  "n_change_walking": 139,
+  "events_walking": 7,
+  "denom_walking": 139,
+  "mean_change_usual": -5.0,
+  "n_change_usual": 117,
+  "events_usual": 14,
+  "denom_usual": 117
+}
+
+-9 = missing code. Participants who didn't complete follow-up have missing values at week 24 and event data. Let's verify the consistency and try to compute the results.
+Results saved to `output/results.json`. Missing week-24 data (`-9`, only for the 44 participants who missed the visit) excluded from both analyses; event rates use participants with known event status as denominator.
+
+| Arm | Mean SBP change (n) | CV event rate |
+|---|---|---|
+| walking | −9.91 mmHg (139/150) | 7/139 = 5.0% |
+| usual care | −5.00 mmHg (117/150) | 14/117 = 12.0% |

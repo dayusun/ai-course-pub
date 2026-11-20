@@ -1,0 +1,268 @@
+
+> build · qwen3-small
+
+→ Read data-dictionary.csv
+
+$ ls -la /home/jovyan/work
+total 32
+drwxrwxrwx 2 jovyan 1000  4096 Oct 22 03:38 .
+drwxrws--- 1 jovyan users 4096 Oct 22 03:38 ..
+-rw-rw-rw- 1 jovyan 1000   898 Oct 22 03:38 AGENTS.md
+-rw-rw-rw- 1 jovyan 1000  9207 Oct 22 03:38 cohort.csv
+-rw-rw-rw- 1 jovyan 1000   397 Oct 22 03:38 data-dictionary.csv
+
+$ head -1 cohort.csv && python3 -c "
+import csv
+with open('cohort.csv') as f:
+    r = list(csv.DictReader(f))
+print('rows:', len(r))
+print('cols:', list(r[0].keys()))
+for c in r[0].keys():
+    vals = set(row[c] for row in r)
+    if len(vals) <= 12:
+        print(c, sorted(vals))
+    else:
+        nums = [float(v) for v in vals if v.replace('.','',1).replace('-','',1).isdigit() or v.startswith('-')]
+        print(c, 'distinct:', len(vals), 'min/max:', min(vals), max(vals))
+"
+id,arm,age,sbp_baseline,sbp_week24,followed_up,cv_event
+rows: 300
+cols: ['id', 'arm', 'age', 'sbp_baseline', 'sbp_week24', 'followed_up', 'cv_event']
+id distinct: 300 min/max: S001 S300
+arm ['usual care', 'walking']
+age distinct: 41 min/max: -9 79
+sbp_baseline distinct: 57 min/max: 108 180
+sbp_week24 distinct: 70 min/max: -9 187
+followed_up ['0', '1']
+cv_event ['-9', '0', '1']
+
+# Todos
+[•] Write scripts/validate.py and run it
+[ ] Write scripts/analysis.py and run it
+[ ] Verify output/results.json keys
+[ ] Report verbatim output
+
+Data structure confirmed. Writing the two scripts per AGENTS.md.
+$ mkdir -p /home/jovyan/work/scripts /home/jovyan/work/output
+(no output)
+
+← Write scripts/validate.py
+Wrote file successfully.
+
+← Write scripts/validate.py
+Wrote file successfully.
+
+Let me fix a convoluted duplicate-id count before running.
+← Write scripts/analysis.py
+Wrote file successfully.
+
+Now the analysis script.
+← Edit scripts/analysis.py
+Index: /home/jovyan/work/scripts/analysis.py
+===================================================================
+--- /home/jovyan/work/scripts/analysis.py
++++ /home/jovyan/work/scripts/analysis.py
+@@ -1,8 +1,12 @@
+ import csv
+ import json
+ import os
++import re
+ 
++def is_num(s):
++    return re.fullmatch(r"-?\d+(\.\d+)?", s) is not None
++
+ DATA = "cohort.csv"
+ OUT = os.path.join("output", "results.json")
+ MISSING = "-9"
+ 
+
+
+← Edit scripts/analysis.py
+Index: /home/jovyan/work/scripts/analysis.py
+===================================================================
+--- /home/jovyan/work/scripts/analysis.py
++++ /home/jovyan/work/scripts/analysis.py
+@@ -59,10 +59,6 @@
+         json.dump(results, f, indent=2)
+     print(f"\nWrote {OUT}")
+     return results
+ 
+-def is_num(s):
+-    import re
+-    return re.fullmatch(r"-?\d+(\.\d+)?", s) is not None
+-
+ if __name__ == "__main__":
+     main()
+
+
+← Edit scripts/analysis.py
+Index: /home/jovyan/work/scripts/analysis.py
+===================================================================
+--- /home/jovyan/work/scripts/analysis.py
++++ /home/jovyan/work/scripts/analysis.py
+@@ -36,24 +36,27 @@
+ 
+ def mean(xs):
+     return sum(xs) / len(xs) if xs else None
+ 
++key_of = {"walking": "walking", "usual care": "usual"}
+ results = {}
+ print("Mean change in systolic BP (baseline -> week 24), mmHg:")
+ for arm in ("walking", "usual care"):
++    k = key_of[arm]
+     a = arms[arm]
+     m = mean(a["change_vals"])
+     print(f"  {arm}: mean_change = {m:.2f} (n = {a['n_change']})")
+-    results[f"mean_change_{arm.replace(' ', '_')}"] = round(m, 4)
+-    results[f"n_change_{arm.replace(' ', '_')}"] = a["n_change"]
++    results[f"mean_change_{k}"] = round(m, 4)
++    results[f"n_change_{k}"] = a["n_change"]
+ 
+ print("Cardiovascular event rate by week 24:")
+ for arm in ("walking", "usual care"):
++    k = key_of[arm]
+     a = arms[arm]
+     rate = a["events"] / a["denom_event"] if a["denom_event"] else None
+     print(f"  {arm}: rate = {rate:.4f} ({a['events']} events / {a['denom_event']} with known cv_event)")
+-    results[f"events_{arm.replace(' ', '_')}"] = a["events"]
+-    results[f"denom_{arm.replace(' ', '_')}"] = a["denom_event"]
++    results[f"events_{k}"] = a["events"]
++    results[f"denom_{k}"] = a["denom_event"]
+ 
+ os.makedirs("output", exist_ok=True)
+ with open(OUT, "w") as f:
+     json.dump(results, f, indent=2)
+
+
+The arm key mapping is wrong — "usual care" would produce `mean_change_usual_care` but the spec requires `mean_change_usual`. Fixing.
+← Edit scripts/analysis.py
+Index: /home/jovyan/work/scripts/analysis.py
+===================================================================
+--- /home/jovyan/work/scripts/analysis.py
++++ /home/jovyan/work/scripts/analysis.py
+@@ -15,13 +15,18 @@
+ with open(DATA, newline="") as f:
+     for row in csv.DictReader(f):
+         arm = row["arm"]
+         a = arms.setdefault(arm, {
++            "n": 0,
++            "n_followed_up": 0,
+             "change_vals": [],      # sbp_week24 - sbp_baseline (both present)
+             "n_change": 0,
+             "events": 0,
+             "denom_event": 0,       # cv_event not missing
+         })
++        a["n"] += 1
++        if row["followed_up"] == "1":
++            a["n_followed_up"] += 1
+ 
+         b = row["sbp_baseline"]
+         w = row["sbp_week24"]
+         if w != MISSING and is_num(b):
+
+
+← Edit scripts/analysis.py
+Index: /home/jovyan/work/scripts/analysis.py
+===================================================================
+--- /home/jovyan/work/scripts/analysis.py
++++ /home/jovyan/work/scripts/analysis.py
+@@ -43,8 +43,13 @@
+     return sum(xs) / len(xs) if xs else None
+ 
+ key_of = {"walking": "walking", "usual care": "usual"}
+ results = {}
++print("Arm totals (n, attended week-24 visit):")
++for arm in ("walking", "usual care"):
++    a = arms[arm]
++    print(f"  {arm}: n = {a['n']}, followed_up = {a['n_followed_up']}")
++
+ print("Mean change in systolic BP (baseline -> week 24), mmHg:")
+ for arm in ("walking", "usual care"):
+     k = key_of[arm]
+     a = arms[arm]
+
+
+Running both scripts from a clean start (removing `output/` first).
+$ rm -rf /home/jovyan/work/output && python3 /home/jovyan/work/scripts/validate.py; echo "exit=$?"
+Rows checked: 300
+Expected ids: 300, distinct ids found: 300
+Problems per column:
+  id: 0
+  arm: 0
+  age: 0
+  sbp_baseline: 0
+  sbp_week24: 0
+  followed_up: 0
+  cv_event: 0
+Total problems: 0
+exit=0
+
+$ python3 /home/jovyan/work/scripts/analysis.py; echo "exit=$?"
+Arm totals (n, attended week-24 visit):
+  walking: n = 150, followed_up = 139
+  usual care: n = 150, followed_up = 117
+Mean change in systolic BP (baseline -> week 24), mmHg:
+  walking: mean_change = -9.91 (n = 139)
+  usual care: mean_change = -5.00 (n = 117)
+Cardiovascular event rate by week 24:
+  walking: rate = 0.0504 (7 events / 139 with known cv_event)
+  usual care: rate = 0.1197 (14 events / 117 with known cv_event)
+
+Wrote output/results.json
+exit=0
+
+Validation is clean. Now the analysis.
+→ Read output/results.json
+
+# Todos
+[✓] Write scripts/validate.py and run it
+[✓] Write scripts/analysis.py and run it
+[✓] Verify output/results.json keys
+[✓] Report verbatim output
+
+All 8 required keys present. Updating todos and reporting.
+**Results** (missing codes `-9` recoded per dictionary; 300 rows, 150/arm)
+
+Mean change in systolic BP, baseline → week 24 (mmHg):
+- Walking: **−9.91** (n = 139)
+- Usual care: **−5.00** (n = 117)
+
+Cardiovascular event rate by week 24:
+- Walking: **5.0%** (7 / 139)
+- Usual care: **12.0%** (14 / 117)
+
+`sbp_week24` was missing exactly for those who didn't attend the week-24 visit, so change denominators equal `followed_up=1` counts (139, 117); event denominators are those with non-missing `cv_event` (same 139, 117).
+
+**Verbatim script output**
+
+`scripts/validate.py`:
+```
+Rows checked: 300
+Expected ids: 300, distinct ids found: 300
+Problems per column:
+  id: 0
+  arm: 0
+  age: 0
+  sbp_baseline: 0
+  sbp_week24: 0
+  followed_up: 0
+  cv_event: 0
+Total problems: 0
+```
+
+`scripts/analysis.py`:
+```
+Arm totals (n, attended week-24 visit):
+  walking: n = 150, followed_up = 139
+  usual care: n = 150, followed_up = 117
+Mean change in systolic BP (baseline -> week 24), mmHg:
+  walking: mean_change = -9.91 (n = 139)
+  usual care: mean_change = -5.00 (n = 117)
+Cardiovascular event rate by week 24:
+  walking: rate = 0.0504 (7 events / 139 with known cv_event)
+  usual care: rate = 0.1197 (14 events / 117 with known cv_event)
+
+Wrote output/results.json
+```
+
+Files: `scripts/validate.py`, `scripts/analysis.py`, `output/results.json` (all 8 required keys).

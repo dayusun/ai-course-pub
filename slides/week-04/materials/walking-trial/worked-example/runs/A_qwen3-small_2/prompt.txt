@@ -1,0 +1,1 @@
+Using cohort.csv, report the mean change in systolic BP from baseline to week 24 in each arm, and the cardiovascular event rate in each arm. Save the numbers to output/results.json with keys: mean_change_walking, mean_change_usual, n_change_walking, n_change_usual, events_walking, events_usual, denom_walking, denom_usual.
