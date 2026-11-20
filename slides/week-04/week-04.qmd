@@ -58,7 +58,7 @@ title-slide-attributes:
 |---|---|
 | `AGENTS.md` | rules for an analysis: read-only data, summaries only, follow the plan |
 | plan mode | the agent proposes the analysis; you check sample, model, outputs |
-| permissions and the sandbox | your expected values sit outside the folder, where the agent cannot read them |
+| permissions and the sandbox | `data/` read-only, so no script can change the raw files |
 | a fresh session | a review of a co-author's analysis that recomputes the main number |
 | `/record` | the record of the analysis, and a rerun from a clean start |
 
@@ -261,28 +261,6 @@ mean and the post-meal mean. Print how many rows each step changes. Then run it.
 
 # 4 · Running the planned analysis
 
-## Your expectations, written down {.hands-on}
-
-::: {.where}
-**Folder** `~/week-04` · a second Terminal tab (File → New → Terminal), outside the project.
-:::
-
-Before any model runs, write down from the profile and the plan the n analysed per arm and
-a range and sign for the main estimate. Only your knowledge of the study can supply these
-numbers, and most real errors show up in them first.
-
-```bash
-cd ~/week-04
-cat > my-expectations.txt <<'EOF'
-analysed per arm: walking __  usual __    (randomized 30 + 30; who has no visit 2?)
-primary estimate, walking minus usual: between ___ and ___ mg/dL
-sign: negative / zero / positive
-EOF
-```
-
-- The file is outside the project folder, so the agent cannot read your guesses and aim for
-  them. Fill in the blanks in a text editor or JupyterLab's file browser.
-
 ## Planning the analysis {.hands-on}
 
 ::: {.where}
@@ -338,8 +316,8 @@ Answer the plan's questions and ask for the work. In the run on the hub:
 
 - The analysis took about 3 minutes. Its first run printed `NA` for the confidence limits
   because of a wrong column name, and the agent fixed that itself.
-- Compare the sample sizes with `my-expectations.txt` before you read the estimate. Then
-  open `scripts/analysis.R` and find the line that fits each model.
+- Before you read the estimate, check the n analysed against the cleaning run: 28 walking,
+  26 usual. Then open `scripts/analysis.R` and find the line that fits each model.
 
 ## Long analyses in the background
 
@@ -1293,7 +1271,6 @@ Fix it in a copy, prep_fixed.R, and run both. Report N and the mean sleep from e
 
 ## Portfolio entry for Week 4
 
-- `my-expectations.txt`, and how the agent's numbers compared with it.
 - `RECORD.md` from Part 9, with the scripts and `output/` it describes.
 - Figure 1 after your own check: what the agent's check missed, if anything, and what you
   asked it to change.

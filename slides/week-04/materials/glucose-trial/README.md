@@ -43,17 +43,15 @@ Check: `wc -l output/visit_means.csv` gives 115 (114 rows and the header).
 
 ## Part 4: the planned analysis
 
-1. Outside the folder, write `~/week-04/my-expectations.txt`: n analysed per arm, and a
-   range for the primary estimate, before the agent shows you any result.
-2. Tab to **Plan**: "Plan scripts/analysis.R for the primary and both secondary analyses in
+1. Tab to **Plan**: "Plan scripts/analysis.R for the primary and both secondary analyses in
    analysis-plan.md, starting from output/visit_means.csv (the mixed model also needs the
    readings). Before any code, state: the analysis sample and its n per arm; how missing
    values are handled; each model formula; and every key the script will write to
    output/results.json, with how it is computed. Do not write any file."
-3. Answer its questions; Tab to **Build**: "Now write and run scripts/analysis.R as
+2. Answer its questions; Tab to **Build**: "Now write and run scripts/analysis.R as
    planned, and show me its output."
-4. Compare its numbers with `my-expectations.txt`. Explain every difference before you
-   accept the result.
+3. Before you read the estimate, check the n analysed against Part 3: 28 walking, 26 usual
+   (six people have no visit 2).
 
 A long analysis can run in the background, so the agent's session does not hang:
 
